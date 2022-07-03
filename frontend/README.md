@@ -18,7 +18,7 @@ docker images
 ### docker run
 
 ```bash
-docker run -p 3000:3000 techeer-a
+docker run -p 3000:3000 2022bc
 ```
 
 3001:3000 이런식으로 바꾸어 실행하면 localhost:3001로 접속할 수 있음
