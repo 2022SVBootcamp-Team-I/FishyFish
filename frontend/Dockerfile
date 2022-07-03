@@ -12,6 +12,7 @@ COPY package.json ./
 
 RUN npm install
 
+COPY . .
 # Expose ports
 EXPOSE 3000
 
