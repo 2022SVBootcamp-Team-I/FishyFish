@@ -24,3 +24,5 @@ docker run -p 3000:3000 2022bc
 3001:3000 이런식으로 바꾸어 실행하면 localhost:3001로 접속할 수 있음
 디폴트: http://localhost:3000
 <br/>
+
+npm start 로 로컬 실행 가능
