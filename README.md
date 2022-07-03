@@ -2,6 +2,7 @@
 
 Type
 feat : 새로운 기능 추가, 기존의 기능을 요구 사항에 맞추어 수정
+<br>
 fix : 기능에 대한 버그 수정
 build : 빌드 관련 수정
 chore : 패키지 매니저 수정, 그 외 기타 수정 ex) .gitignore
