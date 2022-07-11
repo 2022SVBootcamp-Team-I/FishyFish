@@ -8,6 +8,10 @@ export default function Home() {
     <Grid>
       <p> 맛잇는 고등어 *^^*</p>
         <img src={mack} width={400} height={400} alt="mack"/>
+        <p></p>
+        <Link to="/">
+        <button>돌아가기</button>
+        </Link>
     </Grid>
   );
 }
