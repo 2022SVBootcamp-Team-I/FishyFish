@@ -10,7 +10,13 @@ ENV PATH /frontend/node_modules/.bin:$PATH
 # Copy package files and install app dependencies
 COPY package.json ./
 
+#Install NPM, React
 RUN npm install
+
+#Install Tools
+RUN npm install react-bootstrap bootstrap
+RUN npm install react-router-dom@6
+
 
 COPY . ./
 # Expose ports
