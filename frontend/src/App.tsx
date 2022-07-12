@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NaviBar from "./components/NaviBar";
-import Home from "./pages/Home";
-import Example from "./pages/Example";
+import Home from "./pages/Home/index";
+import Example from "./pages/Example/index";
 
 
 function App() {
