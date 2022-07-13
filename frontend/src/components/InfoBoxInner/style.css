@@ -1,0 +1,33 @@
+.infoBox_Line {
+    width: 39.688rem;
+    height: 0.128rem;
+    flex-grow: 0;
+    margin: 0.938rem 0.438rem 1.122rem 0;
+    transform: rotate(-0.1deg);
+    background-color: #9e9e9e;
+}
+
+.infoBox_title {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 9rem;
+    font-family: Poppins;
+    font-size: 0.75rem;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #9e9e9e;
+}
+
+.infoBox_Content {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 2rem;
+}
+
+.content_3 {
+    margin-left: 6.5rem;
+}

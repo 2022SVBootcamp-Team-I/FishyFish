@@ -4,7 +4,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NaviBar from "./components/NaviBar";
 import Home from "./pages/Home/index";
-import Example from "./pages/Example/index";
 
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/example" element={<Example />} />
         </Routes>
       </Router>
     </div>
