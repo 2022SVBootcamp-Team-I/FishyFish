@@ -1,0 +1,238 @@
+.Login_11 {
+  position: absolute;
+  width: 120.125rem;
+  height: 61.375rem;
+  background-color: #fff;
+}
+
+.aa_1 {
+  position: absolute;
+  right: 65.125rem;
+  width: 55rem;
+  height: 61.375rem;
+  background: url(./orca.gif);
+  border-radius: 40px;
+}
+
+.Group_34 {
+  position: absolute;
+  top: 11.688rem;
+  left: 74.017rem;
+  right: 24.313rem;
+  bottom: 41.478rem;
+  width: 21.796rem;
+  height: 8.21rem;
+  padding-bottom: 3.528rem;
+}
+
+.Sign_in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7.006rem;
+  height: 3.053rem;
+  font-family: Poppins;
+  font-size: 1.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.If_you_dont_have_an_account_register {
+  position: absolute;
+  top: 4.546rem;
+  left: 0;
+  bottom: 2.035rem;
+  width: 21.796rem;
+  height: 1.628rem;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.You_can_Register_here_ {
+  position: absolute;
+  top: 6.581rem;
+  left: 0;
+  width: 21.796rem;
+  height: 1.628rem;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0089ed;
+}
+
+.You_can_Register_here_ .text_style_1 {
+  font-weight: normal;
+  color: #000;
+}
+
+.Group_38 {
+  position: absolute;
+  top: 23.425rem;
+  left: 73.875rem;
+  right: 15.75rem;
+  bottom: 25.941rem;
+  width: 30.5rem;
+  height: 22.051rem;
+  margin: 0 0 1.153rem;
+}
+
+.Email {
+  position: absolute;
+  top: 0;
+  left: 0.142rem;
+  width: 2.25rem;
+  height: 1.25rem;
+  font-family: Poppins;
+  font-size: 0.813rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.Vector_Email_icon{
+  position: absolute;
+  top: 2.556rem;
+  left: 0.142rem;
+  width: 1.203rem;
+  height: 0.79rem;
+  background: url(./mail_icon.png);
+}
+
+.Enter_your_email_address {
+  position: absolute;
+  top: 2.103rem;
+  left: 2.052rem;
+  width: 11.464rem;
+  height: 1.628rem;
+  padding-left: 0.5rem;
+  padding-right: 15rem;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  border: none;
+}
+
+.Rectangle_8 {
+  position: absolute;
+  top: 4.207rem;
+  left: 0.142rem;
+  width: 30.359rem;
+  height: 0.136rem;
+  background-color: #000;
+}
+
+.Password {
+  position: absolute;
+  top: 7.667rem;
+  left: 0.142rem;
+  width: 4.25rem;
+  height: 1.25rem;
+  font-family: Poppins;
+  font-size: 0.813rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.Vector_Password_icon {
+  position: absolute;
+  top: 9.906rem;
+  left: 0.142rem;
+  width: 1.203rem;
+  height: 0.79rem;
+  background: url(./mail_icon.png);
+} 
+
+.Enter_your_Password {
+  position: absolute;
+  top: 9.5rem;
+  left: 2.052rem;
+  width: 11.464rem;
+  height: 1.628rem;
+  padding-left: 0.5rem;
+  padding-right: 15rem;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  border: none;
+}
+
+.Rectangle_9 {
+  position: absolute;
+  top: 11.5rem;
+  left: 0.142rem;
+  width: 30.359rem;
+  height: 0.136rem;
+  background-color: #000;
+}
+
+.Rectangle_10 {
+  position: absolute;
+  top: 18.455;
+  right: 0;
+  bottom: 0;
+  left: .142rem;
+  width: 30.359rem;
+  height: 3.596rem;
+  flex-grow: 0;
+  border-radius: 32px;
+  box-shadow: 0 4px 26px 0 rgba(0, 0, 0, 0.25);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  background-color: #d9d9d9;
+}
+
+.Login {
+  position: absolute;
+  top: 0.95rem;
+  right: 13.516rem;
+  bottom: 0.882rem;
+  left: 13.587rem;
+  width: 3.255rem;
+  height: 1.764rem;
+  font-family: Poppins;
+  font-size: 1.063rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}

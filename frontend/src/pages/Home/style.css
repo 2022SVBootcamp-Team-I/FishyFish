@@ -1,0 +1,36 @@
+.test{
+    padding-top: 6.938rem;
+}
+
+.concon{
+    width: 39.5rem;
+    height: 41.563rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 4px;
+    margin-top: 10.375rem;
+    margin-left: 3.375rem;
+    padding: 1rem;
+    border-radius: 16px;
+    border: solid 1px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
+}
+
+.fishList {
+    display: inline-block;
+    height: 25px;
+    flex-grow: 0;
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    margin-left: 0.55rem;
+    margin-top: 0.8rem;
+}
