@@ -15,3 +15,10 @@ release : 버전 릴리즈<br>
 
 # 예시
 [feat] add AI model
+
+
+personal note:
+<br>
+docker tag: use latest when development only. Specify version during deployment.
+<br>
+ELK have errors depending on version. Use same version accross all three stacks.
