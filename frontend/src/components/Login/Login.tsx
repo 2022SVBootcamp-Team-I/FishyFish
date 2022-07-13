@@ -38,10 +38,10 @@ export default function Login() {
         <div className={styles.Rectangle_8}></div>
         <span className={styles.Password}>Password</span>
         <div className={styles.Vector_Password_icon}></div>
-        <input id="password" value={password} className={styles.Enter_your_Password} placeholder="Enter your Password" type="password" onChange={onChangePassword} />
+        <input id="password" value={password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangePassword} />
         <div className={styles.Rectangle_9}></div>
         <button type="submit" onClick={onLogin} className={styles.Rectangle_10}>
-          <span className={styles.Login}>Login</span>
+          <span className={styles.Login}>Sign in</span>
         </button>
       </form>
 
