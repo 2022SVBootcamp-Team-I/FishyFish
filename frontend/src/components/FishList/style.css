@@ -1,0 +1,79 @@
+.cell {
+    height: 4.5rem;
+    align-self: stretch;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 0.25rem 0.5rem;
+}
+
+.cell2 {
+    height: 4.5rem;
+    align-self: stretch;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    background-color: #dd7878;
+}
+
+.Avatar {
+    width: 3rem;
+    height: 3rem;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0.5rem;
+    border-radius: 78px;
+    border: solid 2px #d9d9d9;
+    background-color: #fff;
+}
+.Avatar_img{
+    object-fit: contain;
+    height: 3rem;
+    width: 3rem;
+}
+
+.This-is-a-title {
+    height: 1.125rem;
+    align-self: start;
+    flex-grow: 0;
+    font-family: Poppins;
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+
+.Subtitle-in-da-house {
+    height: 0.875rem;
+    align-self: start;
+    flex-grow: 0;
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+.FishList_Content{
+    display: felx;
+    flex-direction: column;
+}
