@@ -5,15 +5,17 @@ import NaviBar from "./components/NaviBar";
 import Home from "./pages/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import Upload from "./pages/Upload"
 
 
 function App() {
   return (
     <div className="App">
-    {/*<NaviBar />*/}
+    <NaviBar />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/upload" element={<Upload />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
