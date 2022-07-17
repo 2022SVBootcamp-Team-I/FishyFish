@@ -1,0 +1,236 @@
+.Login_11 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.aa_1 {
+  position: absolute;
+  left: 0;
+  right: 65.125rem;
+  width: 50%;
+  height: 100%;
+  background: url(./orca.gif);
+  border-radius: 2vw;
+}
+
+.Group_34 {
+  position: absolute;
+  top: 25%;
+  left: 65%;
+  right: 24.313rem;
+  bottom: 41.478rem;
+  width: 50%;
+  height: 8.21rem;
+}
+
+.Sign_in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10vw;
+  height: 5vh;
+  font-family: Poppins;
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.If_you_dont_have_an_account_register {
+  position: absolute;
+  top: 7.5vh;
+  left: 0;
+  bottom: 2.035rem;
+  width: 20vw;
+  height: 5vh;
+  font-family: Poppins;
+  font-size: 0.8vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.You_can_Register_here_ {
+  position: absolute;
+  top: 11vh;
+  left: 0;
+  width: 20vw;
+  height: 5vh;
+  font-family: Poppins;
+  font-size: 0.8vw;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0089ed;
+}
+
+.You_can_Register_here_ .text_style_1 {
+  font-weight: normal;
+  color: #000;
+}
+
+.Group_38 {
+  position: absolute;
+  top: 45%;
+  left: 65%;
+  right: 15.75rem;
+  bottom: 25.941rem;
+  width: 30.5rem;
+  height: 22.051rem;
+  margin: 0 0 1.153rem;
+}
+
+.Email {
+  position: absolute;
+  top: 0;
+  left: 0.1vw;
+  width: 3vw;
+  height: 2vh;
+  font-family: Poppins;
+  font-size: 0.9vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.Vector_Email_icon{
+  position: absolute;
+  top: 4.5vh;
+  left: 0.1vw;
+  width: 1vw;
+  height: 1vh;
+  background: url(./mail_icon.png);
+}
+
+.Enter_your_email_address {
+  position: absolute;
+  top: 3.5vh;
+  left: 1.5vw;
+  width: 10vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  padding-right: 8vw;
+  font-family: Poppins;
+  font-size: 0.8vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  border: none;
+}
+
+.Rectangle_8 {
+  position: absolute;
+  top: 7.5vh;
+  left: 0.142rem;
+  width: 20vw;
+  height: 0.2vh;
+  background-color: #000;
+}
+
+.Password {
+  position: absolute;
+  top: 11vh;
+  left: 0.1vw;
+  width: 5vw;
+  height: 2vh;
+  font-family: Poppins;
+  font-size: 0.9vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.Vector_Password_icon {
+  position: absolute;
+  top: 15vh;
+  left: 0.1vw;
+  width: 1vw;
+  height: 1vh;
+  background: url(./mail_icon.png);
+} 
+
+.Enter_your_Password {
+  position: absolute;
+  top: 14vh;
+  left: 1.5vw;
+  width: 10vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  padding-right: 8vw;
+  font-family: Poppins;
+  font-size: 0.8vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  border: none;
+}
+
+.Rectangle_9 {
+  position: absolute;
+  top: 18vh;
+  left: 0.142rem;
+  width: 20vw;
+  height: 0.2vh;
+  background-color: #000;
+}
+
+.Rectangle_10 {
+  position: absolute;
+  top: 25vh;
+  right: 0;
+  bottom: 0;
+  left: .142rem;
+  width: 20vw;
+  height: 5vh;
+  flex-grow: 0;
+  border-radius: 5vw;
+  box-shadow: 0 50vw 30vh 0 rgba(0, 0, 0, 0.25);
+  border: solid 0.1vw rgba(0, 0, 0, 0.3);
+  background-color: #d9d9d9;
+}
+
+.Login {
+  position: absolute;
+  top: 30%;
+  left: 43%;
+  width: 10vw;
+  height: 5vh;
+  font-family: Poppins;
+  font-size: 0.9vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}

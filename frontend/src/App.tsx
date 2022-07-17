@@ -3,15 +3,15 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NaviBar from "./components/NaviBar";
 import Home from "./pages/Home";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 import Upload from "./pages/Upload"
 
 
 function App() {
   return (
     <div className="App">
-    <NaviBar />
+      <NaviBar />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

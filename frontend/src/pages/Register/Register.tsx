@@ -30,7 +30,7 @@ export default function Register() {
     setUsername("");
   };
   return(
-    <div className={styles.Sign_in_11}>
+    <div className={styles.Sign_up_11}>
       <div className={styles.aa_1}></div>
       <div className={styles.Group_34}>
         <span className={styles.Sign_up_header}>Sign Up</span>
