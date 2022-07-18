@@ -1,10 +1,9 @@
 .header{
-  position: fixed;
   left: 0;
   right: 0;
   top: 0;
   height: 6.938rem;
-  background-color: rgb(255, 255, 255);
+  background-color: #A2B5BB;
   border-bottom: #000 2px solid;
 }
 .logo {
@@ -18,11 +17,9 @@
 .header_nav {
   display: flex;
   float:right;
-  width: 6rem;
   height: 1.125rem;
   margin-top: 3.25rem;
-  margin-right: 12.939rem;
-  margin-bottom: 50.875rem;
+  margin-right: 3.939rem;
   flex-grow: 0;
   font-family: Poppins;
   font-size: 1.25rem;
