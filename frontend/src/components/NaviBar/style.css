@@ -5,6 +5,7 @@
   top: 0;
   height: 6.938rem;
   background-color: rgb(255, 255, 255);
+  border-bottom: #000 2px solid;
 }
 .logo {
   float:left;
@@ -35,15 +36,6 @@
 }
 .profile{
   margin-left:1.313rem;
-}
-.line{
-    position:absolute;
-    background-color: #000;
-    height: 0.126rem;
-    width: 79.938rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    bottom:0;
 }
 .page{
   display: flex;

@@ -1,6 +1,5 @@
 import React from 'react'
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
-import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import './style.css'
 type ImageUpload = {

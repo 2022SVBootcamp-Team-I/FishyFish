@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React,{useState} from "react";
 
 import ka1 from "./ka1.svg";
 import ka2 from "./ka2.svg";

@@ -11,7 +11,6 @@ const Navibar = () => {
                     <div className="fishlist">fishlist</div>
                     <div className="profile">profile</div>
                 </div>
-                <div className="line"></div>
             </div>
     );
   };
