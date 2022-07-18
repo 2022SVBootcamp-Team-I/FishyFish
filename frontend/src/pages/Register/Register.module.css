@@ -273,7 +273,7 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
-  color: #000;
+  color: white;
 }
 
 
@@ -289,7 +289,11 @@
   border-radius: 5vw;
   box-shadow: 0 50vw 30vh 0 rgba(0, 0, 0, 0.25);
   border: solid 0.1vw rgba(0, 0, 0, 0.3);
-  background-color: #d9d9d9;
+  background-color: #4498d0;
+}
+
+.Rectangle_11:hover {
+  background-color: #74acd1;
 }
 
 @media screen and (max-width: 768px) {
@@ -392,7 +396,7 @@
     top: 9.5vh;
     left: 0.142rem;
     width: 20vw;
-    height: 0.3vh;
+    height: 0.4vh;
     background-color: #000;
   }
 
@@ -448,7 +452,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #000;
+    color: white;
   }
 
   .Vector_Username_icon {
