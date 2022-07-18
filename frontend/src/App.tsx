@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NaviBar from "./components/NaviBar";
@@ -11,7 +11,7 @@ import Upload from "./pages/Upload"
 function App() {
   return (
     <div className="App">
-      <NaviBar />
+      { (window.location.pathname === "/login" || window.location.pathname === "/register") ? null : <NaviBar /> }
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
