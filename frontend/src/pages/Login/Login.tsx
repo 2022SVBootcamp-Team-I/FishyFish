@@ -1,6 +1,8 @@
-import {useState} from "react";
+
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
+import { useTitle } from "../../hooks/useTitle";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -23,14 +25,20 @@ export default function Login() {
     setEmail("");
     setPassword("");
   };
+
+  const titleUpdater = useTitle("Loading...");
+  setTimeout(() => titleUpdater("Sign in"), 1000);
   return(
     <div className={styles.Login_11}>
+      
       <div className={styles.aa_1}></div>
+
       <div className={styles.Group_34}>
         <span className={styles.Sign_in}>Sign in</span>
         <span className={styles.If_you_dont_have_an_account_register}>If you don’t have an account register</span>
         <span className={styles.You_can_Register_here_}><span className={styles.text_style_1}>You can </span>{<Link to="/register">Register here !</Link>}</span>
       </div>
+      
       <form className={styles.Group_38}>
         <span className={styles.Email}>Email</span>
         <div className={styles.Vector_Email_icon}></div>
