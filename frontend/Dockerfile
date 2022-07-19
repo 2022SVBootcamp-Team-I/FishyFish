@@ -15,9 +15,6 @@ RUN npm install
 
 #Install Tools
 RUN npm install react-bootstrap bootstrap
-RUN npm install react-router-dom@6
-RUN npm install @mui/material @emotion/react @emotion/styled
-RUN npm install @mui/icons-material
 
 
 COPY . ./
