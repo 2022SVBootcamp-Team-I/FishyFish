@@ -16,7 +16,7 @@ export default function Home() {
   };
   const sendImage = (event: any)=>{
     const formdata=new FormData();
-    formdata.append('uploadImage',imageFile![0]);
+    formdata.append('uploadImage', imageFile![0]);
     const config ={
       Headers:{
         'content-type':'multipart/form-data',

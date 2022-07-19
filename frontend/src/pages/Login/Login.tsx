@@ -2,6 +2,7 @@
 import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
+import { useTitle } from "../../hooks/useTitle";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -24,8 +25,12 @@ export default function Login() {
     setEmail("");
     setPassword("");
   };
+
+  const titleUpdater = useTitle("Loading...");
+  setTimeout(() => titleUpdater("Sign in"), 1000);
   return(
     <div className={styles.Login_11}>
+      
       <div className={styles.aa_1}></div>
 
       <div className={styles.Group_34}>
