@@ -15,7 +15,6 @@ RUN npm install
 
 #Install Tools
 RUN npm install react-bootstrap bootstrap
-RUN npm install react-router-dom@6
 
 
 COPY . ./
