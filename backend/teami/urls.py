@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import accounts.views
+import fishlist.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', fishlist.views.home, name='home'),
     path('accounts/', include('accounts.urls')),
     #path('/', include('todo_app.urls')),
 ]
