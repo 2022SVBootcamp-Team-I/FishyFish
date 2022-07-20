@@ -4,26 +4,32 @@ import { Link } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
 
+type onChange = ChangeEvent<HTMLInputElement>;
+type onClick = MouseEvent<HTMLButtonElement>;
+
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeEmail = (event: onChange) => {
     setEmail(event.target.value);
   };
-  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangePassword = (event: onChange) => {
     setPassword(event.target.value);
   };
-  const onLogin = (event: MouseEvent<HTMLButtonElement>) => {
+  const resetInputForm = () => {
+    setEmail("");
+    setPassword("");
+  }
+  const onLogin = (event: onClick) => {
     event.preventDefault();
     if (email === "" || password === "") {
       alert("Write a Email or Password ");
-      setEmail("");
-      setPassword("");
+      resetInputForm();
       return;
     }
     console.log(`email : ${email}`, `password : ${password}`);
-    setEmail("");
-    setPassword("");
+    resetInputForm();
+    window.location.href = "/upload";
   };
 
   const titleUpdater = useTitle("Loading...");

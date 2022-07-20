@@ -3,21 +3,24 @@ import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
 
+type onChange = ChangeEvent<HTMLInputElement>;
+type onClick = MouseEvent<HTMLButtonElement>;
+
 export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeEmail = (event: onChange) => {
     setEmail(event.target.value);
   };
-  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangePassword = (event: onChange) => {
     setPassword(event.target.value);
   };
-  const onChangeConfirmPassword = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeConfirmPassword = (event: onChange) => {
     setConfirmPassword(event.target.value);
   }
-  const onChangeUsername = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeUsername = (event: onChange) => {
     setUsername(event.target.value);
   }
   const resetInputForm = () => {
@@ -26,7 +29,7 @@ export default function RegisterForm() {
     setConfirmPassword("");
     setUsername("");
   }
-  const onSignup = (event: MouseEvent<HTMLButtonElement>) => {
+  const onSignup = (event: onClick) => {
     event.preventDefault();
     if (email === "" || password === "" || username === "") {
       alert("Write a Email or Password or Username ");
@@ -49,7 +52,7 @@ export default function RegisterForm() {
       <div className={styles.Group_34}>
         <span className={styles.Sign_up_header}>Sign Up</span>
         <span className={styles.If_you_have_an_account_register}>If you have an account register</span>
-        <span className={styles.You_can_Sign_in_here_}><span className={styles.text_style_1}>You can </span>{<Link to="/login">Sign in !</Link>}</span>
+        <span className={styles.You_can_Sign_in_here_}><span className={styles.text_style_1}>You can </span>{<Link to="/">Sign in !</Link>}</span>
       </div>
       <form className={styles.Group_38}>
         <span className={styles.Email}>Email</span>
