@@ -18,8 +18,8 @@
 
 .Group_34 {
   position: absolute;
-  top: 25%;
-  left: 65%;
+  top: 17%;
+  left: 67%;
   right: 24.313rem;
   bottom: 41.478rem;
   width: 25%;
@@ -32,8 +32,8 @@
   left: 0;
   width: 10vw;
   height: 5vh;
-  font-family: Poppins;
-  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vw;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -50,8 +50,8 @@
   bottom: 2.035rem;
   width: 20vw;
   height: 5vh;
-  font-family: Poppins;
-  font-size: 0.8vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -63,12 +63,12 @@
 
 .You_can_Sign_in_here_ {
   position: absolute;
-  top: 11vh;
+  top: 12vh;
   left: 0;
   width: 20vw;
   height: 5vh;
-  font-family: Poppins;
-  font-size: 0.8vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -85,12 +85,12 @@
 
 .Group_38 {
   position: absolute;
-  top: 45%;
-  left: 65%;
+  top: 40%;
+  left: 67%;
   right: 15.75rem;
   bottom: 25.941rem;
   width: 25%;
-  height: 45%;
+  height: 50%;
   margin: 0 0 1.153rem;
 }
 
@@ -100,7 +100,7 @@
   left: 0.1vw;
   width: 3vw;
   height: 2vh;
-  font-family: Poppins;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9vw;
   font-weight: 500;
   font-stretch: normal;
@@ -124,11 +124,11 @@
   position: absolute;
   top: 3.5vh;
   left: 1.5vw;
-  width: 10vw;
+  width: 13vw;
   height: 3vh;
   padding-left: 0.5vw;
-  padding-right: 8vw;
-  font-family: Poppins;
+  padding-right: 5vw;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8vw;
   font-weight: normal;
   font-stretch: normal;
@@ -155,7 +155,7 @@
   left: 0.1vw;
   width: 5vw;
   height: 2vh;
-  font-family: Poppins;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9vw;
   font-weight: 500;
   font-stretch: normal;
@@ -179,11 +179,11 @@
   position: absolute;
   top: 14vh;
   left: 1.5vw;
-  width: 10vw;
+  width: 13vw;
   height: 3vh;
   padding-left: 0.5vw;
-  padding-right: 8vw;
-  font-family: Poppins;
+  padding-right: 5vw;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8vw;
   font-weight: normal;
   font-stretch: normal;
@@ -204,13 +204,13 @@
   background-color: #000;
 }
 
-.Username {
+.Confirm_password {
   position: absolute;
   top: 21vh;
   left: 0.1vw;
-  width: 5vw;
+  width: 10vw;
   height: 2vh;
-  font-family: Poppins;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9vw;
   font-weight: 500;
   font-stretch: normal;
@@ -221,16 +221,16 @@
   color: #000;
 }
 
-.Vector_Username_icon {
+.Vector_Confirm_password_icon {
   position: absolute;
   top: 25vh;
   left: 0.1vw;
   width: 1vw;
   height: 1vh;
   background: url(../../assets/images/mail_icon.png);
-}
+} 
 
-.Enter_your_username {
+.Enter_your_Confirm_password {
   position: absolute;
   top: 24vh;
   left: 1.5vw;
@@ -238,7 +238,7 @@
   height: 3vh;
   padding-left: 0.5vw;
   padding-right: 8vw;
-  font-family: Poppins;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8vw;
   font-weight: normal;
   font-stretch: normal;
@@ -255,17 +255,17 @@
   top: 28vh;
   left: 0.142rem;
   width: 20vw;
-  height: 0.2vh;
+  height: 0.1vh;
   background-color: #000;
 }
 
-.Sign_up {
+.Username {
   position: absolute;
-  top: 30%;
-  left: 43%;
-  width: 10vw;
-  height: 5vh;
-  font-family: Poppins;
+  top: 30vh;
+  left: 0.1vw;
+  width: 5vw;
+  height: 2vh;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9vw;
   font-weight: 500;
   font-stretch: normal;
@@ -273,13 +273,65 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
+  color: #000;
+}
+
+.Vector_Username_icon {
+  position: absolute;
+  top: 34vh;
+  left: 0.1vw;
+  width: 1vw;
+  height: 1vh;
+  background: url(../../assets/images/mail_icon.png);
+}
+
+.Enter_your_username {
+  position: absolute;
+  top: 33vh;
+  left: 1.5vw;
+  width: 13vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  padding-right: 5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  border: none;
+}
+
+.Rectangle_11 {
+  position: absolute;
+  top: 37vh;
+  left: 0.142rem;
+  width: 20vw;
+  height: 0.2vh;
+  background-color: #000;
+}
+
+.Sign_up {
+  position: absolute;
+  width: 10vw;
+  height: 2vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
   color: white;
 }
 
 
-.Rectangle_11 {
+.Rectangle_12 {
   position: absolute;
-  top: 35vh;
+  top: 45vh;
   right: 0;
   bottom: 0;
   left: .142rem;
@@ -290,13 +342,16 @@
   box-shadow: 0 50vw 30vh 0 rgba(0, 0, 0, 0.25);
   border: solid 0.1vw rgba(0, 0, 0, 0.3);
   background-color: #4498d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Rectangle_11:hover {
+.Rectangle_12:hover {
   background-color: #74acd1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
 	/* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
   .Sign_up_11 {
     position: absolute;
@@ -316,13 +371,23 @@
     border-radius: 2vw;
   }
 
+  .Group_34 {
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    right: 24.313rem;
+    bottom: 41.478rem;
+    width: 25%;
+    height: 15%;
+  }
+
   .Sign_up_header {
     position: absolute;
     top: 0;
     left: 0;
     width: 10vw;
     height: 5vh;
-    font-family: Poppins;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 2vw;
     font-weight: 500;
     font-stretch: normal;
@@ -333,17 +398,49 @@
     color: #000;
   }
 
+  .You_can_Sign_in_here_ {
+    position: absolute;
+    top: 13vh;
+    left: 0;
+    width: 20vw;
+    height: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8vw;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0089ed;
+  }
+
   .Group_38 {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 65%;
     right: 15.75rem;
-    bottom: 25.941rem;
     width: 25%;
-    height: 45%;
-    margin: 0 0 1.153rem;
+    height: 40%;
   }
   
+  .If_you_have_an_account_register {
+    position: absolute;
+    top: 7.5vh;
+    left: 0;
+    bottom: 2.035rem;
+    width: 28vw;
+    height: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
   
   .You_can_Register_here_ {
     position: absolute;
@@ -351,7 +448,7 @@
     left: 0;
     width: 20vw;
     height: 5vh;
-    font-family: Poppins;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8vw;
     font-weight: 600;
     font-stretch: normal;
@@ -375,11 +472,11 @@
     position: absolute;
     top: 5vh;
     left: 2vw;
-    width: 15vw;
+    width: 20vw;
     height: 3vh;
     padding-left: 0.5vw;
-    padding-right: 3vw;
-    font-family: Poppins;
+    padding-right: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8vw;
     font-weight: normal;
     font-stretch: normal;
@@ -393,16 +490,33 @@
 
   .Rectangle_8 {
     position: absolute;
-    top: 9.5vh;
+    top: 10vh;
     left: 0.142rem;
-    width: 20vw;
-    height: 0.4vh;
+    width: 23vw;
+    height: 0.3vh;
     background-color: #000;
+  }
+
+  .Password {
+    position: absolute;
+    top: 12vh;
+    left: 0.1vw;
+    width: 5vw;
+    height: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
   }
 
   .Vector_Password_icon {
     position: absolute;
-    top: 16vh;
+    top: 18vh;
     left: 0.1vw;
     width: 1vw;
     height: 1vh;
@@ -411,13 +525,13 @@
 
   .Enter_your_Password {
     position: absolute;
-    top: 15vh;
+    top: 17vh;
     left: 2vw;
-    width: 15vw;
+    width: 20vw;
     height: 3vh;
     padding-left: 0.5vw;
-    padding-right: 3vw;
-    font-family: Poppins;
+    padding-right: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8vw;
     font-weight: normal;
     font-stretch: normal;
@@ -431,20 +545,20 @@
 
   .Rectangle_9 {
     position: absolute;
-    top: 20vh;
+    top: 22vh;
     left: 0.142rem;
-    width: 20vw;
+    width: 23vw;
     height: 0.3vh;
     background-color: #000;
-  }
+  } 
 
-  .Sign_up {
+  .Confirm_password {
     position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 10vw;
-    height: 5vh;
-    font-family: Poppins;
+    top: 24vh;
+    left: 0.1vw;
+    width: 17vw;
+    height: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9vw;
     font-weight: 500;
     font-stretch: normal;
@@ -452,27 +566,27 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: white;
+    color: #000;
   }
 
-  .Vector_Username_icon {
+  .Vector_Confirm_password_icon {
     position: absolute;
-    top: 26vh;
+    top: 30vh;
     left: 0.1vw;
     width: 1vw;
     height: 1vh;
     background: url(../../assets/images/mail_icon.png);
-  }
+  } 
   
-  .Enter_your_username {
+  .Enter_your_Confirm_password {
     position: absolute;
-    top: 25vh;
+    top: 29vh;
     left: 2vw;
-    width: 15vw;
+    width: 20vw;
     height: 3vh;
     padding-left: 0.5vw;
-    padding-right: 3vw;
-    font-family: Poppins;
+    padding-right: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8vw;
     font-weight: normal;
     font-stretch: normal;
@@ -486,10 +600,97 @@
   
   .Rectangle_10 {
     position: absolute;
-    top: 30vh;
+    top: 34vh;
     left: 0.142rem;
-    width: 20vw;
+    width: 23vw;
     height: 0.3vh;
     background-color: #000;
+  }
+
+  .Username {
+    position: absolute;
+    top: 36vh;
+    left: 0.1vw;
+    width: 5vw;
+    height: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .Vector_Username_icon {
+    position: absolute;
+    top: 42vh;
+    left: 0.1vw;
+    width: 1vw;
+    height: 1vh;
+    background: url(../../assets/images/mail_icon.png);
+  }
+  
+  .Enter_your_username {
+    position: absolute;
+    top: 41vh;
+    left: 2vw;
+    width: 20vw;
+    height: 3vh;
+    padding-left: 0.5vw;
+    padding-right: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    border: none;
+  }
+  
+  .Rectangle_11 {
+    position: absolute;
+    top: 46vh;
+    left: 0.142rem;
+    width: 23vw;
+    height: 0.3vh;
+    background-color: #000;
+  }
+
+  .Sign_up {
+    position: absolute;
+    width: 10vw;
+    height: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: white;
+  }
+
+  .Rectangle_12 {
+    position: absolute;
+    top: 50vh;
+    right: 0;
+    bottom: 0;
+    left: .142rem;
+    width: 23vw;
+    height: 7vh;
+    flex-grow: 0;
+    border-radius: 5vw;
+    box-shadow: 0 50vw 30vh 0 rgba(0, 0, 0, 0.25);
+    border: solid 0.1vw rgba(0, 0, 0, 0.3);
+    background-color: #4498d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

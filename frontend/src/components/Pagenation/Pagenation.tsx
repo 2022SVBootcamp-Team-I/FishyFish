@@ -1,28 +1,20 @@
 import React,{useState} from "react";
+import {ChakraProvider, Box, Image, Flex, Text, Button, Spacer } from "@chakra-ui/react";
+
 
 import ka1 from "./ka1.svg";
 import ka2 from "./ka2.svg";
 import ka3 from "./ka3.png";
 
 const imgList: any = [ 
-  <img width="80px" height="160px" src={ka2} alt="test" />,  
-  <img width="80px" height="160px" src={ka1} alt="test" />,  
-  <img width="80px" height="160px" src={ka3} alt="test" />,  
-  <img width="80px" height="160px" src={ka1} alt="test" />,  
-  <img width="80px" height="160px" src={ka2} alt="test" />,   
-  <img width="80px" height="160px" src={ka3} alt="test" />,
-  <img width="80px" height="160px" src={ka1} alt="test" />,  
-  <img width="80px" height="160px" src={ka2} alt="test" />,  
-  <img width="80px" height="160px" src={ka3} alt="test" />,  
-  <img width="80px" height="160px" src={ka1} alt="test" />,  
-  <img width="80px" height="160px" src={ka2} alt="test" />,   
-  <img width="80px" height="160px" src={ka3} alt="test" />,
-  <img width="80px" height="160px" src={ka1} alt="test" />,  
-  <img width="80px" height="160px" src={ka2} alt="test" />,  
-  <img width="80px" height="160px" src={ka3} alt="test" />,  
-  <img width="80px" height="160px" src={ka1} alt="test" />,  
-  <img width="80px" height="160px" src={ka2} alt="test" />,   
-  <img width="80px" height="160px" src={ka3} alt="test" />
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka2} />,  
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka1} />,  
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka3} />,  
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka1} />,  
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka2} />,   
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka3} />,
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka1} />,  
+  <Image w="19.5%" h="30%" borderRadius="md" src={ka2} />,  
 ];
 
 export default function Pagenation() {
@@ -61,19 +53,24 @@ export default function Pagenation() {
     setPageIndex((MAX_PAGE_AMOUNT - 1) * IMAGE_MAX_AMOUNT_PER_PAGE);
   };
 
-  console.log(pageNum, pageIndex)
-
   return (
-    <div style={{border: "2px solid"}}>
-      {imgList.slice(pageIndex, pageIndex + 5).map((item: any, key: number) => <div style={{display:"inline-block", padding:"10px"}}>{item}</div>)}
-
-      <div>
-        <button onClick={onFirstPage}>First Page</button>
-        <button onClick={onPreviousPage}>Previous Page</button>
-        <span>{pageNum}</span>
-        <button onClick={onNextPage}>Next Page</button>
-        <button onClick={onLastPage}>Last Page</button>
-      </div>
-    </div>
+    <ChakraProvider>
+      <Box maxW="100%" borderWidth="1px">
+        <Flex maxW="100%" alignItems="center" gap="1">
+          {imgList.slice(pageIndex, pageIndex + 5).map((item: any, key: number) => item)}
+        </Flex>
+        <Flex maxW="100%" alignItems="center">
+            <Button maxW="25%" bg='tomato' color="white" onClick={onFirstPage}>{"<<"}</Button>
+            <Spacer />
+            <Button maxW="25%" bg='tomato' color="white" onClick={onPreviousPage}>{"<"}</Button>
+            <Spacer />
+            <Text fontSize="m" fontWeight="semibold" lineHeight="short">{pageNum}</Text>
+            <Spacer />
+            <Button maxW="25%" bg='tomato' color="white" onClick={onNextPage}>{">"}</Button>
+            <Spacer />
+            <Button maxW="25%" bg='tomato' color="white" onClick={onLastPage}>{">>"}</Button>
+          </Flex>
+      </Box>
+    </ChakraProvider>
   );
 };

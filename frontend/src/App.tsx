@@ -9,10 +9,11 @@ import Upload from "./pages/Upload"
 
 
 function App() {
-  console.log(window.location.pathname);
   return (
     <div className="App">
-      { (window.location.pathname === "/Login" || window.location.pathname === "/login" || window.location.pathname === "/Register" || window.location.pathname === "/register") ? null : <NaviBar /> }
+      { (window.location.pathname === "/Login" || window.location.pathname === "/login" || 
+         window.location.pathname === "/Register" || window.location.pathname === "/register") ? 
+         null : <NaviBar /> }
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
