@@ -60,15 +60,15 @@ export default function Pagenation() {
           {imgList.slice(pageIndex, pageIndex + 5).map((item: any, key: number) => item)}
         </Flex>
         <Flex maxW="100%" alignItems="center">
-            <Button maxW="25%" onClick={onFirstPage}>{"<<"}</Button>
+            <Button maxW="25%" bg='tomato' color="white" onClick={onFirstPage}>{"<<"}</Button>
             <Spacer />
-            <Button maxW="25%" onClick={onPreviousPage}>{"<"}</Button>
+            <Button maxW="25%" bg='tomato' color="white" onClick={onPreviousPage}>{"<"}</Button>
             <Spacer />
-            <Text>{pageNum}</Text>
+            <Text fontSize="m" fontWeight="semibold" lineHeight="short">{pageNum}</Text>
             <Spacer />
-            <Button maxW="25%" onClick={onNextPage}>{">"}</Button>
+            <Button maxW="25%" bg='tomato' color="white" onClick={onNextPage}>{">"}</Button>
             <Spacer />
-            <Button maxW="25%" onClick={onLastPage}>{">>"}</Button>
+            <Button maxW="25%" bg='tomato' color="white" onClick={onLastPage}>{">>"}</Button>
           </Flex>
       </Box>
     </ChakraProvider>

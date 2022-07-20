@@ -1,5 +1,5 @@
 
-import React,{useState} from "react";
+import React,{useState, ChangeEvent, MouseEvent} from "react";
 import { Link } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
@@ -7,13 +7,13 @@ import { useTitle } from "../../hooks/useTitle";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const onChangeEmail = (event: any) => {
+  const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
-  const onChangePassword = (event: any) => {
+  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
-  const onLogin = (event: any) => {
+  const onLogin = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (email === "" || password === "") {
       alert("Write a Email or Password ");

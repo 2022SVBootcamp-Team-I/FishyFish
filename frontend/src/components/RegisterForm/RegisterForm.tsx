@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, ChangeEvent, MouseEvent} from "react";
 import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
@@ -7,28 +7,38 @@ export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const onChangeEmail = (event: any) => {
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
-  const onChangePassword = (event: any) => {
+  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
-  const onChangeUsername = (event: any) => {
+  const onChangeConfirmPassword = (event: ChangeEvent<HTMLInputElement>) => {
+    setConfirmPassword(event.target.value);
+  }
+  const onChangeUsername = (event: ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   }
-  const onSignup = (event: any) => {
+  const resetInputForm = () => {
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    setUsername("");
+  }
+  const onSignup = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (email === "" || password === "" || username === "") {
       alert("Write a Email or Password or Username ");
-      setEmail("");
-      setPassword("");
-      setUsername("");
+      resetInputForm();
       return;
+    } else if (password === confirmPassword) {
+      console.log(`email : ${email}`, `password : ${password}`, `username : ${username}`);
+      resetInputForm();
+    } else {
+      alert("check your password")
+      resetInputForm();
     }
-    console.log(`email : ${email}`, `password : ${password}`, `username : ${username}`);
-    setEmail("");
-    setPassword("");
-    setUsername("");
   };
 
   const titleUpdater = useTitle("Loading...");
@@ -52,12 +62,17 @@ export default function RegisterForm() {
         <input id="password" value={password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangePassword} />
         <div className={styles.Rectangle_9}></div>
 
+        <span className={styles.Confirm_password}>Confirm Password</span>
+        <div className={styles.Vector_Confirm_password_icon}></div>
+        <input id="confirmpassword" value={confirmPassword} className={styles.Enter_your_Confirm_password} placeholder="Double check" type="password" onChange={onChangeConfirmPassword} />
+        <div className={styles.Rectangle_10}></div>
+
         <span className={styles.Username}>Username</span>
         <div className={styles.Vector_Username_icon}></div>
         <input id="username" value={username} className={styles.Enter_your_username} placeholder="Enter your username" type="text" onChange={onChangeUsername} />
-        <div className={styles.Rectangle_10}></div>
+        <div className={styles.Rectangle_11}></div>
 
-        <button type="submit" onClick={onSignup} className={styles.Rectangle_11}>
+        <button type="submit" onClick={onSignup} className={styles.Rectangle_12}>
           <span className={styles.Sign_up}>Sign up</span>
         </button>
       </form>
