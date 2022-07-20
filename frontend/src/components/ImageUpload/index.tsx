@@ -19,7 +19,6 @@ function index({onChangeImage}:ImageUpload) {
               </Button>
       
       </div>
-      <Pagenation />
     </div>
   )
 }
