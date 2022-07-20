@@ -12,12 +12,12 @@ function App() {
   console.log(window.location.pathname);
   return (
     <div className="App">
-      { (window.location.pathname === "/Login" || window.location.pathname === "/login" || window.location.pathname === "/Register" || window.location.pathname === "/register") ? null : <NaviBar /> }
+      { (window.location.pathname === "/" || window.location.pathname === "/" || window.location.pathname === "/Register" || window.location.pathname === "/register") ? null : <NaviBar /> }
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
           <Route path="/upload" element={<Upload />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/fishlist" element={<Home />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>

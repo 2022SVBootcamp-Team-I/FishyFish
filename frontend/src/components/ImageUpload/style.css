@@ -8,7 +8,6 @@
     gap: 24px;
     margin: 1.625rem 1.937rem 1.875rem 0;
     padding: 3.5rem;
-    margin-top: 9.938rem;
     margin-left: 2.875rem;
     border-radius: 10px;
     border: dashed 1px rgba(0, 0, 0, 0.25);
@@ -60,4 +59,9 @@
 .img_box {
     width: 20.188rem;
     height: 1.438rem;
+}
+.uploadpage_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
