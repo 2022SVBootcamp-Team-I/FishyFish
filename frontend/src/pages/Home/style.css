@@ -3,12 +3,13 @@
     object-fit: contain;
     background-color: #F5EDDC;
     position: relative;
+    margin-top: -10rem;
 }
 
 .concon{
     z-index: 3;
     width: 39.5rem;
-    height: 46.775rem;
+    height: 44.275rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -19,8 +20,9 @@
     margin-right: 1rem;
     padding: 1rem;
     border-radius: 16px;
-    border: solid 2px rgba(0, 0, 0, 0.6);
-    background-color: #fff;
+    border: solid 1.3rem #da1b32;
+    background-color: #f2f2f2;
+    box-shadow: 0.4rem 0.4rem #78101D;
 }
 
 .fishList {

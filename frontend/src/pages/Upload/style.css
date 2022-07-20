@@ -2,7 +2,10 @@
     background-color: #F5EDDC;
     display: flex;
     justify-content: space-evenly;
+    height: 90vh;
+
 }
+
 
 
 .UploadImageBox {
@@ -28,4 +31,22 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+
+@media screen and (max-width: 71.875rem) {
+    .page {
+        background-color: #F5EDDC;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    .displayPort {
+        z-index: -1;
+    }
+}
+@media screen and (max-height: 58.125rem){
+    .displayPort {
+        z-index: -1;
+        }
 }
