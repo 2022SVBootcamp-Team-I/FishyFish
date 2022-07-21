@@ -62,10 +62,10 @@ export default function Home() {
             <Button variant="contained" endIcon={<SendIcon />} onClick={sendImage}>
               Send
             </Button>
-            <ChakraBox paddingTop="20px">
-              <Pagenation />
-            </ChakraBox>
           </div>
+          <ChakraBox paddingTop="20px">
+              <Pagenation />
+          </ChakraBox>
         </div>
         : 
         <ImageUpload onChangeImage={onChangeImage}/> 
