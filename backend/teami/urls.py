@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import accounts.views
+#import accounts.views
 import fishlist.views
 
 urlpatterns = [
