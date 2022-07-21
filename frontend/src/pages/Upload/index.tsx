@@ -12,7 +12,7 @@ import { Box as ChakraBox } from "@chakra-ui/react";
 
 export default function Home() {
   let [imageFile,setImageFile]=useState();
-
+  
 
   const onChangeImage = (event: any) => {
     setImageFile(event.target.files);
@@ -68,7 +68,7 @@ export default function Home() {
           </ChakraBox>
         </div>
         : 
-        <ImageUpload onChangeImage={onChangeImage}/> 
+        <ImageUploadComponent setImageFile={setImageFile}/> 
       }
 
       

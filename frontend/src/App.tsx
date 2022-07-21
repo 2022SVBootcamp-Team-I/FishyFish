@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Upload from "./pages/Upload"
+import MyDropzone from "./pages/Test/MyDropzone"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/upload" element={<Upload />} />
           <Route path="/fishlist" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/mydropzone" element={<MyDropzone />} />
         </Routes>
       </Router>
     </div>
