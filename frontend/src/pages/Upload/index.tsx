@@ -8,6 +8,7 @@ import { Preview } from "@mui/icons-material";
 import ImageUpload from "../../components/ImageUpload"
 import Pagenation from "../../components/Pagenation/Pagenation"
 import { Box as ChakraBox } from "@chakra-ui/react";
+import ImageUploadComponent from "../../components/ImageUpload/ImageUploadComponent";
 
 
 export default function Home() {

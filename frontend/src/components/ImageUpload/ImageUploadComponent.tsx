@@ -22,7 +22,6 @@ function ImageUploadComponent({setImageFile}:ImageUpload) {
             <span className="big"> Select a file or drag and drop here </span>
             <span className="small">JPG, PNG or PDF, file size no more than 10MB</span>
       </div>
-      <Pagenation />
     </div>
   )
 }
