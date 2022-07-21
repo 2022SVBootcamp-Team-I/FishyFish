@@ -13,14 +13,13 @@ function ImageUploadComponent({setImageFile}:ImageUpload) {
   
   const {getRootProps, getInputProps} = useDropzone({onDrop})
   return (
-    <div className='uploadpage_left'>
-      <div className="UploadImageBox" {...getRootProps() }>
-        <input {...getInputProps()} />
-        <CloudUploadOutlinedIcon sx={{ fontSize: 50 }}/>
-            <span className="big"> Select a file or drag and drop here </span>
-            <span className="small">JPG, PNG or PDF, file size no more than 10MB</span>
-      </div>
-    </div>
+    
+      <div {...getRootProps() }>
+          <input {...getInputProps()} />
+          <CloudUploadOutlinedIcon sx={{ fontSize: 50 }}/>
+              <span className="big"> S </span>
+              <span className="small">J</span>
+        </div>
   )
 }
 
