@@ -1,7 +1,5 @@
 import React,{useCallback} from 'react'
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
-import Button from '@mui/material/Button';
-import Pagenation from "../../components/Pagenation/Pagenation";
 import './style.css'
 import {useDropzone} from 'react-dropzone'
 type ImageUpload = {
@@ -22,7 +20,6 @@ function ImageUploadComponent({setImageFile}:ImageUpload) {
             <span className="big"> Select a file or drag and drop here </span>
             <span className="small">JPG, PNG or PDF, file size no more than 10MB</span>
       </div>
-      <Pagenation />
     </div>
   )
 }
