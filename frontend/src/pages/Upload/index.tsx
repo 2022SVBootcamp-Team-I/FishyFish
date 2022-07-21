@@ -87,7 +87,7 @@ export default function Home() {
           <label htmlFor="chooseFile"><img style={{marginBottom:"8rem"}} src="img/miniCrossbar.png" alt=""/></label>
           <input id="chooseFile" hidden accept="image/*" multiple type="file" onChange={onChangeImage} />
           <div className='outBox'>
-            <div className='inBox'></div>
+            <div className='inBox_under'></div>
           </div>
           <div className="nintendo_under_right">
             <img style={{marginBottom:"9rem",marginTop:"3rem"}} src="img/miniButton.png" alt="" onClick={sendImage}/>
