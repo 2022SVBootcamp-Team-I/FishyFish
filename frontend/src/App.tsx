@@ -12,7 +12,7 @@ import MyDropzone from "./pages/Test/MyDropzone"
 function App() {
   return (
     <div className="App">
-      { (window.location.pathname === "/" || window.location.pathname === "/test" || window.location.pathname === "/Register" || window.location.pathname === "/register") ? null : <NaviBar /> }
+      { (window.location.pathname === "/" || window.location.pathname === "/Register" || window.location.pathname === "/register") ? null : <NaviBar /> }
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
