@@ -3,14 +3,14 @@ from django.db import models
 # Create your models here.
 
 class Users(models.Model):
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    date = models.DateTimeField(auto_now_add=True)
-    last_log = models.DateTimeField(auto_now=True)
+    username = models.CharField(max_length=50, null=False)
+    password = models.CharField(max_length=100, null=False)
+    email = models.EmailField(max_length=50, null=False)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_logged = models.DateTimeField(auto_now=True)
 
     class Meta:             
-        ordering = ['-date']
+        ordering = ['-date_created']
         
     def __str__(self):
         return self.username
