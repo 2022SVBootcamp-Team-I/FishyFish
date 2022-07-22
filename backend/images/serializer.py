@@ -1,7 +1,18 @@
 from rest_framework import serializers
 from .models import *
 
-class photoSerializer(serializers.ModelSerializer):
+class fishSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Fish
+        fields = ['name']
+
+class imageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
-        fields = ['image_url', 'user_id', 'fish']
+        fields = ['user_id', 'image_url', 'fish']
+    
+class getMyFishSerializer(serializers.ModelSerializer):
+    fish = fishSerializer(read_only=True)
+    class Meta:
+        model = Image
+        fields = ['image_url', 'fish']
