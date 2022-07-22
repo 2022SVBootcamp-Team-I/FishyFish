@@ -29,8 +29,8 @@
     display: inline-block;
     height: 25px;
     flex-grow: 0;
-    font-family: Poppins;
-    font-size: 1.5rem;
+    font-family: 'nintendo';
+    font-size: 3rem;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -39,6 +39,6 @@
     text-align: left;
     color: #000;
     margin-left: 0.55rem;
-    margin-top: 0.8rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
 }
