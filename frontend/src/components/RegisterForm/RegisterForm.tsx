@@ -2,25 +2,29 @@ import React,{useState, ChangeEvent, MouseEvent} from "react";
 import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
+import { useDispatch} from "react-redux";
+import { addUser } from "../../redux/Register/registerSlice";
 
-type onChange = ChangeEvent<HTMLInputElement>;
-type onClick = MouseEvent<HTMLButtonElement>;
+type inputChange = ChangeEvent<HTMLInputElement>;
+type inputBtnClick = MouseEvent<HTMLButtonElement>;
 
 export default function RegisterForm() {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const onChangeEmail = (event: onChange) => {
+
+  const onChangeEmail = (event: inputChange) => {
     setEmail(event.target.value);
   };
-  const onChangePassword = (event: onChange) => {
+  const onChangePassword = (event: inputChange) => {
     setPassword(event.target.value);
   };
-  const onChangeConfirmPassword = (event: onChange) => {
+  const onChangeConfirmPassword = (event: inputChange) => {
     setConfirmPassword(event.target.value);
   }
-  const onChangeUsername = (event: onChange) => {
+  const onChangeUsername = (event: inputChange) => {
     setUsername(event.target.value);
   }
   const resetInputForm = () => {
@@ -29,14 +33,20 @@ export default function RegisterForm() {
     setConfirmPassword("");
     setUsername("");
   }
-  const onSignup = (event: onClick) => {
+  const onSignup = (event: inputBtnClick) => {
     event.preventDefault();
     if (email === "" || password === "" || username === "") {
       alert("Write a Email or Password or Username ");
       resetInputForm();
       return;
     } else if (password === confirmPassword) {
+      const registerState = {
+        email: email,
+        password: password,
+        username: username
+      }
       console.log(`email : ${email}`, `password : ${password}`, `username : ${username}`);
+      dispatch(addUser(registerState));
       resetInputForm();
     } else {
       alert("check your password")
@@ -46,6 +56,7 @@ export default function RegisterForm() {
 
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater("Sign up"), 1000);
+  
   return(
     <div className={styles.Sign_up_11}>
       <div className={styles.aa_1}></div>

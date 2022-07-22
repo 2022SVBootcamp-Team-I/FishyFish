@@ -10,6 +10,7 @@ type onClick = MouseEvent<HTMLButtonElement>;
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const onChangeEmail = (event: onChange) => {
     setEmail(event.target.value);
   };
@@ -34,6 +35,7 @@ export default function LoginForm() {
 
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater("Sign in"), 1000);
+  
   return(
     <div className={styles.Login_11}>
       
