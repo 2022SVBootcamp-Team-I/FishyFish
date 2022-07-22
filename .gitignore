@@ -2,8 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
-
+/secret
+/data
 /djangovenv
 
 # C extensions

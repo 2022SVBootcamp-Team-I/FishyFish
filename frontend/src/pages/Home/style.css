@@ -1,0 +1,42 @@
+.displayPort {
+    z-index: 0;
+    object-fit: contain;
+    background-color: #F5EDDC;
+    position: relative;
+}
+
+.concon{
+    z-index: 3;
+    width: 39.5rem;
+    height: 46.775rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 4px;
+    margin-left: 1.375rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    border-radius: 16px;
+    border: solid 2px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
+}
+
+.fishList {
+    display: inline-block;
+    height: 25px;
+    flex-grow: 0;
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    margin-left: 0.55rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+}
