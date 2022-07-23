@@ -3,11 +3,14 @@ import React,{useState, ChangeEvent, MouseEvent} from "react";
 import { Link } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
+import {useDispatch} from "react-redux";
+import {userLogin} from "../../redux/Login/loginSlice";
 
 type onChange = ChangeEvent<HTMLInputElement>;
 type onClick = MouseEvent<HTMLButtonElement>;
 
 export default function LoginForm() {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,7 +31,12 @@ export default function LoginForm() {
       resetInputForm();
       return;
     }
+    const loginState = {
+      email: email,
+      password: password,
+    }
     console.log(`email : ${email}`, `password : ${password}`);
+    dispatch(userLogin(loginState));
     resetInputForm();
     window.location.href = "/upload";
   };
