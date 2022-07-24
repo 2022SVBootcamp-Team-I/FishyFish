@@ -1,4 +1,5 @@
 import json
+import bcrypt
 from django.shortcuts import render, redirect
 from .models import Users
 from rest_framework.views import APIView
@@ -8,17 +9,18 @@ from rest_framework import status
 
 #from rest_framework.generics import ListCreateAPIView
 from .serializers import UsersSerializer
-
+# 오류 처리 거의 X
 class Register(APIView):
-
     def post(self, request):
-        user = Users.objects,all()
-        content = { 'username' : user.username, 
-                    'password' : user.password,
-                    'email'    : user.email,
-            }
-        serializers = UsersSerializer(data = content)
-
+        data= request.data
+        if data['password']!=data['password2']:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        content = {
+            "username": data['username'],
+            "password": bcrypt.hashpw(data['password'].encode("utf-8"), bcrypt.gensalt()).decode("utf-8"),
+            "email": data['email']
+        }
+        serializers = UsersSerializer(data=content)
         if serializers.is_valid():
             serializers.save()
             return Response(serializers.data, status=status.HTTP_201_CREATED)
