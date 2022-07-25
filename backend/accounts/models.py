@@ -11,6 +11,3 @@ class Users(models.Model):
 
     class Meta:             
         ordering = ['-date_created']
-        
-    def __str__(self):
-        return self.username
