@@ -3,11 +3,21 @@ import React,{useState, ChangeEvent, MouseEvent} from "react";
 import { Link } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 type onChange = ChangeEvent<HTMLInputElement>;
 type onClick = MouseEvent<HTMLButtonElement>;
 
 export default function LoginForm() {
+  const slider = (
+  <AwesomeSlider>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </AwesomeSlider>
+);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const onChangeEmail = (event: onChange) => {
@@ -37,7 +47,13 @@ export default function LoginForm() {
   return(
     <div className={styles.Login_11}>
       
-      <div className={styles.aa_1}></div>
+      <div className={styles.aa_1}>
+        <AwesomeSlider>
+          <div  data-src="/img/testing1.jpg"></div>
+          <div  data-src="/img/testing2.jpg"></div>
+          <div  data-src="/img/testing3.jpg"></div>
+        </AwesomeSlider>
+      </div>
 
       <div className={styles.Group_34}>
         <span className={styles.Sign_in}>Sign in</span>
