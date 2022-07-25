@@ -57,11 +57,9 @@ export default function LoginForm() {
       
       <form className={styles.Group_38}>
         <span className={styles.Email}>Email</span>
-        <div className={styles.Vector_Email_icon}></div>
         <input id="email" value={email} className={styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeEmail} />
         <div className={styles.Rectangle_8}></div>
         <span className={styles.Password}>Password</span>
-        <div className={styles.Vector_Password_icon}></div>
         <input id="password" value={password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangePassword} />
         <div className={styles.Rectangle_9}></div>
         <button type="submit" onClick={onLogin} className={styles.Rectangle_10}>
