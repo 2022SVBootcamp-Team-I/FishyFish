@@ -41,10 +41,6 @@ class Register(APIView):
                 status=status.HTTP_200_OK,
             )
             
-            # jwt 토큰 => 쿠키에 저장
-            response.set_cookie("access", access_token, httponly=True)
-            response.set_cookie("refresh", refresh_token, httponly=True)
-            
             return response
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -77,7 +73,29 @@ class Login(APIView):
                         },
                         status=status.HTTP_200_OK,
                     )
+
+                    # jwt 토큰 => 쿠키에 저장
+                    response.set_cookie("access", access_token, httponly=True)
+                    response.set_cookie("refresh", refresh_token, httponly=True)
+
                     return response
                 else:
                     return Response(status=status.HTTP_400_BAD_REQUEST)
         return Response({"message": "존재하지 않는 계정"}, status=status.HTTP_400_BAD_REQUEST)
+
+class Logout(APIView):
+        def post(self, request):
+            data = request.data
+            user = User.objects.get(username = data['username'])
+            token = TokenObtainPairSerializer.get_token(user)
+            refresh_token = str(token)
+            access_token = str(token.access_token)
+            response = Response(
+                        {
+                            "message": "success",
+                        },
+                        status=status.HTTP_200_OK,
+            )
+            response.delete_cookie("access")
+            response.delete_cookie("refresh")
+            return response

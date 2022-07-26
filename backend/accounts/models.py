@@ -11,3 +11,4 @@ class User(models.Model):
 
     class Meta:             
         ordering = ['-date_created']
+        db_table = 'accounts_user'
