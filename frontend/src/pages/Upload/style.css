@@ -1,5 +1,5 @@
 .page{
-    background-color: #F5EDDC;
+    background-color: #E0E0E0;
     display: flex;
     justify-content: space-evenly;
     height: 90vh;
@@ -101,7 +101,7 @@
 }
 @media screen and (max-width: 71.875rem) {
     .page {
-        background-color: #F5EDDC;
+        background-color: #E0E0E0;
         display: flex;
         flex-direction: column;
         align-items: center;

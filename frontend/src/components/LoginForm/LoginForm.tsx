@@ -2,11 +2,15 @@ import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import {useDispatch} from "react-redux";
 import {userLogin} from "../../redux/Login/loginSlice";
 import {onChange, onClick, UserProps}  from "./LoginType";
 
 export default function LoginForm() {
+  const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
   const [userData, setUserData] = useState<UserProps>({email: "", password: ""});
   
@@ -55,7 +59,13 @@ export default function LoginForm() {
   
   return(
     <div className={styles.Login_11}>
-      <div className={styles.aa_1}></div>
+      <div className={styles.aa_1}>
+        <AutoplaySlider style={{ "--slider-height-percentage": "100%"}} bullets={false} buttons={true} play={true} interval={10000}>
+          <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
+          <div  data-src="/img/testing2.jpg"></div>
+          <div  data-src="/img/testing3.jpg"></div>
+        </AutoplaySlider>
+      </div>
       <div className={styles.Group_34}>
         <span className={styles.Sign_in}>Sign in</span>
         <span className={styles.If_you_dont_have_an_account_register}>If you don’t have an account register</span>
@@ -68,7 +78,7 @@ export default function LoginForm() {
         <span className={styles.Password}>Password</span>
         <input id="password" value={userData.password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
         <div className={styles.Rectangle_9}></div>
-        <button type="submit" onClick={onLogin} className={styles.Rectangle_10}>
+        <button type="submit" onClick={onLogin} className={styles.btn_3d_red}>
           <span className={styles.Login}>Sign in</span>
         </button>
       </form>

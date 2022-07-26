@@ -15,7 +15,7 @@ export default function Home() {
 
   const onChangeImage = (event: any) => {
 
-    setImageFile(event.target.filse);
+    setImageFile(event.target.files);
   };
 
 
