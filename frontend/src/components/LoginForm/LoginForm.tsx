@@ -60,7 +60,7 @@ export default function LoginForm() {
   return(
     <div className={styles.Login_11}>
       <div className={styles.aa_1}>
-        <AutoplaySlider style={{ "--slider-height-percentage": "100%"}} bullets={false} buttons={true} play={true} interval={5000}>
+        <AutoplaySlider cssModule={styles.aa_1}  bullets={false} buttons={true} play={true} interval={5000}>
           <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
           <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
           <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
