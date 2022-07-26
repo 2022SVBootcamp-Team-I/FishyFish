@@ -10,7 +10,7 @@ class Fish(models.Model):
 
 # Create your models here.
 class Image(models.Model):
-    image_url = models.ImageField(upload_to='image')
+    url = models.ImageField(upload_to='image')
     create_date = models.DateTimeField(auto_now_add=True)
     fish = models.ForeignKey(Fish, related_name = 'fish_id', on_delete=models.CASCADE)
     user_id = models.ForeignKey(User, related_name = 'user_id',on_delete =models.CASCADE)

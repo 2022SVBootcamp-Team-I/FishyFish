@@ -1,3 +1,3 @@
 /data
 /virenv
-/teami/secret_keys.py
+/teami/secrets.json
