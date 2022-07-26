@@ -16,6 +16,7 @@ class Image_view(APIView):
         user = request.user
         image = Image() 
         image.image_url = request.FILES.get('image_url')
+        print(image.image_url)
         content = {
             'image_url': image.image_url,
             'user_id': user.id,
@@ -69,5 +70,10 @@ class myFishList(APIView):
         return Response(content, status=status.HTTP_200_OK)
 
     # 이미지 삭제
-    def delete(self, request):
-        pass
+    def delete(self, request, pk):
+        user = request.user
+        images = Image.objects.filter(user_id = user.id)
+        image_id = request.POST['image_id']
+        image = images.objects.get(image_id)
+        image.delete()
+        return Response(image, status=status.HTTP_204_NO_CONTENT)

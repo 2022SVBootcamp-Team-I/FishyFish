@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from secret_keys import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -136,10 +137,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AWS_STORAGE_BUCKET_NAME = 'fishclassfication'
-AWS_ACCESS_KEY_ID = 'AKIA25I55WN6M6CX6Q4S'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_REGION = 'ap-northeast-2'
+AWS_STORAGE_BUCKET_NAME = BUCKET_NAME_AWS
+AWS_ACCESS_KEY_ID = ACCESS_KEY_ID_AWS
+AWS_SECRET_ACCESS_KEY = SECRET_ACCESS_KEY_AWS
+AWS_REGION = REGION_AWS
 
 ###S3 Storages
 
