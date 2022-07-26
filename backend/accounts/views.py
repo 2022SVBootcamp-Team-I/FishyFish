@@ -1,7 +1,7 @@
 import jwt
 import bcrypt
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Users
+from .models import User
 from rest_framework.views import APIView
 from django.views import View
 from rest_framework.response import Response
@@ -23,7 +23,7 @@ class Register(APIView):
             "password": bcrypt.hashpw(data['password'].encode("utf-8"), bcrypt.gensalt()).decode("utf-8"),
             "email": data['email']
         }
-        serializer = UsersSerializer(data=content)
+        serializer = UserSerializer(data=content)
         if serializer.is_valid():
             user = serializer.save()
             token = TokenObtainPairSerializer.get_token(user)
@@ -49,20 +49,20 @@ class Register(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request):
-        user = Users.objects.values()
+        user = User.objects.values()
         return Response({'users' : list(user)}, status=200)
 
 class Login(APIView):
     def get(self, request):
-        user = Users.objects.values()
+        user = User.objects.values()
         return Response({"list" : list(user)}, status = 200)
 
     def post(self, request):
         data = request.data
-        if Users.objects.filter(username = data['username']).exists() :
-                user = Users.objects.get(username = data['username'])
+        if User.objects.filter(username = data['username']).exists() :
+                user = User.objects.get(username = data['username'])
                 if bcrypt.checkpw(data['password'].encode('utf-8'), user.password.encode('utf-8')) :
-                    serializer = UsersSerializer(user)
+                    serializer = UserSerializer(user)
                     token = TokenObtainPairSerializer.get_token(user)
                     refresh_token = str(token)
                     access_token = str(token.access_token)
