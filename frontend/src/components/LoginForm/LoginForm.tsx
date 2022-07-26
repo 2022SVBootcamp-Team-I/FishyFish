@@ -5,19 +5,13 @@ import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
 
 type onChange = ChangeEvent<HTMLInputElement>;
 type onClick = MouseEvent<HTMLButtonElement>;
 
 export default function LoginForm() {
-  const slider = (
-  <AwesomeSlider>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </AwesomeSlider>
-);
+  const AutoplaySlider = withAutoplay(AwesomeSlider);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const onChangeEmail = (event: onChange) => {
@@ -48,11 +42,11 @@ export default function LoginForm() {
     <div className={styles.Login_11}>
       
       <div className={styles.aa_1}>
-        <AwesomeSlider>
-          <div  data-src="/img/testing1.jpg"></div>
+        <AutoplaySlider style={{ "--slider-height-percentage": "100%"}} bullets={false} buttons={true} play={true}>
+          <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
           <div  data-src="/img/testing2.jpg"></div>
           <div  data-src="/img/testing3.jpg"></div>
-        </AwesomeSlider>
+        </AutoplaySlider>
       </div>
 
       <div className={styles.Group_34}>
