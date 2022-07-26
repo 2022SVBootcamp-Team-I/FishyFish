@@ -70,7 +70,7 @@ class myFishList(APIView):
         return Response(content, status=status.HTTP_200_OK)
 
     # 이미지 삭제
-    def delete(self, request, pk):
+    def delete(self, request):
         user = request.user
         images = Image.objects.filter(user_id = user.id)
         image_id = request.POST['image_id']
