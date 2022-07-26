@@ -2,11 +2,13 @@ import * as React from "react";
 import Information from '../../components/Infomation'
 import FishList from '../../components/FishList'
 import './style.css'
+import NaviBar from "../../components/NaviBar";
 
 
 export default function Home() {
   return (
     <>
+    <NaviBar />
     <div className="page">
         <div className='concon'>
           <span className="fishList">Myfish List</span>
