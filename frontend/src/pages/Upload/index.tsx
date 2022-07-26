@@ -8,6 +8,7 @@ import { Preview } from "@mui/icons-material";
 import ImageUploadComponent from "../../components/ImageUpload/ImageUploadComponent"
 import Pagenation from "../../components/Pagenation/Pagenation"
 import { Box as ChakraBox } from "@chakra-ui/react";
+import NaviBar from "../../components/NaviBar";
 
 
 export default function Home() {
@@ -53,6 +54,7 @@ export default function Home() {
   }
   return (
     <div className="page">
+      <NaviBar />
       <div className='uploadpage_left'>
         <div className="nintendo_top">
           <img  src="img/speaker.png" alt="이미지오류"></img>
