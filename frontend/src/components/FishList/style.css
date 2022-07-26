@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'nintendo';
+    src: url(../../../public/font/slkscr.ttf)
+}
 .cell {
     height: 4.5rem;
     align-self: stretch;
@@ -51,7 +55,7 @@
     height: 1.125rem;
     align-self: start;
     flex-grow: 0;
-    font-family: Poppins;
+    font-family: 'nintendo';
     font-size: 0.75rem;
     font-weight: bold;
     font-stretch: normal;
@@ -66,7 +70,7 @@
     height: 0.875rem;
     align-self: start;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: 'nintendo';
     font-size: 0.75rem;
     font-weight: 300;
     font-stretch: normal;

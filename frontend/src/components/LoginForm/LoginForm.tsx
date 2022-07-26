@@ -42,7 +42,7 @@ export default function LoginForm() {
     <div className={styles.Login_11}>
       
       <div className={styles.aa_1}>
-        <AutoplaySlider style={{ "--slider-height-percentage": "100%"}} bullets={false} buttons={true} play={true} interval={5000}>
+        <AutoplaySlider style={{ "--slider-height-percentage": "100%"}} bullets={false} buttons={true} play={true} interval={3000}>
           <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
           <div  data-src="/img/testing2.jpg"></div>
           <div  data-src="/img/testing3.jpg"></div>
@@ -64,7 +64,7 @@ export default function LoginForm() {
         <div className={styles.Vector_Password_icon}></div>
         <input id="password" value={password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangePassword} />
         <div className={styles.Rectangle_9}></div>
-        <button type="submit" onClick={onLogin} className={styles.Rectangle_10}>
+        <button type="submit" onClick={onLogin} className={styles.btn_3d_red}>
           <span className={styles.Login}>Sign in</span>
         </button>
       </form>

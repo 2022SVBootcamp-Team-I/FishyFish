@@ -1,6 +1,33 @@
 @font-face {
   font-family: 'nintendo';
-  src: url(../../../public/font/Nintendo-DS-BIOS.ttf)
+  src: url(../../../public/font/slkscr.ttf)
+}
+/* 3D button colors */
+.btn_3d_red {
+  position: absolute;
+  top: 25vh;
+  right: 0;
+  bottom: 0;
+  left: .142rem;
+  width: 20vw;
+  height: 5vh;
+  flex-grow: 0;
+  border: solid 0.1vw rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e74c3c;
+  box-shadow: 0 0 0 1px #c63702 inset,
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 8px 0 0 #C24032,
+    0 8px 0 1px rgba(0, 0, 0, 0.4),
+    0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn_3d_red:active {
+  box-shadow: 0 0 0 1px #c63702 inset,
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 .Login_11 {
   position: absolute;
