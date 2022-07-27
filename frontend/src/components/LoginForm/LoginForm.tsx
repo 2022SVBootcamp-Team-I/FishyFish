@@ -9,12 +9,15 @@ import {useDispatch} from "react-redux";
 import {userLogin} from "../../redux/Login/loginSlice";
 import {onChange, onClick, UserProps}  from "./LoginType";
 import Media from 'react-media';
+import { useGetUserData } from "../../hooks/useGetUserData";
 
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
   const [userLoginData, setUserLoginData] = useState<UserProps>({email: "", password: ""});
-  
+  const temp = useGetUserData();
+  console.log(temp);
+
   const onChangeUserData = (event: onChange) => {
     (event.target.id === "email") ? 
       setUserLoginData((prev) => {
