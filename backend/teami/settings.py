@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from pathlib import Path
-from .environments import get_secret
 from datetime import timedelta
 import os
+import sys
+sys.path.append('..')
+from environments import get_secret
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,8 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'images',
-    'rest_framework'
     'accounts',
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
