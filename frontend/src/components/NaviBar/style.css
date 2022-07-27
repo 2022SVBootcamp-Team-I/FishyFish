@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'nintendo';
+  src: url(../../../public/font/slkscr.ttf)
+}
 .header{
   left: 0;
   right: 0;
@@ -21,8 +25,8 @@
   margin-top: 3.25rem;
   margin-right: 3.939rem;
   flex-grow: 0;
-  font-family: Poppins;
-  font-size: 1.25rem;
+  font-family: 'nintendo';
+  font-size: 2rem;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -31,9 +35,10 @@
   text-align: left;
   color: #000;
 }
-.profile{
+.profile{ 
   margin-left:1.313rem;
 }
 .page{
   display: flex;
 }
+

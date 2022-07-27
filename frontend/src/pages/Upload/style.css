@@ -1,31 +1,118 @@
 .page{
-    background-color: #F5EDDC;
+    background-color: #E0E0E0;
     display: flex;
     justify-content: space-evenly;
+    height: 90vh;
+
 }
 
-
-.UploadImageBox {
-    width: 32.375rem;
-    height: 25.5rem;
+.uploadpage_left {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+
+
+.nintendo_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    width: 48.5rem;
+    height: 22.386rem;
+    flex-grow: 0;
+    border: solid 3.8px #000;
+    border-radius: 36.1607px 36.1607px 12.0536px 12.0536px;
+    background-color: #f2f2f2;
+
+}
+
+.outBox {
+    width: 29rem;
+    height: 18rem;
+    border: solid 2.8px #0d0c0d;
+    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+    background-color: #cfd2cf;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    margin: 1.625rem 1.937rem 1.875rem 0;
-    padding: 3.5rem;
-    margin-top: 9.938rem;
-    margin-left:2.875rem;
-    border-radius: 10px;
-    border: dashed 1px rgba(0, 0, 0, 0.25);
 }
-.previewimg{
-    width: 600px;
-    height: 600px;
+
+.inBox {
+    width: 28rem;
+    height: 17rem;
+    border: solid 2.8px #0d0c0d;
+    background-color: white;
+}
+
+.inBox_under {
+    width: 28rem;
+    height: 17rem;
+    border: solid 2.8px #0d0c0d;
+    background-image: url("../../../public/img/MessageUnder.png");
     justify-content: center;
-    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.middleBar {
+    position: relative;
+    width: 48.6rem;
+    height: 2.607rem;
+    flex-grow: 0;
+    border-radius: 42.2px;
+    border: solid 2.8px #0d0c0d;
+    background-color: #f2f2f2;
+    z-index: 2;
+}
+
+.nintendo_under {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    margin-top: -2.3rem;
+    width: 48.5rem;
+    height: 22.874rem;
+    flex-grow: 0;
+    
+    background-color: #f2f2f2;
+    box-shadow: 0.4rem 0.4rem #C1C1C1;
+    border-radius: 12.0536px 12.0536px 36.1607px 36.1607px ;
+    padding-top: 2.3rem;
+}
+
+.previewimg{
+    width: 27rem;
+    height: 16rem;
+    border-radius: 5px;
+    justify-content: center;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+.nintendo_under_right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+@media screen and (max-width: 71.875rem) {
+    .page {
+        background-color: #E0E0E0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    .displayPort {
+        z-index: -1;
+    }
+}
+@media screen and (max-height: 58.125rem){
+    .displayPort {
+        z-index: -1;
+        }
 }
