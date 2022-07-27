@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Image, Fish
-import boto3
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -52,10 +51,10 @@ class myFishList(APIView):
     # 사용자가 저장한 이미지 확인
     @swagger_auto_schema(operation_id="사용자가 저장한 이미지 확인")
     def get(self, request):
+        if request.COOKIES.get("access") is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
         userId = user_token['user_id']
-        if userId is None:
-            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         images = Image.objects.filter(user_id=userId)
         serializer = getMyFishSerializer(images, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -63,10 +62,10 @@ class myFishList(APIView):
     # 특정 사진 조회
     @swagger_auto_schema(operation_id="특정 사진 조회")
     def post(self, request):
+        if request.COOKIES.get("access") is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
         userId = user_token['user_id']
-        if userId is None:
-            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
@@ -85,10 +84,10 @@ class myFishList(APIView):
     # 이미지 삭제
     @swagger_auto_schema(operation_id="특정 이미지 삭제")
     def delete(self, request):
+        if request.COOKIES.get("access") is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
         userId = user_token['user_id']
-        if userId is None:
-            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
