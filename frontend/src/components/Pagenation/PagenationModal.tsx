@@ -14,7 +14,7 @@ export default function PagenationModal({item}: any) {
   
   return (
     <>
-      <Image w="19%" h="30%" borderRadius="md" onClick={onOpen} src={item} _hover={{transform: "translateY(-10px)"}} />
+      <Image w="32.8%" h="16.8rem" borderRadius="md" onClick={onOpen} src={item} _hover={{transform: "translateY(-10px)"}} />
       
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
