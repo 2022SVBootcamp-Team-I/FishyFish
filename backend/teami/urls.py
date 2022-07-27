@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#import accounts.views
-import fishlist.views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', fishlist.views.home, name='home'),
+    path('', include("images.urls")),
     path('', include('accounts.urls')),
-    #path('/', include('todo_app.urls')),
 ]

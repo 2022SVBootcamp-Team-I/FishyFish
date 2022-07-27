@@ -9,9 +9,12 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
 from pathlib import Path
+<<<<<<< HEAD
+from .environments import get_secret
+=======
 from datetime import timedelta
+>>>>>>> 1d4079b7f6f2f42eba6073ecdff0de88e9d9ef2a
 import os
 
 
@@ -23,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-a_c50z$7+k+os#gy7t-hmd_akj%-60jg=_)t(&u!1(1k)*q6l!'
+SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,7 +46,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'fishlist',
+<<<<<<< HEAD
+    'images',
+    'rest_framework'
+=======
     'accounts',
+>>>>>>> 1d4079b7f6f2f42eba6073ecdff0de88e9d9ef2a
 ]
 
 MIDDLEWARE = [
@@ -153,9 +161,9 @@ SIMPLE_JWT = {
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -168,11 +176,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
+AWS_STORAGE_BUCKET_NAME = get_secret("AWS_STORAGE_BUCKET_NAME")
+AWS_ACCESS_KEY_ID = get_secret("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = get_secret("AWS_SECRET_ACCESS_KEY")
+AWS_REGION = get_secret("AWS_REGION")
+
+###S3 Storages
+AWS_S3_CUSTOM_DOMAIN = get_secret("AWS_S3_CUSTOM_DOMAIN")
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+DEFAULT_FILE_STORAGE = get_secret("DEFAULT_FILE_STORAGE")
+=======
 
 LOGOUT_REDIRECT_URL = '/api/v1/login/'
+>>>>>>> 1d4079b7f6f2f42eba6073ecdff0de88e9d9ef2a
