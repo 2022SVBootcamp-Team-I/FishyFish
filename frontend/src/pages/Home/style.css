@@ -1,20 +1,25 @@
-.test{
-    padding-top: 6.938rem;
+.displayPort {
+    z-index: 0;
+    object-fit: contain;
+    background-color: #F5EDDC;
+    position: relative;
 }
 
 .concon{
+    z-index: 3;
     width: 39.5rem;
-    height: 41.563rem;
+    height: 46.775rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
     gap: 4px;
-    margin-top: 10.375rem;
-    margin-left: 3.375rem;
+    margin-left: 1.375rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
     padding: 1rem;
     border-radius: 16px;
-    border: solid 1px rgba(0, 0, 0, 0.6);
+    border: solid 2px rgba(0, 0, 0, 0.6);
     background-color: #fff;
 }
 
@@ -33,4 +38,5 @@
     color: #000;
     margin-left: 0.55rem;
     margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
 }

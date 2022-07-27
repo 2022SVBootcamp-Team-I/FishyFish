@@ -1,6 +1,7 @@
-import {useState} from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./Register.module.css";
+import { useTitle } from "../../hooks/useTitle";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -29,8 +30,11 @@ export default function Register() {
     setPassword("");
     setUsername("");
   };
+
+  const titleUpdater = useTitle("Loading...");
+  setTimeout(() => titleUpdater("Sign up"), 1000);
   return(
-    <div className={styles.Sign_in_11}>
+    <div className={styles.Sign_up_11}>
       <div className={styles.aa_1}></div>
       <div className={styles.Group_34}>
         <span className={styles.Sign_up_header}>Sign Up</span>

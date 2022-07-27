@@ -10,6 +10,9 @@
     padding: 0.25rem 0.5rem;
 }
 
+.cell:hover{
+    border:1px solid aqua;
+}
 .cell2 {
     height: 4.5rem;
     align-self: stretch;
