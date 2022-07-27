@@ -4,11 +4,16 @@ import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
 import { useDispatch} from "react-redux";
 import { addUser } from "../../redux/Register/registerSlice";
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import Media from 'react-media';
 
 type inputChange = ChangeEvent<HTMLInputElement>;
 type inputBtnClick = MouseEvent<HTMLButtonElement>;
 
 export default function RegisterForm() {
+  const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -59,7 +64,24 @@ export default function RegisterForm() {
   
   return(
     <div className={styles.Sign_up_11}>
-      <div className={styles.aa_1}></div>
+      <div className={styles.aa_1}>
+        <Media query="(max-width: 420px)">
+          {matches => 
+              matches ? (
+                <AutoplaySlider fillParent={true} bullets={false} buttons={true} play={true} interval={3000}>
+                  <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
+                </AutoplaySlider>
+              ) :
+                <AutoplaySlider fillParent={true} bullets={false} buttons={true} play={true} interval={3000}>
+                  <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
+                </AutoplaySlider>
+          }
+        </Media>
+      </div>
       <div className={styles.Group_34}>
         <span className={styles.Sign_up_header}>Sign Up</span>
         <span className={styles.If_you_have_an_account_register}>If you already have an account</span>
@@ -82,7 +104,7 @@ export default function RegisterForm() {
         <input id="username" value={username} className={styles.Enter_your_username} placeholder="Enter your username" type="text" onChange={onChangeUsername} />
         <div className={styles.Rectangle_11}></div>
 
-        <button type="submit" onClick={onSignup} className={styles.Rectangle_12}>
+        <button type="submit" onClick={onSignup} className={styles.btn_3d_red}>
           <span className={styles.Sign_up}>Sign up</span>
         </button>
       </form>

@@ -1,4 +1,4 @@
-import React,{useState,Fragment} from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
@@ -61,17 +61,21 @@ export default function LoginForm() {
   return(
     <div className={styles.Login_11}>
       <div className={styles.aa_1}>
-        <Media query="(max-width: 820px)">
-          {matches=> matches?(<AutoplaySlider style={{ "--slider-height-percentage": "50vh"}} bullets={false} buttons={true} play={true} interval={5000}>
-            <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
-            <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
-            <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
-          </AutoplaySlider>):(<AutoplaySlider style={{ "--slider-height-percentage": "100vh"}} bullets={false} buttons={true} play={true} interval={5000}>
-            <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
-            <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
-            <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
-          </AutoplaySlider>)}
-
+        <Media query="(max-width: 420px)">
+          {matches => 
+              matches ? (
+                <AutoplaySlider fillParent={true} bullets={false} buttons={true} play={true} interval={3000}>
+                  <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
+                </AutoplaySlider>
+              ) :
+                <AutoplaySlider fillParent={true} bullets={false} buttons={true} play={true} interval={3000}>
+                  <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
+                  <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
+                </AutoplaySlider>
+          }
         </Media>
       </div>
       <div className={styles.Group_34}>
