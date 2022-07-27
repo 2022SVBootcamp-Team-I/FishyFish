@@ -48,25 +48,26 @@ class imageView(APIView):
         }
         return Response(content, status=status.HTTP_201_CREATED)
 
-    def get(self, request):
-        images = Image.objects.all()
-        serializer = getMyFishSerializer(images, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
 class myFishList(APIView):
     # 사용자가 저장한 이미지 확인
     @swagger_auto_schema(operation_id="사용자가 저장한 이미지 확인")
     def get(self, request):
-        user = request.user
-        images = Image.objects.filter(user_id=user.id)
+        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        userId = user_token['user_id']
+        if userId is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
+        images = Image.objects.filter(user_id=userId)
         serializer = getMyFishSerializer(images, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     # 특정 사진 조회
     @swagger_auto_schema(operation_id="특정 사진 조회")
     def post(self, request):
-        user = request.user
-        images = Image.objects.filter(user_id=user.id)
+        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        userId = user_token['user_id']
+        if userId is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
+        images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
         serializer = imageSerializer(image)
@@ -84,8 +85,11 @@ class myFishList(APIView):
     # 이미지 삭제
     @swagger_auto_schema(operation_id="특정 이미지 삭제")
     def delete(self, request):
-        user = request.user
-        images = Image.objects.filter(user_id=user.id)
+        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        userId = user_token['user_id']
+        if userId is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
+        images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
         image.delete()
