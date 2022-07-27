@@ -13,11 +13,11 @@ import Media from 'react-media';
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
-  const [userData, setUserData] = useState<UserProps>({email: "", password: ""});
+  const [userLoginData, setUserLoginData] = useState<UserProps>({email: "", password: ""});
   
   const onChangeUserData = (event: onChange) => {
     (event.target.id === "email") ? 
-      setUserData((prev) => {
+      setUserLoginData((prev) => {
         const newObj = { 
           email: event.target.value,
           password: prev.password
@@ -25,7 +25,7 @@ export default function LoginForm() {
         return prev = newObj;
       }) 
     : 
-      setUserData((prev) => {
+      setUserLoginData((prev) => {
         const newObj = { 
           email: prev.email,
           password: event.target.value
@@ -35,21 +35,21 @@ export default function LoginForm() {
     
   }
   const resetInputForm = () => {
-    setUserData({email: "", password: ""});
+    setUserLoginData({email: "", password: ""});
   }
   const onLogin = (event: onClick) => {
     event.preventDefault();
-    if (userData.email === "" || userData.password === "") {
+    if (userLoginData.email === "" || userLoginData.password === "") {
       alert("Write a Email or Password ");
       resetInputForm();
       return;
     }
     const loginState = {
-      email: userData.email,
-      password: userData.password,
+      email: userLoginData.email,
+      password: userLoginData.password,
     }
-    console.log(`email : ${userData.email}`, `password : ${userData.password}`);
-    sessionStorage.setItem("login", JSON.stringify(userData));
+    console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
+    sessionStorage.setItem("login", JSON.stringify(userLoginData));
     dispatch(userLogin(loginState));
     resetInputForm();
     window.location.href = "/upload";
@@ -85,10 +85,10 @@ export default function LoginForm() {
       </div>
       <form className={styles.Group_38}>
         <span className={styles.Email}>Email</span>
-        <input id="email" value={userData.email} className={styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
+        <input id="email" value={userLoginData.email} className={styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
         <div className={styles.Rectangle_8}></div>
         <span className={styles.Password}>Password</span>
-        <input id="password" value={userData.password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
+        <input id="password" value={userLoginData.password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
         <div className={styles.Rectangle_9}></div>
         <button type="submit" onClick={onLogin} className={styles.btn_3d_red}>
           <span className={styles.Login}>Sign in</span>
