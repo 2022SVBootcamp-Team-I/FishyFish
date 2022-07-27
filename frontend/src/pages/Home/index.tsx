@@ -1,4 +1,5 @@
-import * as React from "react";
+import React,{useEffect}from "react";
+import axios from 'axios';
 import Information from '../../components/Infomation'
 import FishList from '../../components/FishList'
 import './style.css'
@@ -6,6 +7,11 @@ import NaviBar from "../../components/NaviBar";
 
 
 export default function Home() {
+    useEffect(()=>{
+    axios.get('주소')
+    .then(res=>console.log(res))
+    .catch(err=> console.log(err));
+  },[])
   return (
     <>
     <NaviBar />
