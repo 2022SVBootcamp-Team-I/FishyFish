@@ -22,7 +22,7 @@ function index({numbering,name,engName,explain}:InformationType) {
             </div>
           </div>
           <div className="infoBox">
-          <InfoBoxInner content_1='Oncorhynchus keta' content_2='연어목' content_3='약70cm' title_1='학명' title_2='목' title_3='몸길이'/>
+          <InfoBoxInner content_1='Oncorhynchus' content_2='NameASIA' content_3='NintendoDs' title_1='Name' title_2='Hobby' title_3='From'/>
           </div>
         </div>
         <img src="img/under.png" alt="이미지오류"></img>

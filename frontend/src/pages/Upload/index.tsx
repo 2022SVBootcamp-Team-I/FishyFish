@@ -103,7 +103,7 @@ export default function Home() {
         </div>
         
         
-        <Information  numbering={3} name="연어" engName="鰱魚 | Salmon" explain="연어(鰱魚)는 연어속에 속하는 물고기이다. 치어는 강에서 태어나 바다로 가서 살다가 성체가 되면 다시 강을 거슬러 올라와 상류에서 알을 낳는 회유성 어종이다. 이 독특한 회유 습성으로 인해 생태계의 영양 셔틀 역할을 한다. 횟감이나 구이, 샐러드 요리 등으로 인기가 많은 생선이다"/>
+        <Information  numbering={3} name="Salmon" engName="鰱魚 | Salmon" explain="Salmon are fish in the genus Salmon. Cheek is a migratory fish that was born in a river and lives in the sea, and when it becomes an adult, it goes back up the river and lays eggs in the upper stream. Due to this unique migration habit, it serves as a nutritional shuttle for the ecosystem. It is a fish that is popular for sashimi, grilling, and salad dishes"/>
       </div>
     </>
   );
