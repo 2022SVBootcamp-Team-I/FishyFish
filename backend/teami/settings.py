@@ -10,11 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from pathlib import Path
-<<<<<<< HEAD
 from .environments import get_secret
-=======
 from datetime import timedelta
->>>>>>> 1d4079b7f6f2f42eba6073ecdff0de88e9d9ef2a
 import os
 
 
@@ -45,13 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
-    'fishlist',
-<<<<<<< HEAD
     'images',
     'rest_framework'
-=======
     'accounts',
->>>>>>> 1d4079b7f6f2f42eba6073ecdff0de88e9d9ef2a
 ]
 
 MIDDLEWARE = [
@@ -186,7 +179,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 AWS_STORAGE_BUCKET_NAME = get_secret("AWS_STORAGE_BUCKET_NAME")
 AWS_ACCESS_KEY_ID = get_secret("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = get_secret("AWS_SECRET_ACCESS_KEY")
@@ -198,7 +190,3 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 DEFAULT_FILE_STORAGE = get_secret("DEFAULT_FILE_STORAGE")
-=======
-
-LOGOUT_REDIRECT_URL = '/api/v1/login/'
->>>>>>> 1d4079b7f6f2f42eba6073ecdff0de88e9d9ef2a
