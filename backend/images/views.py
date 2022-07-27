@@ -1,25 +1,33 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Image, Fish, User
-from django.http.response import JsonResponse
-from django.utils import timezone
-import boto3
+from .models import Image, Fish
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from .serializer import *
+from drf_yasg.utils import swagger_auto_schema
+import jwt
+import sys
+sys.path.append('..')
+from environments import get_secret
+
 
 class imageView(APIView):
     # 이미지 업로드
+    @swagger_auto_schema(operation_id="이미지 업로드")
     def post(self, request):
-        user = request.user
-        image = Image() 
+        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        userId = user_token['user_id']
+        if userId is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
+        image = Image()
         image.url = request.FILES.get('url')
         content = {
             'url': image.url,
-            'user_id': user.id,
+            'user_id': userId,
             'fish': 1
         }
+        print(image.url)
         # 이미지 정보 저장
         serializers = imageSerializer(data=content)
         if serializers.is_valid():
@@ -39,22 +47,26 @@ class imageView(APIView):
         }
         return Response(content, status=status.HTTP_201_CREATED)
 
-    def get(self, request):
-        user = request.user
-        return Response(status=status.HTTP_200_OK)
-
 class myFishList(APIView):
     # 사용자가 저장한 이미지 확인
+    @swagger_auto_schema(operation_id="사용자가 저장한 이미지 확인")
     def get(self, request):
-        user = request.user
-        images = Image.objects.filter(user_id=user.id)
+        if request.COOKIES.get("access") is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
+        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        userId = user_token['user_id']
+        images = Image.objects.filter(user_id=userId)
         serializer = getMyFishSerializer(images, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     # 특정 사진 조회
+    @swagger_auto_schema(operation_id="특정 사진 조회")
     def post(self, request):
-        user = request.user
-        images = Image.objects.filter(user_id=user.id)
+        if request.COOKIES.get("access") is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
+        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        userId = user_token['user_id']
+        images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
         serializer = imageSerializer(image)
@@ -70,9 +82,13 @@ class myFishList(APIView):
         return Response(content, status=status.HTTP_200_OK)
 
     # 이미지 삭제
+    @swagger_auto_schema(operation_id="특정 이미지 삭제")
     def delete(self, request):
-        user = request.user
-        images = Image.objects.filter(user_id=user.id)
+        if request.COOKIES.get("access") is None:
+            return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
+        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        userId = user_token['user_id']
+        images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
         image.delete()
