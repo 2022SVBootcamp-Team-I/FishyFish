@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'nintendo';
+    src: url(../../../public/font/slkscr.ttf)
+}
+@font-face {
+    font-family: 'nintendoBold';
+    src: url(../../../public/font/slkscrb.ttf)
+}
+
 .test{
     display: flex;
     justify-content: space-evenly;
@@ -7,6 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 3rem;
 }
 .box {
     z-index: 3;
@@ -61,8 +71,8 @@ HTML
     width: 3rem;
     height: 1.313rem;
     flex-grow: 0;
-    font-family: Poppins;
-    font-size: 0.75rem;
+    font-family: 'nintendo';
+    font-size: 1.3rem;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -73,12 +83,11 @@ HTML
 }
 
 .name {
-
-    width: 4.813rem;
+    width: 6.613rem;
     height: 3.125rem;
     flex-grow: 0;
-    font-family: Poppins;
-    font-size: 2.25rem;
+    font-family: 'nintendo';
+    font-size: 3rem;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -88,29 +97,14 @@ HTML
     color: #000;
 }
 
-.engName {
-    width: 5.25rem;
-    height: 1.063rem;
-    flex-grow: 0;
-    margin: 0.313rem 17.125rem 1.5rem;
-    font-family: Poppins;
-    font-size: 0.75rem;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
-}
 
 .explain {
     width: 16.063rem;
     height: 7.188rem;
     flex-grow: 0;
-    font-family: Poppins;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-family: 'nintendo';
+    font-size: 1.5rem;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -122,10 +116,9 @@ HTML
     width: 30.063rem;
     height: 4.375rem;
     flex-grow: 0;
-    margin: 0.75rem 2.75rem 0 3.313rem;
+    margin: 0.75rem 0.75rem 0rem 3.313rem;
     padding: 0.563rem 0.447rem 0.75rem 1.313rem;
-    border-radius: 13px;
-    border: solid 2px #d9d9d9;
+    border: dotted 3px #d9d9d9;
     background-color: #f2f2f2;
 }
 
@@ -141,7 +134,7 @@ HTML
     display:flex;
     justify-content: space-between;
     margin-right: 9rem;
-    font-family: Poppins;
+    font-family: 'nintendo';
     font-size: 0.75rem;
     font-weight: 100;
     font-stretch: normal;
@@ -153,6 +146,7 @@ HTML
 }
 .infoBox_Content{
     display: flex;
+    font-family: 'nintendo';
     justify-content: space-around;
     margin-right: 2rem;
 }
