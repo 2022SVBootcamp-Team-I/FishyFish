@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.css'
+import CancelIcon from '@mui/icons-material/Cancel';
 type FishListType = {
   apiData: {
     id:number;
@@ -9,8 +10,9 @@ type FishListType = {
     address:any;
   }
   fishClick(event:number):void;
+  fishDelete(evnet:number):void;
 };
-function index({apiData,fishClick}:FishListType):React.ReactElement {
+function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
   const {id,name,username,email,address}=apiData
   return (
     <div>
@@ -21,6 +23,8 @@ function index({apiData,fishClick}:FishListType):React.ReactElement {
           <div className='FishList_Content'>
             <div className='This-is-a-title'>{name}</div>
             <div className='Subtitle-in-da-house'>{email}</div>
+            <CancelIcon onClick={()=>{fishDelete(id)}}></CancelIcon>
+            
           </div>
         </div>
     </div>
