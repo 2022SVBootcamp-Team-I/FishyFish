@@ -68,18 +68,6 @@ export default function Home() {
                   ?
                   <div style={{ display:"flex" ,flexDirection:"column", justifyContent:"center" , alignItems:"center"}}>
                       <div className="previewimg"/>
-                      {/* <div style={{ width:"20rem"}}>
-                        <Button variant="contained" component="label" style={{ marginRight:"3rem"}}>
-                              ANOTHER
-                              <input hidden accept="image/*" multiple type="file" onChange={onChangeImage} />
-                        </Button>
-                        <Button variant="contained" endIcon={<SendIcon />} onClick={sendImage}>
-                          Send
-                        </Button>
-                    </div> */}
-                    {/* <ChakraBox paddingTop="20px" width="38rem">
-                        <Pagenation />
-                    </ChakraBox> */}
                   </div>  
                   : 
                   <ImageUploadComponent setImageFile={setImageFile}/> 
@@ -103,7 +91,7 @@ export default function Home() {
         </div>
         
         
-        <Information  numbering={3} name="Salmon" engName="鰱魚 | Salmon" explain="Salmon are fish in the genus Salmon. Cheek is a migratory fish that was born in a river and lives in the sea, and when it becomes an adult, it goes back up the river and lays eggs in the upper stream. Due to this unique migration habit, it serves as a nutritional shuttle for the ecosystem. It is a fish that is popular for sashimi, grilling, and salad dishes"/>
+        {/* <Information  numbering={3} name="Salmon" engName="鰱魚 | Salmon" explain="Salmon are fish in the genus Salmon. Cheek is a migratory fish that was born in a river and lives in the sea, and when it becomes an adult, it goes back up the river and lays eggs in the upper stream. Due to this unique migration habit, it serves as a nutritional shuttle for the ecosystem. It is a fish that is popular for sashimi, grilling, and salad dishes"/> */}
       </div>
     </>
   );

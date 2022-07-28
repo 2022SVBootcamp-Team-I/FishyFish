@@ -2,12 +2,16 @@ import React from 'react'
 import "./style.css";
 import InfoBoxInner from "../InfoBoxInner"
 type InformationType = {
-  numbering: number;
-  name: string;
-  engName: string;
-  explain: string;
+  apiData: {
+    id:number;
+    name:string;
+    username:string;
+    email:string;
+    address:any;
+  }
 };
-function index({numbering,name,engName,explain}:InformationType) {
+function index({apiData}:InformationType) {
+  const {id,name,username,email,address}=apiData
   return (
     <div className="box">
       <div className="grayBox">
@@ -16,9 +20,9 @@ function index({numbering,name,engName,explain}:InformationType) {
           <div className='test'>
             <div className="imgBox"></div>
             <div className='commentBox'>
-              <span className="numbering">NO.00{numbering}</span>
+              <span className="numbering">NO.00{id}</span>
               <span className="name">{name}</span>
-              <div className="explain">{explain}</div>
+              <div className="explain">{email}</div>
             </div>
           </div>
           <div className="infoBox">
