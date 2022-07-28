@@ -8,21 +8,26 @@ import Upload from "./pages/Upload"
 import MyDropzone from "./pages/Test/MyDropzone"
 import NotFound from './components/NotFound/NotFound';
 import { isLogin } from './function/isLogin';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={isLogin() ? <Navigate to="/upload" /> : <Login />} />
-          <Route path="/upload" element={isLogin() ? <Upload /> : <Navigate to="/" />} />
-          <Route path="/fishlist" element={isLogin() ? <Home /> : <Navigate to="/" />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/mydropzone" element={<MyDropzone />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" element={isLogin() ? <Navigate to="/upload" /> : <Login />} />
+            <Route path="/upload" element={isLogin() ? <Upload /> : <Navigate to="/" />} />
+            <Route path="/fishlist" element={isLogin() ? <Home /> : <Navigate to="/" />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/mydropzone" element={<MyDropzone />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </div>
+    </QueryClientProvider>
   );
 }
 
