@@ -56,7 +56,7 @@
     align-self: start;
     flex-grow: 0;
     font-family: 'nintendo';
-    font-size: 0.75rem;
+    font-size: 2rem;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -71,7 +71,7 @@
     align-self: start;
     flex-grow: 0;
     font-family: 'nintendo';
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
@@ -81,6 +81,8 @@
     color: #000;
 }
 .FishList_Content{
-    display: felx;
-    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
 }

@@ -4,12 +4,13 @@ import Information from '../../components/Infomation'
 import FishList from '../../components/FishList'
 import './style.css'
 import NaviBar from "../../components/NaviBar";
-import { SelectAllTwoTone } from "@mui/icons-material";
+
 
 export type TodoType ={ id:number;name:string;username:string;email:string;address:any}
 
 export default function Home() {
   const [button,setButton]=useState(false);
+  const [refresh,setRefresh]=useState(false);
   const [fishList,setFishList]=useState<TodoType[]>([]);
   const [clickInformation,setClickInformation]=useState<any[]>();
   const reducer=(state:any,action:any)=>{
@@ -31,10 +32,10 @@ export default function Home() {
   const [state,dispatch]=useReducer(reducer,initialState);
 
   useEffect(()=>{
-    axios.get('https://jsonplaceholder.typicode.com/users') //더미 api사용
+    axios.get('http://localhost:3001/data') //더미 api사용
     .then(res=>{setFishList(res.data)})
     .catch(err=> console.log(err));
-  },[])
+  },[refresh])
 
   const fishClick=(id:number)=>{
     setButton(true);
@@ -43,6 +44,17 @@ export default function Home() {
       id
     })
   }
+
+  const fishDelete=(id:number)=>{
+    axios.delete(`http://localhost:3001/data/${id}`)      
+      .then(()=>{
+        setRefresh(!refresh)
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
+    
+  }
   return (
     <>
     <NaviBar />
@@ -50,7 +62,7 @@ export default function Home() {
         <div className='concon'>
           <span className="fishList">Myfish List</span>
           {fishList.map((apiData)=>{
-            return(<FishList apiData={apiData} fishClick={fishClick}/>);
+            return(<FishList fishDelete={fishDelete} apiData={apiData} fishClick={fishClick}/>);
           })}
         </div>
         {
