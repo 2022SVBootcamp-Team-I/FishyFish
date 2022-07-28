@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'images',
     'accounts',
     "drf_yasg",
+    "corsheaders",#리액트
 ]
 
 MIDDLEWARE = [
@@ -57,6 +58,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",#리액트
+
+]
+CORS_ORIGIN_WHITELIST = [
+    "https://localhost:3000",
+    "https://127.0.0.1:8000",
 ]
 
 ROOT_URLCONF = 'teami.urls'
