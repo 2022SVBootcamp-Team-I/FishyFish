@@ -1,4 +1,4 @@
-import React,{useState, ChangeEvent, MouseEvent} from "react";
+import React,{useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
@@ -8,13 +8,13 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import Media from 'react-media';
-import {onChange, onClick, UserProps}  from "./RegisterType";
+import {onChange, onClick, UserRegisterProps}  from "./RegisterType";
+import axios from "axios";
 
 export default function RegisterForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
-  const [userRegisterData, setUserRegisterData] = useState<UserProps>({email: "", password: "", username: ""});
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [userRegisterData, setUserRegisterData] = useState<UserRegisterProps>({email: "", password: "", confirmPassword: "", username: ""});
 
   const onChangeUserData = (event: onChange) => {
       if (event.target.id === "email") {
@@ -22,6 +22,7 @@ export default function RegisterForm() {
           const newObj = {
             email: event.target.value,
             password: prev.password,
+            confirmPassword: prev.confirmPassword,
             username: prev.username
           }
           return prev = newObj;
@@ -31,6 +32,17 @@ export default function RegisterForm() {
           const newObj = {
             email: prev.email,
             password: event.target.value,
+            confirmPassword:  prev.confirmPassword,
+            username: prev.username
+          }
+          return prev = newObj;
+        });
+      } else if (event.target.id === "confirmpassword") {
+        setUserRegisterData((prev) => {
+          const newObj = {
+            email: prev.email,
+            password: prev.password,
+            confirmPassword: event.target.value,
             username: prev.username
           }
           return prev = newObj;
@@ -40,17 +52,16 @@ export default function RegisterForm() {
           const newObj = {
             email: prev.email,
             password: prev.password,
+            confirmPassword:  prev.confirmPassword,
             username: event.target.value
           }
           return prev = newObj;
         });
       } else return;        
   };
-  const onChangeConfirmPassword = (event: onChange) => {
-    setConfirmPassword(event.target.value);
-  }
+
   const resetInputForm = () => {
-    setUserRegisterData({email: "", password: "", username: ""});
+    setUserRegisterData({email: "", password: "", confirmPassword: "", username: ""});
   };
   const onSignup = (event: onClick) => {
     event.preventDefault();
@@ -58,13 +69,14 @@ export default function RegisterForm() {
       alert("Write a Email or Password or Username ");
       resetInputForm();
       return;
-    } else if (userRegisterData.password === confirmPassword) {
+    } else if (userRegisterData.password === userRegisterData.confirmPassword) {
       const registerState = {
         email: userRegisterData.email,
         password: userRegisterData.password,
+        confirmPassword: userRegisterData.confirmPassword,
         username: userRegisterData.username
       }
-      console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `username : ${userRegisterData.username}`);
+      console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.confirmPassword}`, `username : ${userRegisterData.username}`);
       dispatch(addUser(registerState));
       resetInputForm();
     } else {
@@ -111,7 +123,7 @@ export default function RegisterForm() {
         <div className={styles.Rectangle_9}></div>
 
         <span className={styles.Confirm_password}>Confirm Password</span>
-        <input id="confirmpassword" value={confirmPassword} className={styles.Enter_your_Confirm_password} placeholder="Double check" type="password" onChange={onChangeConfirmPassword} />
+        <input id="confirmpassword" value={userRegisterData.confirmPassword} className={styles.Enter_your_Confirm_password} placeholder="Double check" type="password" onChange={onChangeUserData} />
         <div className={styles.Rectangle_10}></div>
 
         <span className={styles.Username}>Username</span>

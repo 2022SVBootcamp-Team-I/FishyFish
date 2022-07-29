@@ -7,55 +7,57 @@ import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import {useDispatch} from "react-redux";
 import {userLogin} from "../../redux/Login/loginSlice";
-import {onChange, onClick, UserProps}  from "./LoginType";
+import {onChange, onClick, UserLoginProps}  from "./LoginType";
 import Media from 'react-media';
-import { useGetUserData } from "../../hooks/useGetUserData";
 
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
-  const [userLoginData, setUserLoginData] = useState<UserProps>({email: "", password: ""});
-  const temp = useGetUserData();
-  console.log(temp);
+  const [userLoginData, setUserLoginData] = useState<UserLoginProps>({username: "", password: ""});
 
   const onChangeUserData = (event: onChange) => {
-    (event.target.id === "email") ? 
+    (event.target.id === "username") ? 
       setUserLoginData((prev) => {
         const newObj = { 
-          email: event.target.value,
+          username: event.target.value,
           password: prev.password
         }
         return prev = newObj;
       }) 
     : 
       setUserLoginData((prev) => {
-        const newObj = { 
-          email: prev.email,
+        const newObj = {
+          username: prev.username,
           password: event.target.value
         }
         return prev = newObj;
       })
-    
   }
   const resetInputForm = () => {
-    setUserLoginData({email: "", password: ""});
+    setUserLoginData({username: "", password: ""});
   }
   const onLogin = (event: onClick) => {
     event.preventDefault();
-    if (userLoginData.email === "" || userLoginData.password === "") {
-      alert("Write a Email or Password ");
+    if (userLoginData.username === "" || userLoginData.password === "") {
+      alert("아이디 혹은 비밀번호를 입력해주세요.");
       resetInputForm();
       return;
     }
     const loginState = {
-      email: userLoginData.email,
-      password: userLoginData.password,
+      username: userLoginData.username,
+      password: userLoginData.password
     }
-    console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
-    sessionStorage.setItem("login", JSON.stringify(userLoginData));
-    dispatch(userLogin(loginState));
-    resetInputForm();
-    window.location.href = "/upload";
+    if (false) {
+      console.log(`username : ${userLoginData.username}`, `password : ${userLoginData.password}`);
+      sessionStorage.setItem("login", JSON.stringify(userLoginData));
+      dispatch(userLogin(loginState));
+      resetInputForm();
+      // window.location.href = "/upload";
+    } else {
+      alert("아이디 혹은 비밀번호가 틀렸습니다.")
+      resetInputForm();
+      return;
+    }
   };
 
   const titleUpdater = useTitle("Loading...");
@@ -87,8 +89,8 @@ export default function LoginForm() {
         <span className={styles.You_can_Register_here_}><span className={styles.text_style_1}>You can </span>{<Link to="/register">Register here !</Link>}</span>
       </div>
       <form className={styles.Group_38}>
-        <span className={styles.Email}>Email</span>
-        <input id="email" value={userLoginData.email} className={styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
+        <span className={styles.Email}>Username</span>
+        <input id="username" value={userLoginData.username} className={styles.Enter_your_email_address} placeholder="Enter your username" type="text" onChange={onChangeUserData} />
         <div className={styles.Rectangle_8}></div>
         <span className={styles.Password}>Password</span>
         <input id="password" value={userLoginData.password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />

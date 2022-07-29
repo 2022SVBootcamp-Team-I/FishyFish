@@ -68,7 +68,7 @@ export default function Home() {
         {
           !button
           ? <div></div>
-          : state.fish.map((apiData)=>{
+          : state.fish.map((apiData: any)=>{
             return(<Information apiData={apiData}/>);
           })
         }
