@@ -3,30 +3,9 @@
     {
       "id": 1,
       "name": "A",
-      "username": "AMAN",
+      "username": "AAA",
       "email": "AAA@AAA",
       "address": "AAAAAAAAAAAAA"
-    },
-    {
-      "id": 2,
-      "name": "B",
-      "username": "BBB",
-      "email": "BBB@BBB",
-      "address": "BBBBBB"
-    },
-    {
-      "id": 3,
-      "name": "C",
-      "username": "CCC",
-      "email": "CC@CCC",
-      "address": "CCCCCCCCCC"
-    },
-    {
-      "id": 4,
-      "name": "D",
-      "username": "DDD",
-      "email": "DDD@DDD",
-      "address": "AADDDD"
     }
   ]
 }

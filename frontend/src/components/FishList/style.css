@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'nintendo';
-    src: url(../../../public/font/slkscr.ttf)
-}
+
 .cell {
     height: 4.5rem;
     align-self: stretch;
