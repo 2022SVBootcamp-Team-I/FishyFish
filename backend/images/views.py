@@ -8,6 +8,7 @@ from .serializer import *
 from drf_yasg.utils import swagger_auto_schema
 import jwt
 import sys
+from .task import addition
 sys.path.append('..')
 from environments import get_secret
 
@@ -22,12 +23,13 @@ class imageView(APIView):
             return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         image = Image()
         image.url = request.FILES.get('url')
+        num = int(addition(0.5))
+
         content = {
             'url': image.url,
             'user_id': userId,
-            'fish': 1
+            'fish': num
         }
-        print(image.url)
         # 이미지 정보 저장
         serializers = imageSerializer(data=content)
         if serializers.is_valid():

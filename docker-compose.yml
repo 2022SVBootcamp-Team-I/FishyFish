@@ -1,6 +1,19 @@
 version: "3.9"
    
 services:
+  #nginx:
+  #  image: nginx:latest
+  #  ports:
+  #    - "80:80"
+  #  volumes:
+  #    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  #  depends_on:
+  #    - frontend
+  #    - backend
+  #  networks:
+  #    - app-tier
+  #  restart: "on-failure"
+
   db:
     image: postgres:latest
     container_name: sql_db
@@ -54,6 +67,26 @@ services:
       - db:db
 
 
+  rabbitmq:
+    image: rabbitmq:3
+    networks:
+      - mq-tier
+    ports:
+      - "5672:5672"
+    tty: true
+
+  worker:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/backend
+    entrypoint: "/bin/sh ./run-celery.sh"
+    networks:
+      - db-tier
+      - mq-tier
+    depends_on:
+      - db
+
   frontend:
     image: frontend
     build:
@@ -77,6 +110,10 @@ services:
 
 networks:
   app-tier:
+    driver: bridge
+  mq-tier:
+    driver: bridge
+  db-tier:
     driver: bridge
 
 volumes:
