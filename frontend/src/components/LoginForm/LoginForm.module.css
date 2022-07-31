@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'nintendo';
-  src: url(../../../public/font/slkscr.ttf)
-}
+
 /* 3D button colors */
 .btn_3d_red {
   position: absolute;
@@ -75,7 +72,7 @@
   width: 20vw;
   height: 10vh;
   font-family: 'nintendo';
-  font-size: 5vw;
+  font-size: 5.5vw;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -92,7 +89,7 @@
   width: 30vw;
   height: 5vh;
   font-family: 'nintendo';
-  font-size: 2vw;
+  font-size: 2.5vw;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -107,7 +104,7 @@
   top: 15vh;
   left: 0;
   width: 20vw;
-  height: 5vh;
+  height: 2vh;
   font-family: 'nintendo';
   font-size: 2vw;
   font-weight: 600;
@@ -226,10 +223,10 @@
 
 .Login {
   position: absolute;
-  width: 5vw;
+  width: 8vw;
   height: 3vh;
   font-family: 'nintendo';
-  font-size: 2vw;
+  font-size: 1.8vw;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;

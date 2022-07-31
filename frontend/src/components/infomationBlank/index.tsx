@@ -1,17 +1,7 @@
 import React from 'react'
 import "./style.css";
 import InfoBoxInner from "../InfoBoxInner"
-type InformationType = {
-  apiData: {
-    id:number;
-    name:string;
-    username:string;
-    email:string;
-    address:any;
-  }
-};
-function index({apiData}:InformationType) {
-  const {id,name,username,email,address}=apiData
+function index() {
   return (
     <div className="box">
       <div className="grayBox">
@@ -20,13 +10,13 @@ function index({apiData}:InformationType) {
           <div className='test'>
             <div className="imgBox"></div>
             <div className='commentBox'>
-              <span className="numbering">NO.00{id}</span>
-              <span className="name">{name}</span>
-              <div className="explain">{email}</div>
+              <span className="numbering"></span>
+              <span className="name"></span>
+              <div className="explain"></div>
             </div>
           </div>
           <div className="infoBox">
-          <InfoBoxInner content_1='Oncorhynchus' content_2='NameASIA' content_3='NintendoDs' title_1='Name' title_2='Hobby' title_3='From'/>
+          <InfoBoxInner content_1='' content_2='' content_3='' title_1='' title_2='' title_3=''/>
           </div>
         </div>
         <img src="img/under.png" alt="이미지오류"></img>

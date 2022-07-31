@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from pathlib import Path
-from .environments import get_secret
 from datetime import timedelta
 import os
+import sys
+sys.path.append('..')
+from environments import get_secret
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,8 +45,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'images',
-    'rest_framework'
     'accounts',
+    "drf_yasg",
+    "corsheaders",#리액트
 ]
 
 MIDDLEWARE = [
@@ -55,6 +58,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",#리액트
+
+]
+CORS_ORIGIN_WHITELIST = [
+    "https://localhost:3000",
+    "https://127.0.0.1:8000",
 ]
 
 ROOT_URLCONF = 'teami.urls'

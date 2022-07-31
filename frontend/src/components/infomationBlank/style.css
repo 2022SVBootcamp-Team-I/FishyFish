@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'nintendo';
-    src: url(../../../public/font/Nintendo-DS-BIOS.ttf)
-}
+
 .test{
     display: flex;
     justify-content: space-evenly;

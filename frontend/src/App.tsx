@@ -22,7 +22,7 @@ function App() {
             <Route path="/upload" element={isLogin() ? <Upload /> : <Navigate to="/" />} />
             <Route path="/fishlist" element={isLogin() ? <Home /> : <Navigate to="/" />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/mydropzone" element={<MyDropzone />} />
+            <Route path="/mydropzone" element={<Upload/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
