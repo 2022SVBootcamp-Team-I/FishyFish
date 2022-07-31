@@ -14,7 +14,7 @@ export default function Home() {
   const [button,setButton]=useState(true);
   const reducer=(state:any,action:any)=>{
     switch(action.type){
-        case 'FISH_LOADING':
+        case 'FISH_LOADED':
           return{
             ...state,
             data:action.data
@@ -52,7 +52,7 @@ export default function Home() {
       const response=await axios.get(
         'http://localhost:3001/data'
       );
-      dispatch({type:"FISH_LOADING",data:response.data});
+      dispatch({type:"FISH_LOADED",data:response.data});
     } catch(e){
       dispatch({type:'ERROR',error:e});
     }
@@ -74,6 +74,7 @@ export default function Home() {
   }
 
   const fishDelete=(id:number)=>{
+    
     dispatch({type:"FISH_DELETE",id})
     axios.delete(`http://localhost:3001/data/${id}`)      
       .then(()=>{
@@ -100,7 +101,6 @@ export default function Home() {
             return(<Information apiData={apiData}/>);
           })
         }
-          {}
       </div>
       <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>
     </>
