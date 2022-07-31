@@ -13,58 +13,40 @@ import axios from "axios";
 
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
-  const dispatch = useDispatch();
   const [userLoginData, setUserLoginData] = useState<UserLoginProps>({email: "", password: ""});
   const [emailValid, setEmailValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(true);
+
+  const dispatch = useDispatch();
 
   const onChangeUserData = (event: onChange) => {
     setEmailValid(true);
     setPasswordValid(true);
     (event.target.id === "email") ? 
-      setUserLoginData((prev) => {
-        const newObj = { 
-          email: event.target.value,
-          password: prev.password
-        }
-        return prev = newObj;
-      }) 
+      setUserLoginData((prev) => prev = { email: event.target.value, password: prev.password }) 
     : 
-      setUserLoginData((prev) => {
-        const newObj = {
-          email: prev.email,
-          password: event.target.value
-        }
-        return prev = newObj;
-      })
+      setUserLoginData((prev) => prev = { email: prev.email, password: event.target.value })
   }
+
   const resetInputForm = () => {
     setUserLoginData({email: "", password: ""});
   }
+
   const onLogin = (event: onClick) => {
     event.preventDefault();
-    if (userLoginData.email === "") {
-      setEmailValid(false); 
-      resetInputForm();
-    } 
-    if (userLoginData.password === "") {
-      setPasswordValid(false); 
-      resetInputForm();
-    }
-
-    axios.post("http://localhost:8000/api/v1/login/", userLoginData).catch((err) => console.log(err));
-    if (false) {
+    axios.post("http://localhost:8000/api/v1/login/", userLoginData)
+    .then((res) => {
       console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
       sessionStorage.setItem("login", JSON.stringify(userLoginData));
       dispatch(userLogin(userLoginData));
       resetInputForm();
-      // window.location.href = "/upload";
-    } 
-    // else {
-    //   alert("아이디 혹은 비밀번호가 틀렸습니다.")
-    //   resetInputForm();
-    //   return;
-    // }
+      window.location.href = "/upload";
+    })
+    .catch((err) => {
+      setEmailValid(false); 
+      setPasswordValid(false);
+      resetInputForm();
+    });
   };
 
   const titleUpdater = useTitle("Loading...");

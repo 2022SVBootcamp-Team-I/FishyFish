@@ -110,11 +110,12 @@ export default function RegisterForm() {
       setPasswordValid(true);
       resetInputForm();
       return;
-    } else if (!emailExist && !emailValid && !passwordValid && !passwordDoubleCheck) {
+    } else if (!emailValid && !passwordValid && !passwordDoubleCheck) {
       console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.password2}`, `username : ${userRegisterData.username}`);
       axios.post("http://localhost:8000/api/v1/register/", userRegisterData).then((res) => console.log(res)).catch((err) => console.log(err));
       dispatch(addUser(userRegisterData));
       resetInputForm();
+      window.location.href = "/";
     } else {
       setEmailValid(true);
       setPasswordDoubleCheck(true);
