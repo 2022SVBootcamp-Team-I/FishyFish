@@ -2,8 +2,6 @@ import React,{useEffect, useState} from "react";
 import Information from '../../components/Infomation'
 import InfomationBlank from '../../components/infomationBlank'
 import axios from 'axios';
-import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
-import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import './style.css'
 import { Preview } from "@mui/icons-material";
