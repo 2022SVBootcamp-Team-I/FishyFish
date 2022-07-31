@@ -1,8 +1,19 @@
+@font-face {
+  font-family: 'nintendo';
+  src: url(../../../public/font/slkscr.ttf)
+}
+
+@keyframes shake {
+  0% { margin-left: 0rem; }
+  25% { margin-left: 0.5rem; }
+  75% { margin-left: -0.5rem; }
+  100% { margin-left: 0rem; }
+}
 
 /* 3D button colors */
 .btn_3d_red {
   position: absolute;
-  top: 25vh;
+  top: 35vh;
   right: 0;
   bottom: 0;
   left: 0;
@@ -126,9 +137,8 @@
   top: 50%;
   left: 62%;
   width: 25%;
-  height: 40%;
+  height: 45%;
   margin: 0 0 1.153rem;
-  
 }
 
 .Email {
@@ -167,9 +177,61 @@
   border: none;
 }
 
+.If_email_invalid {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  width: 24vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  font-family: 'nintendo';
+  font-size: 1.5vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgb(255, 99, 99);
+  box-shadow: 0 0 0 transparent;
+  border: 1px solid #999;
+  outline: 0 none;
+  transition: box-shadow 0.5s;
+  animation: shake 0.2s ease-in-out 0s 2;
+  box-shadow: 0 0 0.5em red;
+}
+
+.email_validation::before {
+  position: absolute;
+  top: -.8vw;
+  left: 23vw;
+  content: '\00d7';
+  color:#C24032;
+  font-size: 2.5vw;
+}
+
+.email_validation_display_none::before {
+  display: none;
+}
+
+.email_ballon {
+  position: absolute;
+  width: 13vw;
+  text-align: left;
+  height: 3vh;
+  top: 11.3vh;
+  left: 0.3vw;
+  font-size: 1.2vw;
+  color: #C24032;
+}
+
+.email_ballon_display_none {
+  display: none;
+}
+
 .Rectangle_8 {
   position: absolute;
-  top: 9vh;
+  top: 10vh;
   left: 0;
   width: 25vw;
   height: 0.3vh;
@@ -178,7 +240,7 @@
 
 .Password {
   position: absolute;
-  top: 11vh;
+  top: 16vh;
   left: 0;
   width: 20vw;
   height: 3vh;
@@ -195,7 +257,7 @@
 
 .Enter_your_Password {
   position: absolute;
-  top: 16vh;
+  top: 21vh;
   left: 0;
   width: 24vw;
   height: 3vh;
@@ -212,9 +274,62 @@
   border: none;
 }
 
+.If_password_invalid {
+  position: absolute;
+  top: 21vh;
+  left: 0;
+  width: 24vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  font-family: 'nintendo';
+  font-size: 1.5vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgb(255, 99, 99);
+  box-shadow: 0 0 0 transparent;
+  border: 1px solid #999;
+  outline: 0 none;
+  transition: box-shadow 0.5s;
+  animation: shake 0.2s ease-in-out 0s 2;
+  box-shadow: 0 0 0.5em red;
+}
+
+.password_validation::before {
+  position: absolute;
+  top: 13.3vh;
+  left: 23vw;
+  content: '\00d7';
+  color:#C24032;
+  font-size: 2.5vw;
+}
+
+.password_validation_display_none::before {
+  display: none;
+}
+
+.password_validation_ballon {
+  position: absolute;
+  width: 25vw;
+  text-align: left;
+  height: 3vh;
+  top: 27.3vh;
+  left: 0.3vw;
+  font-size: 1.2vw;
+  color: #C24032;
+}
+
+.password_validation_ballon_display_none {
+  display: none;
+}
+
+
 .Rectangle_9 {
   position: absolute;
-  top: 20vh;
+  top: 26vh;
   left: 0;
   width: 25vw;
   height: 0.3vh;

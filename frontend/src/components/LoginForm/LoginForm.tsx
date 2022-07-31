@@ -9,17 +9,22 @@ import {useDispatch} from "react-redux";
 import {userLogin} from "../../redux/Login/loginSlice";
 import {onChange, onClick, UserLoginProps}  from "./LoginType";
 import Media from 'react-media';
+import axios from "axios";
 
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
-  const [userLoginData, setUserLoginData] = useState<UserLoginProps>({username: "", password: ""});
+  const [userLoginData, setUserLoginData] = useState<UserLoginProps>({email: "", password: ""});
+  const [emailValid, setEmailValid] = useState(true);
+  const [passwordValid, setPasswordValid] = useState(true);
 
   const onChangeUserData = (event: onChange) => {
-    (event.target.id === "username") ? 
+    setEmailValid(true);
+    setPasswordValid(true);
+    (event.target.id === "email") ? 
       setUserLoginData((prev) => {
         const newObj = { 
-          username: event.target.value,
+          email: event.target.value,
           password: prev.password
         }
         return prev = newObj;
@@ -27,37 +32,39 @@ export default function LoginForm() {
     : 
       setUserLoginData((prev) => {
         const newObj = {
-          username: prev.username,
+          email: prev.email,
           password: event.target.value
         }
         return prev = newObj;
       })
   }
   const resetInputForm = () => {
-    setUserLoginData({username: "", password: ""});
+    setUserLoginData({email: "", password: ""});
   }
   const onLogin = (event: onClick) => {
     event.preventDefault();
-    if (userLoginData.username === "" || userLoginData.password === "") {
-      alert("아이디 혹은 비밀번호를 입력해주세요.");
+    if (userLoginData.email === "") {
+      setEmailValid(false); 
       resetInputForm();
-      return;
+    } 
+    if (userLoginData.password === "") {
+      setPasswordValid(false); 
+      resetInputForm();
     }
-    const loginState = {
-      username: userLoginData.username,
-      password: userLoginData.password
-    }
+
+    axios.post("http://localhost:8000/api/v1/login/", userLoginData).catch((err) => console.log(err));
     if (false) {
-      console.log(`username : ${userLoginData.username}`, `password : ${userLoginData.password}`);
+      console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
       sessionStorage.setItem("login", JSON.stringify(userLoginData));
-      dispatch(userLogin(loginState));
+      dispatch(userLogin(userLoginData));
       resetInputForm();
       // window.location.href = "/upload";
-    } else {
-      alert("아이디 혹은 비밀번호가 틀렸습니다.")
-      resetInputForm();
-      return;
-    }
+    } 
+    // else {
+    //   alert("아이디 혹은 비밀번호가 틀렸습니다.")
+    //   resetInputForm();
+    //   return;
+    // }
   };
 
   const titleUpdater = useTitle("Loading...");
@@ -89,12 +96,18 @@ export default function LoginForm() {
         <span className={styles.You_can_Register_here_}><span className={styles.text_style_1}>You can </span>{<Link to="/register">Register here !</Link>}</span>
       </div>
       <form className={styles.Group_38}>
-        <span className={styles.Email}>Username</span>
-        <input id="username" value={userLoginData.username} className={styles.Enter_your_email_address} placeholder="Enter your username" type="text" onChange={onChangeUserData} />
+        <span className={styles.Email}>Email</span>
+        <span className={emailValid ? styles.email_validation_display_none : styles.email_validation}></span>
+        <input id="email" value={userLoginData.email} className={emailValid ? styles.Enter_your_email_address : styles.If_email_invalid } placeholder="Enter your email" type="text" onChange={onChangeUserData} />
+        <span className={emailValid ? styles.email_ballon_display_none : styles.email_ballon}>Check your email</span>
         <div className={styles.Rectangle_8}></div>
+
         <span className={styles.Password}>Password</span>
-        <input id="password" value={userLoginData.password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
+        <span className={passwordValid ? styles.password_validation_display_none : styles.password_validation}></span>
+        <input id="password" value={userLoginData.password} className={passwordValid ? styles.Enter_your_Password : styles.If_password_invalid} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
+        <span className={passwordValid ? styles.password_validation_ballon_display_none : styles.password_validation_ballon}>Check your password</span>
         <div className={styles.Rectangle_9}></div>
+
         <button type="submit" onClick={onLogin} className={styles.btn_3d_red}>
           <span className={styles.Login}>Sign in</span>
         </button>

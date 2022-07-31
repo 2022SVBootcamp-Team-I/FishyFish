@@ -5,6 +5,6 @@ export type onClick = MouseEvent<HTMLButtonElement>;
 export interface UserRegisterProps {
   email: string,
   password: string,
-  confirmPassword: string,
+  password2: string,
   username: string
 };

@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
@@ -9,12 +9,25 @@ import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import Media from 'react-media';
 import {onChange, onClick, UserRegisterProps}  from "./RegisterType";
+import { useGetUserDataOnce } from "../../hooks/useGetData";
+import { passwordEngCheck, passwordNumSpcCheck, passwordLengthCheck } from "../../function/passwordCheck";
+import { emailValidation } from "../../function/emailValidation";
 import axios from "axios";
 
 export default function RegisterForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const dispatch = useDispatch();
-  const [userRegisterData, setUserRegisterData] = useState<UserRegisterProps>({email: "", password: "", confirmPassword: "", username: ""});
+  const [userRegisterData, setUserRegisterData] = useState<UserRegisterProps>({email: "", password: "", password2: "", username: ""});
+  const [emailExist, setEmailExist] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
+  const [passwordDoubleCheck, setPasswordDoubleCheck] = useState(false);
+  const getAllUserData = useGetUserDataOnce("http://localhost:8000/api/v1/login/");
+
+  let allUserEmailList: string[] = []
+  if (typeof getAllUserData !== "undefined") {
+    allUserEmailList = getAllUserData.map((data) => data.email);
+  }
 
   const onChangeUserData = (event: onChange) => {
       if (event.target.id === "email") {
@@ -22,37 +35,62 @@ export default function RegisterForm() {
           const newObj = {
             email: event.target.value,
             password: prev.password,
-            confirmPassword: prev.confirmPassword,
+            password2: prev.password2,
             username: prev.username
           }
-          return prev = newObj;
+          if (allUserEmailList.includes(event.target.value)) {
+            setEmailExist(true);
+            return prev = newObj;
+          } else {
+            if (!emailValidation(event.target.value)) {
+              setEmailValid(true);
+              setEmailExist(false);
+              return prev = newObj;
+            } else {
+              setEmailValid(false);
+              setEmailExist(false);
+              return prev = newObj;
+            }
+          }
         });
       } else if (event.target.id === "password") {
         setUserRegisterData((prev) => {
           const newObj = {
             email: prev.email,
             password: event.target.value,
-            confirmPassword:  prev.confirmPassword,
+            password2:  prev.password2,
             username: prev.username
           }
-          return prev = newObj;
+          if (!passwordEngCheck(event.target.value) || !passwordLengthCheck(event.target.value) || !passwordNumSpcCheck(event.target.value)) {
+            setPasswordValid(true);
+            return prev = newObj;
+          } else {
+            setPasswordValid(false);
+            return prev = newObj;
+          }
         });
       } else if (event.target.id === "confirmpassword") {
         setUserRegisterData((prev) => {
           const newObj = {
             email: prev.email,
             password: prev.password,
-            confirmPassword: event.target.value,
+            password2: event.target.value,
             username: prev.username
           }
-          return prev = newObj;
+          if (prev.password !== event.target.value) {
+            setPasswordDoubleCheck(true);
+            return prev = newObj;
+          } else {
+            setPasswordDoubleCheck(false);
+            return prev = newObj;
+          }
         });
       } else if (event.target.id === "username") {
         setUserRegisterData((prev) => {
           const newObj = {
             email: prev.email,
             password: prev.password,
-            confirmPassword:  prev.confirmPassword,
+            password2:  prev.password2,
             username: event.target.value
           }
           return prev = newObj;
@@ -61,27 +99,28 @@ export default function RegisterForm() {
   };
 
   const resetInputForm = () => {
-    setUserRegisterData({email: "", password: "", confirmPassword: "", username: ""});
+    setUserRegisterData({email: "", password: "", password2: "", username: ""});
   };
+
   const onSignup = (event: onClick) => {
     event.preventDefault();
     if (userRegisterData.email === "" || userRegisterData.password === "" || userRegisterData.username === "") {
-      alert("Write a Email or Password or Username ");
+      setEmailValid(true);
+      setPasswordDoubleCheck(true);
+      setPasswordValid(true);
       resetInputForm();
       return;
-    } else if (userRegisterData.password === userRegisterData.confirmPassword) {
-      const registerState = {
-        email: userRegisterData.email,
-        password: userRegisterData.password,
-        confirmPassword: userRegisterData.confirmPassword,
-        username: userRegisterData.username
-      }
-      console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.confirmPassword}`, `username : ${userRegisterData.username}`);
-      dispatch(addUser(registerState));
+    } else if (!emailExist && !emailValid && !passwordValid && !passwordDoubleCheck) {
+      console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.password2}`, `username : ${userRegisterData.username}`);
+      axios.post("http://localhost:8000/api/v1/register/", userRegisterData).then((res) => console.log(res)).catch((err) => console.log(err));
+      dispatch(addUser(userRegisterData));
       resetInputForm();
     } else {
-      alert("check your password")
+      setEmailValid(true);
+      setPasswordDoubleCheck(true);
+      setPasswordValid(true);
       resetInputForm();
+      return;
     }
   };
 
@@ -115,15 +154,22 @@ export default function RegisterForm() {
       </div>
       <form className={styles.Group_38}>
         <span className={styles.Email}>Email</span>
-        <input id="email" value={userRegisterData.email} className={styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
+        <span className={(emailExist || emailValid) ? styles.email_validation : styles.email_validation_display_none}></span>
+        <input id="email" value={userRegisterData.email} className={(emailExist || emailValid) ? styles.If_email_address_Exist : styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
+        <span className={(emailExist) ? styles.email_ballon : styles.email_ballon_display_none}>It already exists</span>
+        <span className={(emailValid && !emailExist) ? styles.email_ballon : styles.email_ballon_display_none}>Check your email</span>
         <div className={styles.Rectangle_8}></div>
 
         <span className={styles.Password}>Password</span>
-        <input id="password" value={userRegisterData.password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
+        <span className={passwordValid ? styles.password_validation : styles.password_validation_display_none}></span>
+        <input id="password" value={userRegisterData.password} className={passwordValid ? styles.If_password_invalid : styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
+        <span className={passwordValid ? styles.password_validation_ballon : styles.password_validation_ballon_display_none}>Password should contain at least<br />one uppercase and special character, 8 ~ 16 length</span>
         <div className={styles.Rectangle_9}></div>
 
         <span className={styles.Confirm_password}>Confirm Password</span>
-        <input id="confirmpassword" value={userRegisterData.confirmPassword} className={styles.Enter_your_Confirm_password} placeholder="Double check" type="password" onChange={onChangeUserData} />
+        <span className={passwordDoubleCheck ? styles.password_different : styles.password_different_display_none}></span>
+        <input id="confirmpassword" value={userRegisterData.password2} className={passwordDoubleCheck ? styles.If_password_different : styles.Enter_your_Confirm_password} placeholder="Double check" type="password" onChange={onChangeUserData} />
+        <span className={passwordDoubleCheck ? styles.password_different_ballon : styles.password_different_ballon_display_none}>Check your password</span>
         <div className={styles.Rectangle_10}></div>
 
         <span className={styles.Username}>Username</span>
@@ -134,7 +180,6 @@ export default function RegisterForm() {
           <span className={styles.Sign_up}>Sign up</span>
         </button>
       </form>
-
     </div>
   );
 }
