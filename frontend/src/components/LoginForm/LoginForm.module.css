@@ -14,12 +14,9 @@
 .btn_3d_red {
   position: absolute;
   top: 33vh;
-  right: 0;
-  bottom: 0;
   left: 0;
   width: 25vw;
   height: 5vh;
-  flex-grow: 0;
   border: solid 0.1vw rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
@@ -60,8 +57,8 @@
   align-content: center;
   width: 50%;
   height: 100%;
-  z-index: 0;
 }
+
 .aa_1_image {
   width: 100%;
   height: 100%;
@@ -624,7 +621,6 @@
     display: none;
   }
   
-
   .Rectangle_9 {
     position: absolute;
     top: 22vh;

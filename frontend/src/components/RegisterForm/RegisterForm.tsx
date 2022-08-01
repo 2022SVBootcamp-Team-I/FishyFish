@@ -32,68 +32,47 @@ export default function RegisterForm() {
   const onChangeUserData = (event: onChange) => {
       if (event.target.id === "email") {
         setUserRegisterData((prev) => {
-          const newObj = {
-            email: event.target.value,
-            password: prev.password,
-            password2: prev.password2,
-            username: prev.username
-          }
+          const newUser = { email: event.target.value, password: prev.password, password2: prev.password2, username: prev.username};
           if (allUserEmailList.includes(event.target.value)) {
             setEmailExist(true);
-            return prev = newObj;
+            return newUser;
           } else {
             if (!emailValidation(event.target.value)) {
               setEmailValid(true);
               setEmailExist(false);
-              return prev = newObj;
+              return newUser;
             } else {
               setEmailValid(false);
               setEmailExist(false);
-              return prev = newObj;
+              return newUser;
             }
           }
         });
       } else if (event.target.id === "password") {
         setUserRegisterData((prev) => {
-          const newObj = {
-            email: prev.email,
-            password: event.target.value,
-            password2:  prev.password2,
-            username: prev.username
-          }
+          const newUser = { email: prev.email, password: event.target.value, password2: prev.password2, username: prev.username};
           if (!passwordEngCheck(event.target.value) || !passwordLengthCheck(event.target.value) || !passwordNumSpcCheck(event.target.value)) {
             setPasswordValid(true);
-            return prev = newObj;
+            return newUser;
           } else {
             setPasswordValid(false);
-            return prev = newObj;
+            return newUser;
           }
         });
       } else if (event.target.id === "confirmpassword") {
         setUserRegisterData((prev) => {
-          const newObj = {
-            email: prev.email,
-            password: prev.password,
-            password2: event.target.value,
-            username: prev.username
-          }
+          const newUser = { email: prev.email, password: prev.password, password2: event.target.value, username: prev.username};
           if (prev.password !== event.target.value) {
             setPasswordDoubleCheck(true);
-            return prev = newObj;
+            return newUser;
           } else {
             setPasswordDoubleCheck(false);
-            return prev = newObj;
+            return newUser;
           }
         });
       } else if (event.target.id === "username") {
         setUserRegisterData((prev) => {
-          const newObj = {
-            email: prev.email,
-            password: prev.password,
-            password2:  prev.password2,
-            username: event.target.value
-          }
-          return prev = newObj;
+          return {email: prev.email, password: prev.password, password2:  prev.password2, username: event.target.value};
         });
       } else return;        
   };
@@ -104,25 +83,19 @@ export default function RegisterForm() {
 
   const onSignup = (event: onClick) => {
     event.preventDefault();
-    if (userRegisterData.email === "" || userRegisterData.password === "" || userRegisterData.username === "") {
-      setEmailValid(true);
-      setPasswordDoubleCheck(true);
-      setPasswordValid(true);
-      resetInputForm();
-      return;
-    } else if (!emailValid && !passwordValid && !passwordDoubleCheck) {
+    axios.post("http://localhost:8000/api/v1/register/", userRegisterData)
+    .then((res) => {
       console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.password2}`, `username : ${userRegisterData.username}`);
-      axios.post("http://localhost:8000/api/v1/register/", userRegisterData).then((res) => console.log(res)).catch((err) => console.log(err));
       dispatch(addUser(userRegisterData));
       resetInputForm();
       window.location.href = "/";
-    } else {
+    })
+    .catch((err) => {
       setEmailValid(true);
       setPasswordDoubleCheck(true);
       setPasswordValid(true);
       resetInputForm();
-      return;
-    }
+    });
   };
 
   const titleUpdater = useTitle("Loading...");
