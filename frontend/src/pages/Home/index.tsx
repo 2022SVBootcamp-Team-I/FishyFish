@@ -95,6 +95,7 @@ export default function Home() {
           })}
         </div>
         {
+          !button
           state.selectFishBoolean
           ? <InformationBlank/>
           : state.selectFish.map((apiData)=>{

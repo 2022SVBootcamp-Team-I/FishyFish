@@ -8,13 +8,9 @@ import Upload from "./pages/Upload"
 import MyDropzone from "./pages/Test/MyDropzone"
 import NotFound from './components/NotFound/NotFound';
 import { isLogin } from './function/isLogin';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
       <div className="App">
         <Router>
           <Routes>
@@ -27,7 +23,6 @@ function App() {
           </Routes>
         </Router>
       </div>
-    </QueryClientProvider>
   );
 }
 

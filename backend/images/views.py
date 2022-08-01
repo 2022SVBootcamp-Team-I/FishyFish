@@ -8,6 +8,7 @@ from .serializer import *
 from drf_yasg.utils import swagger_auto_schema
 import jwt
 import sys
+from django.core.files.storage import default_storage
 sys.path.append('..')
 from environments import get_secret
 
@@ -27,7 +28,6 @@ class imageView(APIView):
             'user_id': userId,
             'fish': 1
         }
-        print(image.url)
         # 이미지 정보 저장
         serializers = imageSerializer(data=content)
         if serializers.is_valid():
