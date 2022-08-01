@@ -13,20 +13,6 @@
       "username": "BBB",
       "email": "BBB@BBB",
       "address": "AAAAAAAAAAAAA"
-    },
-    {
-      "id": 3,
-      "name": "Ccccccc",
-      "username": "CCC",
-      "email": "CCC@CCC",
-      "address": "AAAAAAAAAAAAA"
-    },
-    {
-      "id": 4,
-      "name": "Ddd",
-      "username": "DDDD",
-      "email": "DDD@AAA",
-      "address": "AAAAAAAAAAAAA"
     }
   ]
-}    
+}

@@ -2,23 +2,27 @@ import React from 'react'
 import "./style.css";
 import InfoBoxInner from "../InfoBoxInner"
 type InformationType = {
-  apiData: {
-    id:number;
-    name:string;
-    username:string;
-    email:string;
-    address:any;
+  apiData:{
+    model:string,
+    pk:number
+    fields: {
+      name:string
+      toxicity:boolean;
+      prohibit_period:string;
+      prohibit_area:string;
+      description:string;
+    }
   }
 };
 function index({apiData}:InformationType) {
-  const {id,name,username,email,address}=apiData
+  const {model,pk,fields}=apiData
   return (
     <div className="box">
       <div className="grayBox">
         <img src="img/top.png" alt="이미지오류"></img>
         <div className="whiteBox">
           <div className='test'>
-            <div className="imgBox"></div>
+            <div className="imgBox" style={{backgroundImage:`${address}`}}></div>
             <div className='commentBox'>
               <div className="numbering">NO.00{id}</div>
               <div className="name">{name}</div>
