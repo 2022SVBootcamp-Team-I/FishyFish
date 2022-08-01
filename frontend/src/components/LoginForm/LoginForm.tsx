@@ -7,55 +7,46 @@ import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import {useDispatch} from "react-redux";
 import {userLogin} from "../../redux/Login/loginSlice";
-import {onChange, onClick, UserProps}  from "./LoginType";
+import {onChange, onClick, UserLoginProps}  from "./LoginType";
 import Media from 'react-media';
-import { useGetUserData } from "../../hooks/useGetUserData";
+import axios from "axios";
 
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
+  const [userLoginData, setUserLoginData] = useState<UserLoginProps>({email: "", password: ""});
+  const [emailValid, setEmailValid] = useState(true);
+  const [passwordValid, setPasswordValid] = useState(true);
+
   const dispatch = useDispatch();
-  const [userLoginData, setUserLoginData] = useState<UserProps>({email: "", password: ""});
-  const temp = useGetUserData();
-  console.log(temp);
 
   const onChangeUserData = (event: onChange) => {
+    setEmailValid(true);
+    setPasswordValid(true);
     (event.target.id === "email") ? 
-      setUserLoginData((prev) => {
-        const newObj = { 
-          email: event.target.value,
-          password: prev.password
-        }
-        return prev = newObj;
-      }) 
+      setUserLoginData((prev) => prev = { email: event.target.value, password: prev.password }) 
     : 
-      setUserLoginData((prev) => {
-        const newObj = { 
-          email: prev.email,
-          password: event.target.value
-        }
-        return prev = newObj;
-      })
-    
+      setUserLoginData((prev) => prev = { email: prev.email, password: event.target.value })
   }
+
   const resetInputForm = () => {
     setUserLoginData({email: "", password: ""});
   }
+
   const onLogin = (event: onClick) => {
     event.preventDefault();
-    if (userLoginData.email === "" || userLoginData.password === "") {
-      alert("Write a Email or Password ");
+    axios.post("http://localhost:8000/api/v1/login/", userLoginData)
+    .then((res) => {
+      console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
+      sessionStorage.setItem("login", JSON.stringify(userLoginData));
+      dispatch(userLogin(userLoginData));
       resetInputForm();
-      return;
-    }
-    const loginState = {
-      email: userLoginData.email,
-      password: userLoginData.password,
-    }
-    console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
-    sessionStorage.setItem("login", JSON.stringify(userLoginData));
-    dispatch(userLogin(loginState));
-    resetInputForm();
-    window.location.href = "/upload";
+      window.location.href = "/upload";
+    })
+    .catch((err) => {
+      setEmailValid(false); 
+      setPasswordValid(false);
+      resetInputForm();
+    });
   };
 
   const titleUpdater = useTitle("Loading...");
@@ -88,11 +79,17 @@ export default function LoginForm() {
       </div>
       <form className={styles.Group_38}>
         <span className={styles.Email}>Email</span>
-        <input id="email" value={userLoginData.email} className={styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
+        <span className={emailValid ? styles.email_validation_display_none : styles.email_validation}></span>
+        <input id="email" value={userLoginData.email} className={emailValid ? styles.Enter_your_email_address : styles.If_email_invalid } placeholder="Enter your email" type="text" onChange={onChangeUserData} />
+        <span className={emailValid ? styles.email_ballon_display_none : styles.email_ballon}>Check your email</span>
         <div className={styles.Rectangle_8}></div>
+
         <span className={styles.Password}>Password</span>
-        <input id="password" value={userLoginData.password} className={styles.Enter_your_Password} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
+        <span className={passwordValid ? styles.password_validation_display_none : styles.password_validation}></span>
+        <input id="password" value={userLoginData.password} className={passwordValid ? styles.Enter_your_Password : styles.If_password_invalid} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
+        <span className={passwordValid ? styles.password_validation_ballon_display_none : styles.password_validation_ballon}>Check your password</span>
         <div className={styles.Rectangle_9}></div>
+
         <button type="submit" onClick={onLogin} className={styles.btn_3d_red}>
           <span className={styles.Login}>Sign in</span>
         </button>

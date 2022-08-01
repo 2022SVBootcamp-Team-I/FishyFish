@@ -8,13 +8,9 @@ import Upload from "./pages/Upload"
 import MyDropzone from "./pages/Test/MyDropzone"
 import NotFound from './components/NotFound/NotFound';
 import { isLogin } from './function/isLogin';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
       <div className="App">
         <Router>
           <Routes>
@@ -22,12 +18,11 @@ function App() {
             <Route path="/upload" element={isLogin() ? <Upload /> : <Navigate to="/" />} />
             <Route path="/fishlist" element={isLogin() ? <Home /> : <Navigate to="/" />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/mydropzone" element={<MyDropzone />} />
+            <Route path="/mydropzone" element={<Upload/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
       </div>
-    </QueryClientProvider>
   );
 }
 

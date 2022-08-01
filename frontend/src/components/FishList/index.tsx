@@ -1,47 +1,30 @@
 import React from 'react'
 import './style.css'
+import CancelIcon from '@mui/icons-material/Cancel';
 type FishListType = {
-  img: string;
-  listName: string;
-  listExplain: string;
-
+  apiData: {
+    id:number;
+    name:string;
+    username:string;
+    email:string;
+    address:any;
+  }
+  fishClick(event:number):void;
+  fishDelete(evnet:number):void;
 };
-function index({img,listName,listExplain}:FishListType) {
+function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
+  const {id,name,username,email,address}=apiData
   return (
     <div>
-        <div className="cell">
+        <div className="cell" onClick={()=>{fishClick(id)}}>
           <div className='Avatar'>
             <img className='Avatar_img' src="img/Logo.jpg" alt="이미지오류"></img>
           </div>
           <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
-          </div>
-        </div>
-
-        <div className="cell2">
-          <div className='Avatar'></div>
-          <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
-          </div>
-        </div>
-
-        <div className="cell">
-          <div className='Avatar'>
-            <img className='Avatar_img' src="img/Logo.jpg" alt="이미지오류"></img>
-          </div>
-          <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
-          </div>
-        </div>
-
-        <div className="cell2">
-          <div className='Avatar'></div>
-          <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
+            <div className='This-is-a-title'>{name}</div>
+            <div className='Subtitle-in-da-house'>{email}</div>
+            <CancelIcon onClick={()=>{fishDelete(id)}}></CancelIcon>
+            
           </div>
         </div>
     </div>

@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'nintendo';
-  src: url(../../../public/font/slkscr.ttf)
-}
+
 .header{
   left: 0;
   right: 0;
@@ -42,3 +39,13 @@
   display: flex;
 }
 
+.fishlist a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+.profile a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,7 +1,7 @@
 .displayPort {
     z-index: 0;
     object-fit: contain;
-    background-color: #F5EDDC;
+    background-color: #E0E0E0;
     position: relative;
     margin-top: -10rem;
 }

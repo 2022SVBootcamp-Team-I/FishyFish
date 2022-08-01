@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from "react";
 import Information from '../../components/Infomation'
+import InfomationBlank from '../../components/infomationBlank'
 import axios from 'axios';
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import SendIcon from '@mui/icons-material/Send';
@@ -22,8 +23,7 @@ export default function Home() {
 
 
   const sendImage = async(e: any)=>{
-    console.log(999)
-    e.prventDefault();
+    
     const formdata=new FormData();
     formdata.append('uploadImage', imageFile![0]);
     axios.post("",formdata)
@@ -33,6 +33,7 @@ export default function Home() {
       .catch((error)=>{
         console.log(error);
       })
+    console.log("전송완료 전송파일 데이터",formdata)
   }
 
 
@@ -68,18 +69,6 @@ export default function Home() {
                   ?
                   <div style={{ display:"flex" ,flexDirection:"column", justifyContent:"center" , alignItems:"center"}}>
                       <div className="previewimg"/>
-                      {/* <div style={{ width:"20rem"}}>
-                        <Button variant="contained" component="label" style={{ marginRight:"3rem"}}>
-                              ANOTHER
-                              <input hidden accept="image/*" multiple type="file" onChange={onChangeImage} />
-                        </Button>
-                        <Button variant="contained" endIcon={<SendIcon />} onClick={sendImage}>
-                          Send
-                        </Button>
-                    </div> */}
-                    {/* <ChakraBox paddingTop="20px" width="38rem">
-                        <Pagenation />
-                    </ChakraBox> */}
                   </div>  
                   : 
                   <ImageUploadComponent setImageFile={setImageFile}/> 
@@ -93,7 +82,9 @@ export default function Home() {
             <label htmlFor="chooseFile"><img style={{marginBottom:"8rem"}} src="img/miniCrossbar.png" alt=""/></label>
             <input id="chooseFile" hidden accept="image/*" multiple type="file" onChange={onChangeImage} />
             <div className='outBox'>
-              <div className='inBox_under'><Pagenation /></div>
+              <div className='inBox_under'>
+                {/* <Pagenation /> */}
+              </div>
             </div>
             <div className="nintendo_under_right">
               <img style={{marginBottom:"9rem",marginTop:"3rem"}} src="img/miniButton.png" alt="" onClick={sendImage}/>
@@ -102,8 +93,8 @@ export default function Home() {
           </div> 
         </div>
         
-        
-        <Information  numbering={3} name="Salmon" engName="鰱魚 | Salmon" explain="Salmon are fish in the genus Salmon. Cheek is a migratory fish that was born in a river and lives in the sea, and when it becomes an adult, it goes back up the river and lays eggs in the upper stream. Due to this unique migration habit, it serves as a nutritional shuttle for the ecosystem. It is a fish that is popular for sashimi, grilling, and salad dishes"/>
+        <InfomationBlank/>
+        {/* <Information  numbering={3} name="Salmon" engName="鰱魚 | Salmon" explain="Salmon are fish in the genus Salmon. Cheek is a migratory fish that was born in a river and lives in the sea, and when it becomes an adult, it goes back up the river and lays eggs in the upper stream. Due to this unique migration habit, it serves as a nutritional shuttle for the ecosystem. It is a fish that is popular for sashimi, grilling, and salad dishes"/> */}
       </div>
     </>
   );
