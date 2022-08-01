@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'nintendo';
+  src: url(../../../public/font/Nintendo-DS-BIOS.ttf)
+}
 
 @keyframes shake {
   0% { margin-left: 0rem; }
@@ -41,6 +45,26 @@
   box-shadow: 0 0 0 1px #c63702 inset,
     0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.btn_email_check {
+  position: absolute;
+  top: 9.2vh;
+  left: 20.5vw;
+  font-family: 'nintendo';
+  font-size: 1.5vw;
+  color: white;
+  border: solid 0.1vw rgba(0, 0, 0, 0.3);
+  background-color: #e74c3c;
+  box-shadow: 0 0 0 1px #c63702 inset,
+  0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+  0 2px 0 0 #C24032,
+  0 2px 0 1px rgba(0, 0, 0, 0.4),
+  0 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn_email_check:hover {
+  background-color: #e76e60;
 }
 
 .Sign_up_11 {
