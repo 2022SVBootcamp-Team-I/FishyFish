@@ -10,8 +10,8 @@ function index() {
           <div className='test'>
             <div className="imgBox"></div>
             <div className='commentBox'>
-              <span className="numbering"></span>
-              <span className="name"></span>
+              <div className="numbering"></div>
+              <div className="name"></div>
               <div className="explain"></div>
             </div>
           </div>

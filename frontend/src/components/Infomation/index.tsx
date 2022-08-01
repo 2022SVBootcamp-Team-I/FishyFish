@@ -20,8 +20,8 @@ function index({apiData}:InformationType) {
           <div className='test'>
             <div className="imgBox"></div>
             <div className='commentBox'>
-              <span className="numbering">NO.00{id}</span>
-              <span className="name">{name}</span>
+              <div className="numbering">NO.00{id}</div>
+              <div className="name">{name}</div>
               <div className="explain">{email}</div>
             </div>
           </div>

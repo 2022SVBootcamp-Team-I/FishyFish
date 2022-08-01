@@ -4,56 +4,85 @@ import Information from '../../components/Infomation'
 import FishList from '../../components/FishList'
 import './style.css'
 import NaviBar from "../../components/NaviBar";
+import InformationBlank from "../../components/infomationBlank"
+import userEvent from "@testing-library/user-event";
 
 
 export type TodoType ={ id:number;name:string;username:string;email:string;address:any}
 
 export default function Home() {
-  const [button,setButton]=useState(false);
-  const [refresh,setRefresh]=useState(false);
-  const [fishList,setFishList]=useState<TodoType[]>([]);
-  const [clickInformation,setClickInformation]=useState<any[]>();
+  const [button,setButton]=useState(true);
   const reducer=(state:any,action:any)=>{
     switch(action.type){
-        
-        case 'fishClick':
-            console.log(action.id)
-            return{
-                fish:(fishList.filter(apiData=>apiData.id === action.id))
-            };
+        case 'FISH_LOADED':
+          return{
+            ...state,
+            data:action.data
+          }
+        case 'ERROR':
+          console.log("api연결실패!")
+          return
+        case 'FISH_CLICK':
+          console.log(action.id)
+          return{
+            ...state,
+            selectFish:(state.data.filter(apiData=>apiData.id === action.id)),
+            selectFishBoolean:false
+          };
+        case 'FISH_DELETE':
+          return{
+            ...state,
+            data:state.data.filter(data=>data.id !== action.id),
+            selectFishBoolean:true
+          }
         default:
-            return state;
+          return state;
     }
   }
   const initialState ={
-    fish:{}
+    data:[],
+    selectFish:{},
+    selectFishBoolean:true
   }
 
   const [state,dispatch]=useReducer(reducer,initialState);
 
+  const fetchFishes =async()=>{
+    try{
+      const response=await axios.get(
+        'http://localhost:3001/data'
+      );
+      dispatch({type:"FISH_LOADED",data:response.data});
+    } catch(e){
+      dispatch({type:'ERROR',error:e});
+    }
+  }
+
   useEffect(()=>{
-    axios.get('http://localhost:3001/data') //더미 api사용
-    .then(res=>{setFishList(res.data)})
-    .catch(err=> console.log(err));
-  },[refresh])
+    fetchFishes();
+    console.log(111);
+  },[])
 
   const fishClick=(id:number)=>{
-    setButton(true);
+    
     dispatch({
-      type:"fishClick",
+      type:"FISH_CLICK",
       id
     })
+
+    setButton(false);
   }
 
   const fishDelete=(id:number)=>{
+    
+    dispatch({type:"FISH_DELETE",id})
     axios.delete(`http://localhost:3001/data/${id}`)      
       .then(()=>{
-        setRefresh(!refresh)
       })
       .catch((error)=>{
         console.log(error);
       })
-    
+    setButton(true);
   }
   return (
     <>
@@ -61,18 +90,18 @@ export default function Home() {
     <div className="page">
         <div className='concon'>
           <span className="fishList">Myfish List</span>
-          {fishList.map((apiData)=>{
+          {state.data.map((apiData)=>{
             return(<FishList fishDelete={fishDelete} apiData={apiData} fishClick={fishClick}/>);
           })}
         </div>
         {
           !button
-          ? <div></div>
-          : state.fish.map((apiData: any)=>{
+          state.selectFishBoolean
+          ? <InformationBlank/>
+          : state.selectFish.map((apiData)=>{
             return(<Information apiData={apiData}/>);
           })
         }
-          {}
       </div>
       <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>
     </>

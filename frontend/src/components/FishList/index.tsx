@@ -23,7 +23,7 @@ function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
           <div className='FishList_Content'>
             <div className='This-is-a-title'>{name}</div>
             <div className='Subtitle-in-da-house'>{email}</div>
-            <CancelIcon onClick={()=>{fishDelete(id)}}></CancelIcon>
+            <CancelIcon onClick={(e)=>{e.stopPropagation(); fishDelete(id)}}></CancelIcon>
             
           </div>
         </div>
