@@ -14,6 +14,14 @@ from drf_yasg.utils import swagger_auto_schema
 #from rest_framework.generics import ListCreateAPIView
 from .serializers import *
 
+class Unique(APIView):
+    @swagger_auto_schema(operation_id="이메일 중복 확인")
+    def post(self, request):
+        data = request.data
+        if User.objects.filter(email = data['email']).exists():
+            return Response({"message": "이메일이 존재합니다"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message": "이 이메일은 사용 가능합니다"}, status=status.HTTP_200_OK)
+
 class Register(APIView):
     @swagger_auto_schema(operation_id="회원가입")
     def post(self, request):
