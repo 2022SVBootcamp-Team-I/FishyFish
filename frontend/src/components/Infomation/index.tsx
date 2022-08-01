@@ -22,15 +22,15 @@ function index({apiData}:InformationType) {
         <img src="img/top.png" alt="이미지오류"></img>
         <div className="whiteBox">
           <div className='test'>
-            <div className="imgBox" style={{backgroundImage:`${address}`}}></div>
+            <div className="imgBox" style={{backgroundImage:`${model}`}}></div>
             <div className='commentBox'>
-              <div className="numbering">NO.00{id}</div>
-              <div className="name">{name}</div>
-              <div className="explain">{email}</div>
+              <div className="numbering">NO.00{pk}</div>
+              <div className="name">{fields.name}</div>
+              <div className="explain">{fields.description}</div>
             </div>
           </div>
           <div className="infoBox">
-          <InfoBoxInner content_1='Oncorhynchus' content_2='NameASIA' content_3='NintendoDs' title_1='Name' title_2='Hobby' title_3='From'/>
+          <InfoBoxInner content_1={fields.prohibit_period} content_2={fields.prohibit_area} content_3={fields.toxicity} title_1='Period' title_2='Area' title_3='Toxicity'/>
           </div>
         </div>
         <img src="img/under.png" alt="이미지오류"></img>
