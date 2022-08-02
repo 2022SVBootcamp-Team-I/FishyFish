@@ -96,10 +96,11 @@ export default function Home() {
         </div>
         {
           !button
-          state.selectFishBoolean
+          //state.selectFishBoolean
           ? <InformationBlank/>
-          : state.selectFish.map((apiData)=>{
-            return(<Information apiData={apiData}/>);
+          : state.selectFish.map((apiData)=>
+          {
+            return (<Information apiData={apiData} />);
           })
         }
       </div>
