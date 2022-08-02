@@ -9,6 +9,7 @@
     align-items: center;
     gap: 8px;
     padding: 0.25rem 0.5rem;
+    cursor: pointer;
 }
 
 .cell:hover{

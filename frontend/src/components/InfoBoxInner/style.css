@@ -12,7 +12,7 @@
     justify-content: space-between;
     margin-right: 9rem;
     font-family: 'nintendo';
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 100;
     font-stretch: normal;
     font-style: normal;
@@ -24,12 +24,8 @@
 .infoBox_Content {
     display: flex;
     font-family: 'nintendo';
-    justify-content: space-around;
+    justify-content: space-between;
+    font-size: 2rem;
     margin-right: 2rem;
-    font-size: 1.4rem;
 
-}
-
-.content_3 {
-    margin-left: 6.5rem;
 }

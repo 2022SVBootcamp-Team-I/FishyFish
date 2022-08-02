@@ -2,51 +2,28 @@ import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
-import { useDispatch} from "react-redux";
-import { addUser } from "../../redux/Register/registerSlice";
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import Media from 'react-media';
 import {onChange, onClick, UserRegisterProps}  from "./RegisterType";
-import { useGetUserDataOnce } from "../../hooks/useGetData";
 import { passwordEngCheck, passwordNumSpcCheck, passwordLengthCheck } from "../../function/passwordCheck";
 import { emailValidation } from "../../function/emailValidation";
 import axios from "axios";
 
 export default function RegisterForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
-  const dispatch = useDispatch();
   const [userRegisterData, setUserRegisterData] = useState<UserRegisterProps>({email: "", password: "", password2: "", username: ""});
   const [emailExist, setEmailExist] = useState(false);
-  const [emailValid, setEmailValid] = useState(false);
+  const [emailValid, setEmailValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(false);
   const [passwordDoubleCheck, setPasswordDoubleCheck] = useState(false);
-  const getAllUserData = useGetUserDataOnce("http://localhost:8000/api/v1/login/");
-
-  let allUserEmailList: string[] = []
-  if (typeof getAllUserData !== "undefined") {
-    allUserEmailList = getAllUserData.map((data) => data.email);
-  }
 
   const onChangeUserData = (event: onChange) => {
       if (event.target.id === "email") {
         setUserRegisterData((prev) => {
           const newUser = { email: event.target.value, password: prev.password, password2: prev.password2, username: prev.username};
-          if (allUserEmailList.includes(event.target.value)) {
-            setEmailExist(true);
-            return newUser;
-          } else {
-            if (!emailValidation(event.target.value)) {
-              setEmailValid(true);
-              setEmailExist(false);
-              return newUser;
-            } else {
-              setEmailValid(false);
-              setEmailExist(false);
-              return newUser;
-            }
-          }
+          return newUser;
         });
       } else if (event.target.id === "password") {
         setUserRegisterData((prev) => {
@@ -86,7 +63,6 @@ export default function RegisterForm() {
     axios.post("http://localhost:8000/api/v1/register/", userRegisterData)
     .then((res) => {
       console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.password2}`, `username : ${userRegisterData.username}`);
-      dispatch(addUser(userRegisterData));
       resetInputForm();
       window.location.href = "/";
     })
@@ -95,6 +71,24 @@ export default function RegisterForm() {
       setPasswordDoubleCheck(true);
       setPasswordValid(true);
       resetInputForm();
+    });
+  };
+  
+  const onCheckEmail = (event) => {
+    event.preventDefault();
+    axios.post("http://localhost:8000/api/v1/check-email/", {email: userRegisterData.email})
+    .then((res) => { //  이메일 존재하지 않음
+      setEmailExist(false);
+      if (emailValidation(userRegisterData.email)) {
+        setEmailValid(true);  // 합격
+        alert("Confirmed")
+      } else {
+        setEmailValid(false); // 불합격
+      }
+    })
+    .catch((err) => { // 이메일 존재함
+      setEmailExist(true);
+      setEmailValid(false);
     });
   };
 
@@ -128,10 +122,11 @@ export default function RegisterForm() {
       </div>
       <form className={styles.Group_38}>
         <span className={styles.Email}>Email</span>
-        <span className={(emailExist || emailValid) ? styles.email_validation : styles.email_validation_display_none}></span>
-        <input id="email" value={userRegisterData.email} className={(emailExist || emailValid) ? styles.If_email_address_Exist : styles.Enter_your_email_address} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
+        <span className={(emailValid && !emailExist) ? styles.email_validation_display_none : styles.email_validation}></span>
+        <button className={styles.btn_email_check} type="button" onClick={onCheckEmail}>check</button>
+        <input id="email" value={userRegisterData.email} className={(emailValid) ? styles.Enter_your_email_address : styles.If_email_address_Exist} placeholder="Enter your email address" type="text" onChange={onChangeUserData} />
         <span className={(emailExist) ? styles.email_ballon : styles.email_ballon_display_none}>It already exists</span>
-        <span className={(emailValid && !emailExist) ? styles.email_ballon : styles.email_ballon_display_none}>Check your email</span>
+        <span className={(!emailExist && !emailValid ) ? styles.email_ballon : styles.email_ballon_display_none}>Check your email</span>
         <div className={styles.Rectangle_8}></div>
 
         <span className={styles.Password}>Password</span>

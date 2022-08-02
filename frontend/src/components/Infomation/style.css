@@ -59,7 +59,10 @@ HTML
     height: 18.063rem;
     flex-grow: 0;
     margin: 0 0.063rem 0.75rem 0;
-    background-color: #000;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .numbering {
@@ -73,7 +76,7 @@ HTML
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    text-align: left;
+    text-align: center;
     color: #000;
 }
 
@@ -88,7 +91,7 @@ HTML
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    text-align: left;
+    text-align: center;
     color: #000;
     margin-bottom: 1rem;
 }
@@ -108,15 +111,6 @@ HTML
     text-align: left;
     color: #000;
 }
-.infoBox {
-    width: 30.063rem;
-    height: 4.375rem;
-    flex-grow: 0;
-    margin: 0.75rem 0.75rem 0rem 3.313rem;
-    padding: 0.563rem 0.447rem 0.75rem 1.313rem;
-    border: dotted 3px #d9d9d9;
-    background-color: #f2f2f2;
-}
 
 .infoBox_Line {
     width: 39.688rem;
@@ -126,29 +120,8 @@ HTML
     transform: rotate(-0.1deg);
     background-color: #9e9e9e;
 }
-.infoBox_title{
-    display:flex;
-    justify-content: space-between;
-    margin-right: 9rem;
-    font-family: 'nintendo';
-    font-size: 0.75rem;
-    font-weight: 100;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #9e9e9e;
-}
-.infoBox_Content{
-    display: flex;
-    font-family: 'nintendo';
-    justify-content: space-around;
-    margin-right: 2rem;
-}
-.content_3{
-    margin-left: 6.5rem;
-}
+
+
 .controller{
     padding-left: 2rem;
     padding-right: 2rem;
