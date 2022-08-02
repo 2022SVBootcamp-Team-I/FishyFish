@@ -1,7 +1,7 @@
 import jwt
 import bcrypt
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import User
+from teami.models import User
 from rest_framework.views import APIView
 from django.views import View
 from rest_framework.response import Response

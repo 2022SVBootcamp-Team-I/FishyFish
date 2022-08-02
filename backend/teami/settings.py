@@ -46,8 +46,9 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'images',
     'accounts',
-    "drf_yasg",
-    "corsheaders",#리액트
+    'drf_yasg',
+    'corsheaders',#리액트
+    'teami',
 ]
 
 MIDDLEWARE = [
