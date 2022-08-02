@@ -1,5 +1,7 @@
+import { getCookieToken } from "../storage/handleCookie";
+
 export function isLogin() {
-  if (sessionStorage.getItem("login")) {
+  if (getCookieToken()) {
     return true;
   } else
     return false;
