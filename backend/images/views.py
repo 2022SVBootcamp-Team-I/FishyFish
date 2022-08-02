@@ -71,7 +71,7 @@ class myFishList(APIView):
         image = images.get(id=image_id)
         serializer = imageSerializer(image)
         fish = Fish.objects.get(id=serializer.data.get('fish'))
-        content = {
+        result = {
             'url': serializer.data.get('url'), 
             'name': fish.name,
             'toxicity': fish.toxicity,
@@ -79,7 +79,7 @@ class myFishList(APIView):
             'prohibit_area': fish.prohibit_area,
             'description': fish.description
         }
-        return Response(content, status=status.HTTP_200_OK)
+        return Response(result, status=status.HTTP_200_OK)
 
     # 이미지 삭제
     @swagger_auto_schema(operation_id="특정 이미지 삭제")
