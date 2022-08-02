@@ -30,3 +30,13 @@ ELK have errors depending on version. Use same version accross all three stacks.
 | Back-end  |Back-end   |Back-end|Web Desginer, |Web Desginer,| 
 | AI Traning | AI inference|  DevOps | Front-end developer |  Front-end developer
 | DevOps |  |   |   |  |
+
+
+
+#  :electric_plug: Tech Stack
+|Front-end|Back-end|AI|DevOps|Etc|DB|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">|  <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white"> |  <img src="https://img.shields.io/badge/-PyTorch-%23EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">   |  <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">| <img src="https://img.shields.io/badge/-Grafana-%23F46800?style=for-the-badge&logo=grafana&logoColor=white">   |  <img src="https://img.shields.io/badge/-Prometheus-%23E6522C?style=for-the-badge&logo=Prometheus&logoColor=white">    |  <img src="https://img.shields.io/badge/-PostgreSQL-%#4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white">   |
+
+
+|     |     |     |     |     |     |
