@@ -1,15 +1,16 @@
 import React,{useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import {useDispatch} from "react-redux";
-import {userLogin} from "../../redux/Login/loginSlice";
 import {onChange, onClick, UserLoginProps}  from "./LoginType";
 import Media from 'react-media';
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { SET_TOKEN } from "../../redux/Auth/tokenSlice";
+import { setRefreshToken } from "../../storage/handleCookie";
 
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -18,6 +19,7 @@ export default function LoginForm() {
   const [passwordValid, setPasswordValid] = useState(true);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onChangeUserData = (event: onChange) => {
     setEmailValid(true);
@@ -37,10 +39,12 @@ export default function LoginForm() {
     axios.post("http://localhost:8000/api/v1/login/", userLoginData)
     .then((res) => {
       console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
-      sessionStorage.setItem("login", JSON.stringify(userLoginData));
-      dispatch(userLogin(userLoginData));
+      setRefreshToken(res.data.token.refresh); // 쿠키에 저장
+      dispatch(SET_TOKEN(res.data.token.access));
+      //sessionStorage.setItem("login", JSON.stringify(userLoginData));
       resetInputForm();
-      window.location.href = "/upload";
+      navigate("/upload");
+      //window.location.href = "/upload";
     })
     .catch((err) => {
       setEmailValid(false); 
