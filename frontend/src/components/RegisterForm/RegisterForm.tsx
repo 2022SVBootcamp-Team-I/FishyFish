@@ -81,6 +81,7 @@ export default function RegisterForm() {
       setEmailExist(false);
       if (emailValidation(userRegisterData.email)) {
         setEmailValid(true);  // 합격
+        alert("Confirmed")
       } else {
         setEmailValid(false); // 불합격
       }

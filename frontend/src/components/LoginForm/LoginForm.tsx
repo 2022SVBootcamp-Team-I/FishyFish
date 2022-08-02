@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
 import AwesomeSlider from 'react-awesome-slider';
@@ -10,7 +10,7 @@ import Media from 'react-media';
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { SET_TOKEN } from "../../redux/Auth/tokenSlice";
-import { setRefreshToken } from "../../storage/handleCookie";
+import { setRefreshToken } from "../../function/handleCookie";
 
 export default function LoginForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -19,7 +19,6 @@ export default function LoginForm() {
   const [passwordValid, setPasswordValid] = useState(true);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const onChangeUserData = (event: onChange) => {
     setEmailValid(true);
@@ -39,12 +38,10 @@ export default function LoginForm() {
     axios.post("http://localhost:8000/api/v1/login/", userLoginData)
     .then((res) => {
       console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
-      setRefreshToken(res.data.token.refresh); // 쿠키에 저장
-      dispatch(SET_TOKEN(res.data.token.access));
-      //sessionStorage.setItem("login", JSON.stringify(userLoginData));
+      setRefreshToken(res.data.token.refresh); // refresh 토큰 쿠키에 저장
+      dispatch(SET_TOKEN(res.data.token.access)); // access 토큰 state에 저장
       resetInputForm();
-      navigate("/upload");
-      //window.location.href = "/upload";
+      window.location.href = "/upload";
     })
     .catch((err) => {
       setEmailValid(false); 

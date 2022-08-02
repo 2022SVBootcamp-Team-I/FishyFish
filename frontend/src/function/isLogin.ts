@@ -1,4 +1,4 @@
-import { getCookieToken } from "../storage/handleCookie";
+import { getCookieToken } from "./handleCookie";
 
 export function isLogin() {
   if (getCookieToken()) {
