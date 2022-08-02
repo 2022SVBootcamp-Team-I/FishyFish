@@ -2,8 +2,6 @@ import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
-import { useDispatch} from "react-redux";
-import { addUser } from "../../redux/Register/registerSlice";
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
@@ -15,7 +13,6 @@ import axios from "axios";
 
 export default function RegisterForm() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
-  const dispatch = useDispatch();
   const [userRegisterData, setUserRegisterData] = useState<UserRegisterProps>({email: "", password: "", password2: "", username: ""});
   const [emailExist, setEmailExist] = useState(false);
   const [emailValid, setEmailValid] = useState(true);
@@ -66,7 +63,6 @@ export default function RegisterForm() {
     axios.post("http://localhost:8000/api/v1/register/", userRegisterData)
     .then((res) => {
       console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.password2}`, `username : ${userRegisterData.username}`);
-      dispatch(addUser(userRegisterData));
       resetInputForm();
       window.location.href = "/";
     })
