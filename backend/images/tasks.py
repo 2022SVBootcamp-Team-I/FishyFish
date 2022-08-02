@@ -8,6 +8,6 @@ def expect_image_task(image):
     return fish_detect(image)
 """
 
-@app.task(track_started=True)
-def try_celery(x):
-    return addition(x)
+@app.task()
+def try_celery(x,y):
+    return addition(x,y)

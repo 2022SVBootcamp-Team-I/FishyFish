@@ -20,5 +20,5 @@ def fish_detect(img_link):
     i = fish_dict[fish_ac]
     return i
 """
-def addition(x):
-    return x+x
+def addition(x,y):
+    return x+y
