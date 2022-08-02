@@ -8,7 +8,7 @@ from .serializer import *
 from drf_yasg.utils import swagger_auto_schema
 import jwt
 import sys
-from .task import addition
+from .tasks import try_celery
 sys.path.append('..')
 from environments import get_secret
 
@@ -23,7 +23,7 @@ class imageView(APIView):
             return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         image = Image()
         image.url = request.FILES.get('url')
-        num = int(addition.delay(0.5))
+        num = try_celery.delay(0.5)
 
         content = {
             'url': image.url,
@@ -40,8 +40,8 @@ class imageView(APIView):
         fish = Fish.objects.get(id=serializers.data.get('fish'))
         # 리턴 값
         content = {
-            'url': serializers.data.get('url'), 
-            'name': fish.name,
+            'url': serializers.data.get('url'), #사진
+            'name': fish.name, #이름
             'toxicity':fish.toxicity,
             'prohibit_period': fish.prohibit_period,
             'prohibit_area': fish.prohibit_area,

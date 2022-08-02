@@ -61,19 +61,33 @@ services:
       - POSTGRES_NAME=teami2022
       - POSTGRES_USER=teami
       - POSTGRES_PASSWORD=teami
+      - RABBITMQ_USER=user
+      - RABBITMQ_PASSWORD=user
+      - RABBITMQ_HOST=mq
     depends_on:
       - db
     links:
       - db:db
 
 
-  rabbitmq:
-    image: rabbitmq:3
+  mq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    expose:
+      - 5672
+    volumes:
+      - rabbitmq_data_dev:/var/lib/rabbitmq/
+      - rabbitmq_data_dev:/var/log/rabbitmq
+    environment:
+      - DEFAULT_USER=user
+      - DEFAULT_PASS=user
     networks:
       - mq-tier
-    ports:
-      - "5672:5672"
-    tty: true
+    depends_on:
+      - backend
 
   worker:
     build:
@@ -86,6 +100,7 @@ services:
       - mq-tier
     depends_on:
       - db
+      - backend
 
   frontend:
     image: frontend
@@ -119,3 +134,4 @@ networks:
 volumes:
   postgres_data_dev:
   pgadmin_data_dev:
+  rabbitmq_data_dev:
