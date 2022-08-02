@@ -197,8 +197,10 @@ DEFAULT_FILE_STORAGE = get_secret("DEFAULT_FILE_STORAGE")
 RABBITMQ_USER = 'guest'
 RABBITMQ_PASSWORD = 'guest'
 
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
+CELERY_RESULT_BACKEND = 'rpc://guest:guest@rabbitmq:5672'
 CELERY_TIMEZONE = 'Asia/Seoul'
 CELERY_ENABLE_UTC=False
 CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']

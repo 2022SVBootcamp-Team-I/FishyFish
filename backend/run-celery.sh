@@ -5,4 +5,4 @@ sleep 10
 
 echo Starting celery worker.
 
-exec celery -A tasks worker --loglevel=INFO
+exec celery -A images.tasks worker --loglevel=INFO
