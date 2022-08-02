@@ -22,3 +22,11 @@ personal note:
 docker tag: use latest when development only. Specify version during deployment.
 <br>
 ELK have errors depending on version. Use same version accross all three stacks.
+
+
+ # :office: Member
+ |:kissing:Ryan Lee(Leader)|:laughing:김연진|:stuck_out_tongue_winking_eye:손희연|:joy:용준현|:yum:유제빈|
+|:---:|:---:|:---:|:---:|:---:|
+| Back-end  |Back-end   |Back-end|Web Desginer, |Web Desginer,| 
+| AI Traning | AI inference|  DevOps | Front-end developer |  Front-end developer
+| DevOps |  |   |   |  |
