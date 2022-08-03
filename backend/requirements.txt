@@ -10,9 +10,7 @@ bcrypt
 boto3
 #---- Celery
 celery
-redis
-django_celery_beat
-django_celery_results
+#redis
 #---- swagger
 drf-yasg
 #---- Yolov5
