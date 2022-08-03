@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 import uuid
 
 class User(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(max_length=150, null=False, unique=True)
     password = models.CharField(max_length=255, null=False)
     username = models.CharField(max_length=50, null=False)
@@ -25,10 +24,10 @@ class Fish(models.Model):
         db_table = 'fish'
 
 class Image(models.Model):
-    url = models.ImageField(upload_to='image')
+    url = models.ImageField(upload_to='')
     create_date = models.DateTimeField(auto_now_add=True)
-    fish = models.ForeignKey(Fish, related_name='fish_id', on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, related_name='user_id', on_delete =models.CASCADE)
+    fish = models.ForeignKey(Fish, related_name='fish_id', on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, related_name='user_id', on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'image'

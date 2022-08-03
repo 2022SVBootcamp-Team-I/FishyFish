@@ -14,6 +14,6 @@ def fish_detect(img_link):
     fish = results.pandas().xyxy[0].values.tolist()
     fish_ac = fish[0][-1]
 
-    fish_dict = {"hali":4, "mack":1, "rock":2, "ray":3, "snap":5,}
+    fish_dict = {"mack":1, "rock":2, "ray":3, "snap":4, "hali":5}
     i = fish_dict[fish_ac]
     return i

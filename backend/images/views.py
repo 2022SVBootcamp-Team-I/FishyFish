@@ -12,39 +12,32 @@ from .tasks import fish_ai
 from django.core.files.storage import default_storage
 sys.path.append('..')
 from environments import get_secret
+import io
+from PIL import Image as PILImage
 
 
 class imageView(APIView):
     # 이미지 업로드
     @swagger_auto_schema(operation_id="이미지 업로드")
     def post(self, request):
-        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        user_token = jwt.decode(request.COOKIES.get("access"), get_secret("SECRET_KEY"), algorithms=['HS256'])
         userId = user_token['user_id']
         if userId is None:
             return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         image = Image()
-        image.url = request.FILES.get('url')
-
+        image.url = request.FILES.get('url')    
+        image.user_id = userId
+        image.save()
+        # 여기까지 된다.
+        fish_id = fish_ai.delay(image.url.url).get()
+        print(1)
+        image.fish = Fish.objects.get(id=fish_id)
+        print(2)
+        image.save()
+        print(3)
+        fish = image.fish
         content = {
-            'url': image.url,
-            'user_id': userId,
-            'fish': 1
-        }
-        # 이미지 정보 저장
-        serializers = imageSerializer(data=content)
-        if serializers.is_valid():
-            serializers.save()
-        else:
-            Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
-            
-        fish = Fish.objects.get(id=serializers.data.get('fish'))
-        # 리턴 값
-        #tes = 셀러리 결과물
-        tes = fish_ai.delay(serializers.data.get('url')).get()
-        print(tes)
-        
-        content = {
-            'url': serializers.data.get('url'), #사진
+            'url': image.url.url, #사진
             'name': fish.name, #이름
             'toxicity':fish.toxicity,
             'prohibit_period': fish.prohibit_period,
