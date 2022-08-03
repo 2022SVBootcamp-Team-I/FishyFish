@@ -26,10 +26,10 @@ ELK have errors depending on version. Use same version accross all three stacks.
 # 🐟 Fishy Fish 🎣
 물고기 분류 및 정보 제공 서비스
 
-## :file_folder: System Archiecture
+# :file_folder: System Archiecture
 <br/>
 
-##  :electric_plug: Tech Stack
+# :electric_plug: Tech Stack
 |분류|기술|
 |:---:|:---:|
 |  Frontend  | <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> |
@@ -40,12 +40,16 @@ ELK have errors depending on version. Use same version accross all three stacks.
 |  Cloud  | <img src="https://img.shields.io/badge/Amazon S3-569A31?style=for-the-badge&logo=Amazon S3&logoColor=white"> <img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=for-the-badge&logo=Amazon EC2&logoColor=white">
 |  ETC  | <img src="https://img.shields.io/badge/-Grafana-%23F46800?style=for-the-badge&logo=grafana&logoColor=white"> <img src="https://img.shields.io/badge/-Prometheus-%23E6522C?style=for-the-badge&logo=Prometheus&logoColor=white"> |
 
-## :page_facing_up: Swagger
+# :page_facing_up: Swagger
 
 <img width="1436" alt="image" src="https://user-images.githubusercontent.com/86517634/182526687-49169532-dc33-4279-af6e-51fb904933a1.png">
 
-## :office: Member
+# 🤖 AI
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/86517634/182535625-0502c864-1ca1-4067-9e74-296098145952.jpeg"><img width="512" alt="image" src="https://user-images.githubusercontent.com/86517634/182535634-043fd13a-56bb-43f2-8ce5-322a34de1dcd.jpeg">
+<img width="820" alt="image" src="https://user-images.githubusercontent.com/86517634/182536438-48a9dd3e-7bac-4f14-9b7f-2d8a2af5be53.png">
+
+# :office: Member
 | **이름** |:kissing:Ryan Lee(Leader)|:laughing:김연진|:stuck_out_tongue_winking_eye:손희연|:joy:용준현|:yum:유제빈|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **역할** | Back-end <br/> DevOps <br/> AI Traning |  &nbsp;&nbsp; Back-end &nbsp;&nbsp;<br/>  AI inference  |  &nbsp;&nbsp; Back-end &nbsp;&nbsp;  <br/>  DevOps  | Web Desginer <br/> Front-end developer | Web Desginer <br/> Front-end developer|
+| **역할** | Back-end <br/> DevOps <br/> AI Traning | &nbsp;&nbsp; Back-end &nbsp;&nbsp;<br/>AI inference  |  &nbsp;&nbsp;Back-end&nbsp;&nbsp;<br/>DevOps  | Web Desginer <br/> Front-end developer | Web Desginer <br/> Front-end developer|
 | **GitHub** |
