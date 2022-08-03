@@ -71,8 +71,6 @@ services:
       - 15672:15672
     expose:
       - 5672
-    networks:
-      - mq-tier
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
@@ -86,8 +84,6 @@ services:
     volumes:
       - ./backend:/backend
     entrypoint: "/bin/sh ./run-celery.sh"
-    networks:
-      - mq-tier
     depends_on:
       - db
       - backend
@@ -99,8 +95,6 @@ services:
       context: ./frontend
     container_name: react
     #command: [ "npm", "start" ]
-    networks:
-      - app-tier
     stdin_open: true # react-script 3.4.1 부터 필요
     tty: true
     ports:
@@ -116,10 +110,6 @@ services:
 
 networks:
   app-tier:
-    driver: bridge
-  mq-tier:
-    driver: bridge
-  db-tier:
     driver: bridge
 
 volumes:
