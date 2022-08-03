@@ -10,6 +10,7 @@ import Media from 'react-media';
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { SET_TOKEN } from "../../redux/Auth/tokenSlice";
+import { USER_LOGIN } from "../../redux/Login/loginSlice";
 import { setRefreshToken } from "../../function/handleCookie";
 
 export default function LoginForm() {
@@ -40,6 +41,7 @@ export default function LoginForm() {
       console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
       setRefreshToken(res.data.token.refresh); // refresh 토큰 쿠키에 저장
       dispatch(SET_TOKEN(res.data.token.access)); // access 토큰 state에 저장
+      dispatch(USER_LOGIN({email: userLoginData.email}))
       resetInputForm();
       window.location.href = "/upload";
     })
@@ -90,7 +92,7 @@ export default function LoginForm() {
         <input id="password" value={userLoginData.password} className={passwordValid ? styles.Enter_your_Password : styles.If_password_invalid} placeholder="Enter your password" type="password" onChange={onChangeUserData} />
         <span className={passwordValid ? styles.password_validation_ballon_display_none : styles.password_validation_ballon}>Check your password</span>
         <div className={styles.Rectangle_9}></div>
-
+        
         <button type="submit" onClick={onLogin} className={styles.btn_3d_red}>
           <span className={styles.Login}>Sign in</span>
         </button>
