@@ -9,8 +9,10 @@ bcrypt
 #---- S3 bucket
 boto3
 #---- Celery
-celery==4.3
-#redis
+celery
+redis
+django_celery_beat
+django_celery_results
 #---- swagger
 drf-yasg
 #---- Yolov5

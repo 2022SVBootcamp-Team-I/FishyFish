@@ -75,13 +75,11 @@ services:
       - 15672:15672
     expose:
       - 5672
-    volumes:
-      - rabbitmq_data_dev:/var/lib/rabbitmq/
-      - rabbitmq_data_dev:/var/log/rabbitmq
     networks:
       - mq-tier
     depends_on:
       - backend
+    tty: true
 
   worker:
     build:
@@ -94,6 +92,7 @@ services:
     depends_on:
       - db
       - backend
+    tty: true
 
   frontend:
     image: frontend

@@ -23,8 +23,7 @@ class imageView(APIView):
             return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         image = Image()
         image.url = request.FILES.get('url')
-        num = try_celery.delay(1,1)
-        print(num)
+        num = try_celery.delay(1,1).get()
 
         content = {
             'url': image.url,
