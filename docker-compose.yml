@@ -1,6 +1,19 @@
-version: "3.9"
+version: "3.8"
    
 services:
+  #nginx:
+  #  image: nginx:latest
+  #  ports:
+  #    - "80:80"
+  #  volumes:
+  #    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  #  depends_on:
+  #    - frontend
+  #    - backend
+  #  networks:
+  #    - app-tier
+  #  restart: "on-failure"
+
   db:
     image: postgres:latest
     container_name: sql_db
@@ -30,10 +43,6 @@ services:
     links:
       - "db:sql-server"
     
-    
-
-
-      
   backend:
     image: backend
     container_name: django-back
@@ -54,14 +63,38 @@ services:
       - db:db
 
 
+  rabbitmq:
+    image: rabbitmq:3.7-management
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    expose:
+      - 5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    depends_on:
+      - backend
+    tty: true
+
+  celery:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/backend
+    entrypoint: "/bin/sh ./run-celery.sh"
+    depends_on:
+      - db
+      - backend
+    tty: true
+
   frontend:
     image: frontend
     build:
       context: ./frontend
     container_name: react
     #command: [ "npm", "start" ]
-    networks:
-      - app-tier
     stdin_open: true # react-script 3.4.1 부터 필요
     tty: true
     ports:
@@ -82,3 +115,4 @@ networks:
 volumes:
   postgres_data_dev:
   pgadmin_data_dev:
+  rabbitmq_data_dev:

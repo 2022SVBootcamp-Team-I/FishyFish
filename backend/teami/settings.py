@@ -30,7 +30,7 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'images',
     'accounts',
     'drf_yasg',
+    'celery',
     'corsheaders',#리액트
     'teami',
 ]
@@ -205,3 +206,10 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 DEFAULT_FILE_STORAGE = get_secret("DEFAULT_FILE_STORAGE")
+
+CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
+CELERY_RESULT_BACKEND = 'rpc://guest:guest@rabbitmq:5672//'
+
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Seoul'

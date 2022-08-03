@@ -8,6 +8,7 @@ from .serializer import *
 from drf_yasg.utils import swagger_auto_schema
 import jwt
 import sys
+#from .tasks import fish_ai
 from django.core.files.storage import default_storage
 sys.path.append('..')
 from environments import get_secret
@@ -23,6 +24,9 @@ class imageView(APIView):
             return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         image = Image()
         image.url = request.FILES.get('url')
+        print(image.url)
+        #num = fish_ai.delay(image.url).get()
+
         content = {
             'url': image.url,
             'user_id': userId,
@@ -38,8 +42,8 @@ class imageView(APIView):
         fish = Fish.objects.get(id=serializers.data.get('fish'))
         # 리턴 값
         content = {
-            'url': serializers.data.get('url'), 
-            'name': fish.name,
+            'url': serializers.data.get('url'), #사진
+            'name': fish.name, #이름
             'toxicity':fish.toxicity,
             'prohibit_period': fish.prohibit_period,
             'prohibit_area': fish.prohibit_area,
