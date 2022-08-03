@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from teami.models import *
 
 class fishSerializer(serializers.ModelSerializer):
     class Meta:
