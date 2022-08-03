@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.8
+FROM python:3.9
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -10,6 +10,6 @@ COPY requirements.txt /backend/
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN pip install -r https://raw.githubusercontent.com/ultralytics/yolov5/master/requirements.txt
+RUN apt-get update && apt-get install -y python3-opencv
 
 COPY . /backend/
