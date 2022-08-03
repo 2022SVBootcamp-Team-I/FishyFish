@@ -1,20 +1,21 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
 from teami.models import Image, Fish, User
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
-from .serializer import *
 from drf_yasg.utils import swagger_auto_schema
+from environments import get_secret
+from PIL import Image as PILImage
 import jwt
 import sys
-from .tasks import fish_ai
-from django.core.files.storage import default_storage
-sys.path.append('..')
-from environments import get_secret
+import uuid
 import io
-from PIL import Image as PILImage
-
+from .tasks import fish_ai
+from .serializer import *
+sys.path.append('..')
 
 class imageView(APIView):
     # 이미지 업로드
@@ -25,16 +26,21 @@ class imageView(APIView):
         if userId is None:
             return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         image = Image()
-        image.url = request.FILES.get('url')    
+        image.url = request.FILES.get('uploadImage')
+        
+        file_name = str(uuid.uuid4())  
+        imageByte = io.BytesIO()
+        image_file = PILImage.open(image.url)
+        image_file.save(imageByte, 'png')
+        imageByte.seek(0)
+        result_url = ContentFile(imageByte.read(), f'{file_name}.png')
+        image.url = result_url
         image.user_id = userId
         image.save()
-        # 여기까지 된다.
+
         fish_id = fish_ai.delay(image.url.url).get()
-        print(1)
         image.fish = Fish.objects.get(id=fish_id)
-        print(2)
         image.save()
-        print(3)
         fish = image.fish
         content = {
             'url': image.url.url, #사진
@@ -68,10 +74,10 @@ class myFishList(APIView):
         images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
-        serializer = imageSerializer(image)
-        fish = Fish.objects.get(id=serializer.data.get('fish'))
+        fish = Fish.objects.get(id=image.fish_id)
+        print(image.url.url)
         result = {
-            'url': serializer.data.get('url'), 
+            'url': image.url.url, 
             'name': fish.name,
             'toxicity': fish.toxicity,
             'prohibit_period': fish.prohibit_period,
