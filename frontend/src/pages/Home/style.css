@@ -1,9 +1,10 @@
 .displayPort {
-    z-index: 0;
+    z-index: 1;
     object-fit: contain;
-    background-color: #F5EDDC;
+    background-color: #E0E0E0;
     position: relative;
-    margin-top: -10rem;
+    margin-top: -2.5rem;
+    top: -2.5rem;
 }
 
 .concon{

@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'nintendo';
-    src: url(../../../public/font/slkscr.ttf)
-}
+
 .cell {
     height: 4.5rem;
     align-self: stretch;
@@ -12,6 +9,7 @@
     align-items: center;
     gap: 8px;
     padding: 0.25rem 0.5rem;
+    cursor: pointer;
 }
 
 .cell:hover{
@@ -56,7 +54,7 @@
     align-self: start;
     flex-grow: 0;
     font-family: 'nintendo';
-    font-size: 0.75rem;
+    font-size: 2rem;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -71,7 +69,7 @@
     align-self: start;
     flex-grow: 0;
     font-family: 'nintendo';
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
@@ -81,6 +79,8 @@
     color: #000;
 }
 .FishList_Content{
-    display: felx;
-    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
 }

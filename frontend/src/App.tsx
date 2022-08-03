@@ -11,18 +11,18 @@ import { isLogin } from './function/isLogin';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={isLogin() ? <Navigate to="/upload" /> : <Login />} />
-          <Route path="/upload" element={isLogin() ? <Upload /> : <Navigate to="/" />} />
-          <Route path="/fishlist" element={isLogin() ? <Home /> : <Navigate to="/" />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/mydropzone" element={<MyDropzone />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-    </div>
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" element={isLogin() ? <Navigate to="/upload" /> : <Login />} />
+            <Route path="/upload" element={isLogin() ? <Upload /> : <Navigate to="/" />} />
+            <Route path="/fishlist" element={isLogin() ? <Home /> : <Navigate to="/" />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/mydropzone" element={<Home/>} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </div>
   );
 }
 

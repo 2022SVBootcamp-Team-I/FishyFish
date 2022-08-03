@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'nintendo';
-    src: url(../../../public/font/Nintendo-DS-BIOS.ttf)
-}
+
 .test{
     display: flex;
     justify-content: space-evenly;
@@ -48,53 +45,25 @@
     margin: 0.563rem 0 0.938rem;
     padding: 0.688rem 1.813rem 1.063rem 1.313rem;
     border: solid 2.8px #000;
-    background-color: #f2f2f2;
+    
     align-items: center;
 }
 
 HTML
 
-.imgBox {
+.imgBox_blank {
     width: 17rem;
     height: 18.063rem;
     flex-grow: 0;
     margin: 0 0.063rem 0.75rem 0;
+    background-image: url("../../../public/img/blankImage.png");
     justify-content: center;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
-.numbering {
-    width: 3rem;
-    height: 1.313rem;
-    flex-grow: 0;
-    font-family: 'nintendo';
-    font-size: 1.3rem;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #000;
-}
 
-.name {
-    width: 6.613rem;
-    height: 3.125rem;
-    flex-grow: 0;
-    font-family: 'nintendo';
-    font-size: 3rem;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #000;
-    margin-bottom: 1rem;
-}
 
 
 .explain {
@@ -110,6 +79,15 @@ HTML
     letter-spacing: normal;
     text-align: left;
     color: #000;
+}
+.infoBox {
+    width: 30.063rem;
+    height: 3.175rem;
+    flex-grow: 0;
+    margin: 0.75rem 0.75rem 0rem 3.313rem;
+    padding: 1.163rem 0.447rem 0.75rem 1.313rem;
+    border: dotted 3px #d9d9d9;
+    background-color: #f2f2f2;
 }
 
 .infoBox_Line {

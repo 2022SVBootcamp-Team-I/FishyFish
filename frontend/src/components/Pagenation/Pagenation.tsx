@@ -11,7 +11,7 @@ const imgList: string[] = [ ka1, ka2, ka3, ka1, ka2, ka3 ];
 export default function Pagenation() {
   const [pageNum, setPageNum] = useState(1);
   const [pageIndex, setPageIndex] = useState(0);
-  const IMAGE_MAX_AMOUNT_PER_PAGE = 5;
+  const IMAGE_MAX_AMOUNT_PER_PAGE = 3;
   const MAX_PAGE_AMOUNT = Math.ceil(imgList.length / IMAGE_MAX_AMOUNT_PER_PAGE);
 
   const onNextPage = () => {
@@ -50,16 +50,16 @@ export default function Pagenation() {
         <Flex maxW="100%" alignItems="center" gap="1">
           {imgList.slice(pageIndex, pageIndex + 5).map((item: string, key: number) => <PagenationModal key={key} item={item} /> )}
         </Flex>
-        <Flex maxW="100%" alignItems="center">
-            <Button maxW="25%" bg='tomato' color="white" onClick={onFirstPage}>{"<<"}</Button>
+        <Flex marginTop="0.5rem" maxW="100%" alignItems="center">
+            <Button height="0.6%" maxW="1%" bg='f2f2f2' color="black" onClick={onFirstPage}>{"<<"}</Button>
             <Spacer />
-            <Button maxW="25%" bg='tomato' color="white" onClick={onPreviousPage}>{"<"}</Button>
+            <Button height="0.6%" maxW="1%" bg='f2f2f2' color="black" onClick={onPreviousPage}>{"<"}</Button>
             <Spacer />
-            <Text fontSize="m" fontWeight="semibold" lineHeight="short">{pageNum}</Text>
+            <Text  fontSize="m" fontWeight="semibold" lineHeight="short">{pageNum}</Text>
             <Spacer />
-            <Button maxW="25%" bg='tomato' color="white" onClick={onNextPage}>{">"}</Button>
+            <Button height="0.6%" maxW="1%" bg='f2f2f2' color="black" onClick={onNextPage}>{">"}</Button>
             <Spacer />
-            <Button maxW="25%" bg='tomato' color="white" onClick={onLastPage}>{">>"}</Button>
+            <Button height="0.6%" maxW="1%" bg='f2f2f2' color="black" onClick={onLastPage}>{">>"}</Button>
         </Flex>
       </Box>
     </ChakraProvider>

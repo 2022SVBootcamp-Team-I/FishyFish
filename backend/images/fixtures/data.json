@@ -1,17 +1,17 @@
 [
     {
-        "model": "images.fish",
+        "model": "teami.fish",
         "pk": 1,
         "fields": {
             "name" : "mackerel",
             "toxicity" : false,
             "prohibit_period": "a month between April 1st and June 30th",
             "prohibit_area": "None",
-            "description": "he eyes are large and the pupil area is exposed. Mackerel species typically have vertical stripes on their backs and deeply forked tails. The back of the body is dark blue, and the belly is silver-white. It is mainly eaten as grilled, stewed, and fried food."
+            "description": "The eyes are large and the pupil area is exposed. Mackerel species typically have vertical stripes on their backs and deeply forked tails. The back of the body is dark blue, and the belly is silver-white. It is mainly eaten as grilled, stewed, and fried food."
         }
     },
     {
-        "model": "images.fish",
+        "model": "teami.fish",
         "pk": 2,
         "fields": {
             "name" : "rockfish",
@@ -22,7 +22,7 @@
         }
     },
     {
-        "model": "images.fish",
+        "model": "teami.fish",
         "pk": 3,
         "fields": {
             "name" : "yellow stingray",
@@ -33,7 +33,7 @@
         }
     },
     {
-        "model": "images.fish",
+        "model": "teami.fish",
         "pk": 4,
         "fields": {
             "name" : "red snapper",
@@ -44,7 +44,7 @@
         }
     },
     {
-        "model": "images.fish",
+        "model": "teami.fish",
         "pk": 5,
         "fields": {
             "name" : "halibut",

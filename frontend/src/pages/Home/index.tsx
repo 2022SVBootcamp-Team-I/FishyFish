@@ -1,20 +1,108 @@
-import * as React from "react";
+import React,{useEffect,useState,useReducer}from "react";
+import axios from 'axios';
 import Information from '../../components/Infomation'
 import FishList from '../../components/FishList'
 import './style.css'
 import NaviBar from "../../components/NaviBar";
+import InformationBlank from "../../components/infomationBlank"
+import userEvent from "@testing-library/user-event";
 
+
+export type TodoType ={ id:number;name:string;username:string;email:string;address:any}
 
 export default function Home() {
+  const [button,setButton]=useState(true);
+  const reducer=(state:any,action:any)=>{
+    switch(action.type){
+        case 'FISH_LOADED':
+          return{
+            ...state,
+            data:action.data
+          }
+        case 'ERROR':
+          console.log("api연결실패!")
+          return
+        case 'FISH_CLICK':
+          console.log(action.id)
+          return{
+            ...state,
+            selectFish:(state.data.filter(apiData=>apiData.id === action.id)),
+            selectFishBoolean:false
+          };
+        case 'FISH_DELETE':
+          return{
+            ...state,
+            data:state.data.filter(data=>data.id !== action.id),
+            selectFishBoolean:true
+          }
+        default:
+          return state;
+    }
+  }
+  const initialState ={
+    data:[],
+    selectFish:{},
+    selectFishBoolean:true
+  }
+
+  const [state,dispatch]=useReducer(reducer,initialState);
+
+  const fetchFishes =async()=>{
+    try{
+      const response=await axios.get(
+        'http://localhost:3001/data'
+      );
+      dispatch({type:"FISH_LOADED",data:response.data});
+    } catch(e){
+      dispatch({type:'ERROR',error:e});
+    }
+  }
+
+  useEffect(()=>{
+    fetchFishes();
+    console.log(111);
+  },[])
+
+  const fishClick=(id:number)=>{
+    
+    dispatch({
+      type:"FISH_CLICK",
+      id
+    })
+
+    setButton(false);
+  }
+
+  const fishDelete=(id:number)=>{
+    
+    dispatch({type:"FISH_DELETE",id})
+    axios.delete(`http://localhost:3001/data/${id}`)      
+      .then(()=>{
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
+    setButton(true);
+  }
   return (
     <>
     <NaviBar />
     <div className="page">
         <div className='concon'>
           <span className="fishList">Myfish List</span>
-          <FishList img="미정" listName="연어" listExplain="설명"/>
+          {state.data.map((apiData)=>{
+            return(<FishList fishDelete={fishDelete} apiData={apiData} fishClick={fishClick}/>);
+          })}
         </div>
-        <Information  numbering={3} name="연어" engName="鰱魚 | Salmon" explain="연어(鰱魚)는 연어속에 속하는 물고기이다. 치어는 강에서 태어나 바다로 가서 살다가 성체가 되면 다시 강을 거슬러 올라와 상류에서 알을 낳는 회유성 어종이다. 이 독특한 회유 습성으로 인해 생태계의 영양 셔틀 역할을 한다. 횟감이나 구이, 샐러드 요리 등으로 인기가 많은 생선이다"/>
+        {
+          !button
+          //state.selectFishBoolean
+          ? <InformationBlank/>
+          : state.selectFish.map((apiData)=>
+          {
+            return (<Information apiData={apiData} />);
+          })
+        }
       </div>
       <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>
     </>

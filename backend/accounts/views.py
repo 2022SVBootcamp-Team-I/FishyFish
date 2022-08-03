@@ -1,7 +1,7 @@
 import jwt
 import bcrypt
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import User
+from teami.models import User
 from rest_framework.views import APIView
 from django.views import View
 from rest_framework.response import Response
@@ -14,6 +14,14 @@ from drf_yasg.utils import swagger_auto_schema
 #from rest_framework.generics import ListCreateAPIView
 from .serializers import *
 
+class Unique(APIView):
+    @swagger_auto_schema(operation_id="이메일 중복 확인")
+    def post(self, request):
+        data = request.data
+        if User.objects.filter(email = data['email']).exists():
+            return Response({"message": "이메일이 존재합니다"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message": "이 이메일은 사용 가능합니다"}, status=status.HTTP_200_OK)
+
 class Register(APIView):
     @swagger_auto_schema(operation_id="회원가입")
     def post(self, request):
@@ -21,9 +29,9 @@ class Register(APIView):
         if data['password'] != data['password2']:
             return Response({"message": "비밀번호가 일치하지 않습니다"},status=status.HTTP_400_BAD_REQUEST)
         content = {
-            "username": data['username'],
+            "email": data['email'],
             "password": bcrypt.hashpw(data['password'].encode("utf-8"), bcrypt.gensalt()).decode("utf-8"),
-            "email": data['email']
+            "username": data['username']
         }
         serializer = UserSerializer(data=content)
         if serializer.is_valid():
@@ -40,7 +48,7 @@ class Register(APIView):
                         "refresh": refresh_token,
                     },
                 },
-                status=status.HTTP_200_OK,
+                status=status.HTTP_201_CREATED,
             )
             
             return response
@@ -55,8 +63,8 @@ class Login(APIView):
     @swagger_auto_schema(operation_id="로그인 (토큰 쿠키에 저장)")
     def post(self, request):
         data = request.data
-        if User.objects.filter(username = data['username']).exists() :
-                user = User.objects.get(username = data['username'])
+        if User.objects.filter(email = data['email']).exists() :
+                user = User.objects.get(email = data['email'])
                 if bcrypt.checkpw(data['password'].encode('utf-8'), user.password.encode('utf-8')) :
                     serializer = UserSerializer(user)
                     token = TokenObtainPairSerializer.get_token(user)
@@ -73,21 +81,18 @@ class Login(APIView):
                         },
                         status=status.HTTP_200_OK,
                     )
-
-                    # jwt 토큰 => 쿠키에 저장
                     response.set_cookie("access", access_token, httponly=True)
                     response.set_cookie("refresh", refresh_token, httponly=True)
-
                     return response
                 else:
                     return Response(status=status.HTTP_400_BAD_REQUEST)
-        return Response({"message": "존재하지 않는 계정"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message": "존재하지 않는 계정입니다."}, status=status.HTTP_400_BAD_REQUEST)
 
 class Logout(APIView):
         @swagger_auto_schema(operation_id="로그아웃 (토큰 쿠키에서 삭제)")
         def post(self, request):
             data = request.data
-            user = User.objects.get(username = data['username'])
+            user = User.objects.get(email = data['email'])
             token = TokenObtainPairSerializer.get_token(user)
             response = Response(
                         {
