@@ -15,13 +15,13 @@ celery
 #---- swagger
 drf-yasg
 #---- Yolov5
-#torch
-#torchvision
-#numpy
-#pandas
-#opencv-python
-#PyYAML
-#requests
-#tqdm
-#matplotlib
-#seaborn
+torch
+torchvision
+numpy
+pandas
+opencv-python
+PyYAML
+requests
+tqdm
+matplotlib
+seaborn
