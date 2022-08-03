@@ -963,4 +963,20 @@
       0 8px 0 1px rgba(0, 0, 0, 0.4),
       0 8px 8px 1px rgba(0, 0, 0, 0.5);
   }
+
+  .btn_email_check {
+    position: absolute;
+    top: 9.2vh;
+    left: 72.5vw;
+    font-family: 'nintendo';
+    font-size: 6vw;
+    color: white;
+    border: solid 0.1vw rgba(0, 0, 0, 0.3);
+    background-color: #e74c3c;
+    box-shadow: 0 0 0 1px #c63702 inset,
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 2px 0 0 #C24032,
+    0 2px 0 1px rgba(0, 0, 0, 0.4),
+    0 2px 2px 1px rgba(0, 0, 0, 0.5);
+  }
 }

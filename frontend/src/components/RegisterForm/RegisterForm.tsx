@@ -2,17 +2,13 @@ import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useTitle } from "../../hooks/useTitle";
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import Media from 'react-media';
 import {onChange, onClick, UserRegisterProps}  from "./RegisterType";
 import { passwordEngCheck, passwordNumSpcCheck, passwordLengthCheck } from "../../function/passwordCheck";
 import { emailValidation } from "../../function/emailValidation";
 import axios from "axios";
+import HowToSlider from "../HowToSlider/HowToSlider";
 
 export default function RegisterForm() {
-  const AutoplaySlider = withAutoplay(AwesomeSlider);
   const [userRegisterData, setUserRegisterData] = useState<UserRegisterProps>({email: "", password: "", password2: "", username: ""});
   const [emailExist, setEmailExist] = useState(false);
   const [emailValid, setEmailValid] = useState(true);
@@ -98,22 +94,7 @@ export default function RegisterForm() {
   return(
     <div className={styles.Sign_up_11}>
       <div className={styles.aa_1}>
-        <Media query="(max-width: 420px)">
-          {matches => 
-              matches ? (
-                <AutoplaySlider fillParent={true} bullets={false} buttons={true} play={true} interval={3000}>
-                  <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
-                  <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
-                  <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
-                </AutoplaySlider>
-              ) :
-                <AutoplaySlider fillParent={true} bullets={false} buttons={true} play={true} interval={3000}>
-                  <div className={styles.aa_1_image} data-src="/img/testing1.jpg"></div>
-                  <div className={styles.aa_1_image} data-src="/img/testing2.jpg"></div>
-                  <div className={styles.aa_1_image} data-src="/img/testing3.jpg"></div>
-                </AutoplaySlider>
-          }
-        </Media>
+        <HowToSlider />
       </div>
       <div className={styles.Group_34}>
         <span className={styles.Sign_up_header}>Sign Up</span>
