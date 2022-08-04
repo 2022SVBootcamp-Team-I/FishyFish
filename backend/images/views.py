@@ -75,7 +75,6 @@ class myFishList(APIView):
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
         fish = Fish.objects.get(id=image.fish_id)
-        print(image.url.url)
         result = {
             'url': image.url.url, 
             'name': fish.name,
