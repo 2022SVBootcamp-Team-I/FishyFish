@@ -6,6 +6,8 @@ import './style.css'
 import NaviBar from "../../components/NaviBar";
 import InformationBlank from "../../components/infomationBlank"
 import userEvent from "@testing-library/user-event";
+import { useSelector } from "react-redux";
+
 
 
 export type TodoType ={ id:number;name:string;username:string;email:string;address:any}
@@ -58,8 +60,13 @@ export default function Home() {
     }
   }
 
+  const aToken = useSelector((state: any) => state.persistedReducer.tokenSlice.accessToken);
+
   useEffect(()=>{
-    fetchFishes();
+    //fetchFishes();
+    axios.get("http://localhost:8000/api/v1/myfish/", {headers: {Cookie: `access=${aToken}`}, withCredentials: true})
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
     console.log(111);
   },[])
 
@@ -98,10 +105,10 @@ export default function Home() {
           !button
           //state.selectFishBoolean
           ? <InformationBlank/>
-          : state.selectFish.map((apiData)=>
-          {
-            return (<Information apiData={apiData} />);
-          })
+          : null //  state.selectFish.map((apiData)=>
+          // {
+          //   return (<Information apiData={apiData} />);
+          // })
         }
       </div>
       <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>
