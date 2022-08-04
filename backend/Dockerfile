@@ -11,7 +11,5 @@ COPY requirements.txt /backend/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN apt-get update && apt-get install -y python3-opencv
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 COPY . /backend/

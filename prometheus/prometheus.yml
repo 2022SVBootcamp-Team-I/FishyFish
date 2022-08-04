@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+
+
+# Load and evaluate rules in this file every 'evaluation_interval' seconds.
+rule_files:
+  #- "alert.rules"
+  # - "first.rules"
+  # - "second.rules"
+
+scrape_configs:
+  - job_name: "monitoring"
+    
+    static_configs:
+      #- targets:
+       # - host.docker.internal
+      - targets: ["localhost:8000"]
+      #- targets: ["133.186.143.213:9090"]
