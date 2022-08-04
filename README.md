@@ -19,6 +19,86 @@
 
 <img width="1436" alt="image" src="https://user-images.githubusercontent.com/86517634/182526687-49169532-dc33-4279-af6e-51fb904933a1.png">
 
+# 📂file tree
+
+'''c
+📦fishy fish
+┣ 📂backend
+┃ ┣ 📂teami
+┃ ┃ ┣ 📜__init__.py
+┃ ┃ ┣ 📜asgi.py
+┃ ┃ ┣ 📜settings.py
+┃ ┃ ┣ 📜urls.py
+┃ ┃ ┗ 📜wsgi.py
+┃ ┣ 📜gitignore
+┃ ┣ 📜dockerfile
+┃ ┣ 📜manage.py
+┃ ┣ 📜read.md
+┃ ┗ 📜requirement.txt
+┣ 📂frontend
+┃ ┣ 📂ngnix
+┃ ┃ ┗ 📜default.conf
+┃ ┣ 📂public
+┃ ┃ ┣ 📂images
+┃ ┃ ┣ 📜favicon.ico
+┃ ┃ ┣ 📜index.html
+┃ ┃ ┣ 📜logo192.png
+┃ ┃ ┣ 📜logo512.png
+┃ ┃ ┣ 📜manifest.json
+┃ ┃ ┗ 📜robots.text
+┃ ┣ 📂src
+┃ ┃ ┣ 📂assests/images
+┃ ┃ ┣ 📂components
+┃ ┃ ┃ ┣ 📂FishList
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂ImageUpload
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┣ 📜style.css
+┃ ┃ ┃ ┣ 📂InfoBoxInner
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┣ 📜style.css
+┃ ┃ ┃ ┣ 📂Information
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂NaviBar
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂Information
+┃ ┃ ┃ ┃ ┣ 📜ka1.svg
+┃ ┃ ┃ ┃ ┣ 📜ka2.svg
+┃ ┃ ┃ ┃ ┣ 📜ka3.png
+┃ ┃ ┃ ┃ ┣ 📜Pagenation.module.css
+┃ ┃ ┃ ┃ ┗ 📜Pagenation.tsx
+┃ ┃ ┃ ┣ 📜index.css
+┃ ┃ ┃ ┗ 📜index.js
+┃ ┃ ┣ 📂hooks
+┃ ┃ ┃ ┗ 📜useTitle.tsx
+┃ ┃ ┣ 📂pages
+┃ ┃ ┃ ┣ 📂Home
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂Login
+┃ ┃ ┃ ┃ ┣ 📜Login.module.css
+┃ ┃ ┃ ┃ ┗ 📜Login.tsx
+┃ ┃ ┃ ┣ 📂Register
+┃ ┃ ┃ ┃ ┣ 📜Register.module.css
+┃ ┃ ┃ ┃ ┗ 📜Register.tsx
+┃ ┃ ┃ ┣ 📂Upload
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📜App.css
+┃ ┃ ┃ ┣ 📜App.tsx
+┃ ┃ ┃ ┣ 📜index.css
+┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┗ 📜react-app-env.d.ts 
+┃ ┃ ┣ 📜.gitignore
+┃ ┃ ┣ 📜dockerfile
+┃ ┃ ┣ 📜package-lock.json
+┃ ┃ ┣ 📜README.md
+┃ ┃ ┗ 📜README_en.md
+'''
+
 # 🤖 AI
 <img width="290" alt="image" src="https://user-images.githubusercontent.com/86517634/182535625-0502c864-1ca1-4067-9e74-296098145952.jpeg"><img width="512" alt="image" src="https://user-images.githubusercontent.com/86517634/182535634-043fd13a-56bb-43f2-8ce5-322a34de1dcd.jpeg">
 <img width="820" alt="image" src="https://user-images.githubusercontent.com/86517634/182536438-48a9dd3e-7bac-4f14-9b7f-2d8a2af5be53.png">
