@@ -19,6 +19,7 @@ type FishListType = {
   fishDelete(evnet:number):void;
 };
 function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
+
   const {url,id,fish}=apiData
   return (
     <div>

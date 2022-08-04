@@ -63,10 +63,9 @@ export default function Home() {
 
   useEffect(()=>{
     fetchFishes();
-    // axios.get("http://localhost:8000/api/v1/myfish/", {headers: {Cookie: `access=${aToken}`}, withCredentials: true})
-    // .then(res => console.log(res))
-    // .catch(err => console.log(err));
     console.log(111);
+    console.log(state);
+
   },[])
 
   const fishClick=(id:number)=>{
@@ -95,9 +94,10 @@ export default function Home() {
     <div className="page">
         <div className='concon'>
           <span className="fishList">Myfish List</span>
-          {state.data.map((apiData)=>{
+          {
+          /* {state.data.map((apiData)=>{
             return(<FishList fishDelete={fishDelete} apiData={apiData} fishClick={fishClick}/>);
-          })}
+          })} */}
         </div>
         {
           state.selectFishBoolean

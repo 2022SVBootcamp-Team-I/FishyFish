@@ -41,11 +41,13 @@
 .page{
   display: flex;
 }
-.upload a{
+
+.upload a {
   text-align: center;
   text-decoration: none;
   color: inherit;
 }
+
 .fishlist a {
   text-align: center;
   text-decoration: none;
