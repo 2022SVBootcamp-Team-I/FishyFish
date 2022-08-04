@@ -80,9 +80,8 @@ export default function Home() {
   }
 
   const fishDelete=(id:number)=>{
-    
     dispatch({type:"FISH_DELETE",id})
-    axios.delete(`http://localhost:3001/data/${id}`)      
+    axios.delete("http://localhost:8000/api/v1/myfish/",{data:{image_id:id},withCredentials: true})      
       .then(()=>{
       })
       .catch((error)=>{
@@ -101,13 +100,12 @@ export default function Home() {
           })}
         </div>
         {
-          !button
-          //state.selectFishBoolean
+          state.selectFishBoolean
           ? <InformationBlank/>
-          : null //  state.selectFish.map((apiData)=>
-          // {
-          //   return (<Information apiData={apiData} />);
-          // })
+          :  state.selectFish.map((apiData)=>
+          {
+            return (<Information apiData={apiData} />);
+          })
         }
       </div>
       <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>

@@ -1,12 +1,12 @@
 import React from 'react'
 import './style.css'
 import CancelIcon from '@mui/icons-material/Cancel';
-// onClick={()=>{fishClick(pk)}}
-// onClick={(e)=>{e.stopPropagation(); fishDelete(pk)}}
+// 
+//
 type FishListType = {
   apiData:{
     url:string
-    //id:0,1,2,3,4,5,6,7,8,9...
+    id:number
     fish: {
       name:string
       toxicity:boolean;
@@ -19,17 +19,17 @@ type FishListType = {
   fishDelete(evnet:number):void;
 };
 function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
-  const {url,fish}=apiData
+  const {url,id,fish}=apiData
   return (
     <div>
-        <div className="cell" >
+        <div className="cell" onClick={()=>{fishClick(id)}} >
           <div className='Avatar'>
             <img className='Avatar_img' src={url} alt="이미지오류"></img>
           </div>
           <div className='FishList_Content'>
             <div className='This-is-a-title'>NO.00</div>
             <div className='Subtitle-in-da-house'>{fish.name}</div>
-            <CancelIcon ></CancelIcon>
+            <CancelIcon  onClick={(e)=>{e.stopPropagation(); fishDelete(id)}} ></CancelIcon>
             
           </div>
         </div>
