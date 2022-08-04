@@ -39,6 +39,13 @@
   display: flex;
 }
 
+.upload a {
+  padding-right: 1.5vw;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .fishlist a {
   text-align: center;
   text-decoration: none;

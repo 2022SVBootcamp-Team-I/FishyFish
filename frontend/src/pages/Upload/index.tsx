@@ -29,10 +29,11 @@ export default function Home() {
     setButton(true);
     const formdata=new FormData();
     formdata.append('uploadImage', imageFile![0]);
-    axios.post("http://localhost:8000/api/v1/images/",formdata, {headers: {Cookie: `access=${aToken}`}, withCredentials: true})
+    axios.post("http://localhost:8000/api/v1/images/",formdata, {withCredentials: true})
       .then((response=>{
         console.log(response.data)
-        setResult(response.data);
+        setResult((prev: any) => prev.push(response.data));
+        console.log(result);
       }))
       .catch((error)=>{
         console.log(error);
@@ -102,6 +103,7 @@ export default function Home() {
           {
           button
           ? result.map((apiData)=>{
+            console.log(apiData);
             return(<Information apiData={apiData}/>);
           })
           : <InfomationBlank/>
