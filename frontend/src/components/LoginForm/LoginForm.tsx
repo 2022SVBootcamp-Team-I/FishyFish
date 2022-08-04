@@ -7,7 +7,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { SET_TOKEN } from "../../redux/Auth/tokenSlice";
 import { USER_LOGIN } from "../../redux/Login/loginSlice";
-import { setRefreshToken } from "../../function/handleCookie";
+import { setAccessToken, setRefreshToken } from "../../function/handleCookie";
 import HowToSlider from "../HowToSlider/HowToSlider";
 
 export default function LoginForm() {
@@ -34,8 +34,8 @@ export default function LoginForm() {
     event.preventDefault();
     axios.post("http://localhost:8000/api/v1/login/", userLoginData)
     .then((res) => {
-      console.log(`email : ${userLoginData.email}`, `password : ${userLoginData.password}`);
       setRefreshToken(res.data.token.refresh); // refresh 토큰 쿠키에 저장
+      setAccessToken(res.data.token.access);
       dispatch(SET_TOKEN(res.data.token.access)); // access 토큰 state에 저장
       dispatch(USER_LOGIN({email: userLoginData.email}))
       resetInputForm();

@@ -1,7 +1,7 @@
-import { getCookieToken } from "./handleCookie";
+import { getCookieAccessToken } from "./handleCookie";
 
 export function isLogin() {
-  if (getCookieToken()) {
+  if (getCookieAccessToken()) {
     return true;
   } else
     return false;

@@ -8,6 +8,8 @@ import Pagenation from "../../components/Pagenation/Pagenation"
 import { Box as ChakraBox } from "@chakra-ui/react";
 import NaviBar from "../../components/NaviBar";
 import LinearProgress from '@mui/material/LinearProgress';
+import { useSelector } from "react-redux";
+
 
 
 export default function Home() {
@@ -20,16 +22,18 @@ export default function Home() {
     setImageFile(event.target.files);
   };
 
-
+  const aToken = useSelector((state: any) => state.persistedReducer.tokenSlice.accessToken);
+  
   const sendImage = async(e: any)=>{
     setLoading(true);
     setButton(true);
     const formdata=new FormData();
     formdata.append('uploadImage', imageFile![0]);
-    axios.post("",formdata)
+    axios.post("http://localhost:8000/api/v1/images/",formdata, {withCredentials: true})
       .then((response=>{
         console.log(response.data)
-        setResult(response.data);
+        setResult((prev: any) => prev.push(response.data));
+        console.log(result);
       }))
       .catch((error)=>{
         console.log(error);
@@ -99,6 +103,7 @@ export default function Home() {
           {
           button
           ? result.map((apiData)=>{
+            console.log(apiData);
             return(<Information apiData={apiData}/>);
           })
           : <InfomationBlank/>

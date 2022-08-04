@@ -58,7 +58,6 @@ export default function RegisterForm() {
     event.preventDefault();
     axios.post("http://localhost:8000/api/v1/register/", userRegisterData)
     .then((res) => {
-      console.log(`email : ${userRegisterData.email}`, `password : ${userRegisterData.password}`, `confirmPassword : ${userRegisterData.password2}`, `username : ${userRegisterData.username}`);
       resetInputForm();
       window.location.href = "/";
     })

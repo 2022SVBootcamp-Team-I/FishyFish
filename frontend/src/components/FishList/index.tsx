@@ -18,6 +18,7 @@ type FishListType = {
 };
 function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
   const {model,pk,fields}=apiData
+  console.log(apiData);
   return (
     <div>
         <div className="cell" onClick={()=>{fishClick(pk)}}>

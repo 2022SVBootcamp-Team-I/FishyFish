@@ -6,6 +6,8 @@ import './style.css'
 import NaviBar from "../../components/NaviBar";
 import InformationBlank from "../../components/infomationBlank"
 import userEvent from "@testing-library/user-event";
+import { useSelector } from "react-redux";
+
 
 
 export type TodoType ={ id:number;name:string;username:string;email:string;address:any}
@@ -49,18 +51,20 @@ export default function Home() {
 
   const fetchFishes =async()=>{
     try{
-      const response=await axios.get(
-        'http://localhost:3001/data'
-      );
+      const response=await axios.get("http://localhost:8000/api/v1/myfish/", { withCredentials: true})
       dispatch({type:"FISH_LOADED",data:response.data});
     } catch(e){
       dispatch({type:'ERROR',error:e});
     }
   }
 
+  const aToken = useSelector((state: any) => state.persistedReducer.tokenSlice.accessToken);
+
   useEffect(()=>{
     fetchFishes();
     console.log(111);
+    console.log(state);
+
   },[])
 
   const fishClick=(id:number)=>{
@@ -90,18 +94,19 @@ export default function Home() {
     <div className="page">
         <div className='concon'>
           <span className="fishList">Myfish List</span>
-          {state.data.map((apiData)=>{
+          {
+          /* {state.data.map((apiData)=>{
             return(<FishList fishDelete={fishDelete} apiData={apiData} fishClick={fishClick}/>);
-          })}
+          })} */}
         </div>
         {
           !button
           //state.selectFishBoolean
           ? <InformationBlank/>
-          : state.selectFish.map((apiData)=>
-          {
-            return (<Information apiData={apiData} />);
-          })
+          : null //  state.selectFish.map((apiData)=>
+          // {
+          //   return (<Information apiData={apiData} />);
+          // })
         }
       </div>
       <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>
