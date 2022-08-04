@@ -15,4 +15,4 @@ class getMyFishSerializer(serializers.ModelSerializer):
     fish = fishSerializer(read_only=True)
     class Meta:
         model = Image
-        fields = ['url', 'fish']
+        fields = ['id', 'url', 'fish']
