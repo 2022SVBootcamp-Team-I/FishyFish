@@ -10,8 +10,6 @@ import { useSelector } from "react-redux";
 
 
 
-export type TodoType ={ id:number;name:string;username:string;email:string;address:any}
-
 export default function Home() {
   const [button,setButton]=useState(true);
   const reducer=(state:any,action:any)=>{
@@ -52,8 +50,9 @@ export default function Home() {
   const fetchFishes =async()=>{
     try{
       const response=await axios.get(
-        'http://localhost:3001/data'
+        "http://localhost:8000/api/v1/myfish/", {withCredentials: true}
       );
+      console.log(response.data)
       dispatch({type:"FISH_LOADED",data:response.data});
     } catch(e){
       dispatch({type:'ERROR',error:e});
@@ -63,10 +62,10 @@ export default function Home() {
   const aToken = useSelector((state: any) => state.persistedReducer.tokenSlice.accessToken);
 
   useEffect(()=>{
-    //fetchFishes();
-    axios.get("http://localhost:8000/api/v1/myfish/", {headers: {Cookie: `access=${aToken}`}, withCredentials: true})
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
+    fetchFishes();
+    // axios.get("http://localhost:8000/api/v1/myfish/", {headers: {Cookie: `access=${aToken}`}, withCredentials: true})
+    // .then(res => console.log(res))
+    // .catch(err => console.log(err));
     console.log(111);
   },[])
 
