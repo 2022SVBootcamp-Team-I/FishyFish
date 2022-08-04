@@ -13,6 +13,14 @@
     align-items: center;
     margin-left: 3rem;
 }
+.imgBox_img{
+    width: 17rem;
+    height: 18.063rem;
+    margin: 0 0.063rem 0.75rem 0;
+    justify-content: center;
+    position: center;
+    size: contain;
+}
 .box {
     z-index: 3;
     width: 44.8rem;
@@ -81,7 +89,6 @@ HTML
 }
 
 .name {
-    width: 6.613rem;
     height: 3.125rem;
     flex-grow: 0;
     font-family: 'nintendo';
@@ -98,8 +105,6 @@ HTML
 
 
 .explain {
-    width: 16.063rem;
-    height: 7.188rem;
     flex-grow: 0;
     font-family: 'nintendo';
     font-size: 1.5rem;

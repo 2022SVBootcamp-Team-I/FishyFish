@@ -35,12 +35,14 @@
 .profile{ 
   margin-left:1.313rem;
 }
+.fishlist{
+  margin-left:1.313rem;
+}
 .page{
   display: flex;
 }
 
 .upload a {
-  padding-right: 1.5vw;
   text-align: center;
   text-decoration: none;
   color: inherit;
