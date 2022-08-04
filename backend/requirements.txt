@@ -10,19 +10,18 @@ django-cors-headers
 #---- S3 bucket
 boto3
 #---- Celery
-#celery==5.2.7
+celery
 #redis
-#rabbitmq
 #---- swagger
 drf-yasg
 #---- Yolov5
-#torch
-#torchvision
-#numpy
-#pandas
-#opencv-python
-#PyYAML
-#requests
-#tqdm
-#matplotlib
-#seaborn
+torch
+torchvision
+numpy
+pandas
+opencv-python
+PyYAML
+requests
+tqdm
+matplotlib
+seaborn

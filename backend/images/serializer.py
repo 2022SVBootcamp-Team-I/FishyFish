@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from teami.models import *
 
 class fishSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,7 +9,7 @@ class fishSerializer(serializers.ModelSerializer):
 class imageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
-        fields = ['user_id', 'url', 'fish']
+        fields = ['user_id', 'url']
     
 class getMyFishSerializer(serializers.ModelSerializer):
     fish = fishSerializer(read_only=True)
