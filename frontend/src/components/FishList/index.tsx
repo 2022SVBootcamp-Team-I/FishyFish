@@ -27,7 +27,7 @@ function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
             <img className='Avatar_img' src={url} alt="이미지오류"></img>
           </div>
           <div className='FishList_Content'>
-            <div className='This-is-a-title'>NO.00</div>
+            <div className='This-is-a-title'>NO.00{id}</div>
             <div className='Subtitle-in-da-house'>{fish.name}</div>
             <CancelIcon  onClick={(e)=>{e.stopPropagation(); fishDelete(id)}} ></CancelIcon>
             

@@ -89,7 +89,6 @@ HTML
 }
 
 .name {
-    width: 6.613rem;
     height: 3.125rem;
     flex-grow: 0;
     font-family: 'nintendo';
@@ -106,8 +105,6 @@ HTML
 
 
 .explain {
-    width: 16.063rem;
-    height: 7.188rem;
     flex-grow: 0;
     font-family: 'nintendo';
     font-size: 1.5rem;

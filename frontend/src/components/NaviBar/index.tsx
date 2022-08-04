@@ -24,8 +24,9 @@ const Navibar = () => {
             <div className="header">
                 <img className="logo" src="img/Logo.png" alt="이미지오류"></img>
                 <div className="header_nav">
-                    <div className="fishlist">{<Link to="/fishlist">fishlist</Link>}</div>
-                    <div className="profile" onClick={onLogout}>{<Link to="/">logout</Link>}</div>
+                <div className="upload">{<Link to="/upload">Upload</Link>}</div>
+                    <div className="fishlist">{<Link to="/fishlist">FishList</Link>}</div>
+                    <div className="profile" onClick={onLogout}>{<Link to="/">Logout</Link>}</div>
                 </div>
             </div>
     );
