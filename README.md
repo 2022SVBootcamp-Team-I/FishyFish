@@ -11,7 +11,6 @@ style : 코드 스타일, 포맷팅에 대한 수정<br>
 refactor : 기능의 변화가 아닌 코드 리팩터링 ex) 변수 이름 변경<br>
 test : 테스트 코드 추가/수정<br>
 release : 버전 릴리즈<br>
-<br>
 
 # 예시
 [feat] add AI model
@@ -27,6 +26,7 @@ ELK have errors depending on version. Use same version accross all three stacks.
 물고기 분류 및 정보 제공 서비스
 
 # :file_folder: System Archiecture
+<img width="1436" alt="image" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/47908851-9804-47dd-abe8-4e23fb8fb4d9/2022_Bootcamp_Team-I_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220805%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220805T130628Z&X-Amz-Expires=86400&X-Amz-Signature=40f1a1ef56c6c8cce3f316324b256fe1877671cd27492f5e41006ed84200dc3b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%222022%2520Bootcamp%2520Team-I%2520%282%29.png%22&x-id=GetObject">
 <br/>
 
 # :electric_plug: Tech Stack
@@ -55,4 +55,4 @@ ELK have errors depending on version. Use same version accross all three stacks.
 | :laughing:김연진   | Back-end                  | API Design, Data Engineering                      | [Github Profile](https://github.com/homebdy)   |
 | :stuck_out_tongue_winking_eye:손희연   | Back-end, AI           | API Design, Machine Learning                  | [Github Profile](https://github.com/fluorine1805)   |
 | :joy:용준현   | Frontend, DevOps            | Web Development, Deploy                 | [Github Profile](https://github.com/pione3r) |
-| :yum:유제빈 | Frontend                      | Web Development                                    | [Github Profile](https://github.com/Yujaebin)   |
+| :yum:유제빈 | Frontend                      | Web Development, UI/UX Design                                    | [Github Profile](https://github.com/Yujaebin)   |
