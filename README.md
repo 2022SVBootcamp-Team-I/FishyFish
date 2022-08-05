@@ -21,25 +21,61 @@
 
 # 📂file tree
 
-'''c
+```c
 📦fishy fish
 ┣ 📂backend
+┃ ┣ 📂accounts
+┃ ┃ ┣ 📂migrations
+┃ ┃ ┃ ┗ 📜__init__.py
+┃ ┃ ┣ 📜__init__.py
+┃ ┃ ┣ 📜admin.py
+┃ ┃ ┣ 📜apps.py
+┃ ┃ ┣ 📜models.py
+┃ ┃ ┣ 📜serializers.py
+┃ ┃ ┣ 📜tests.py
+┃ ┃ ┣ 📜urls.py
+┃ ┃ ┗ 📜views.py
+┃ ┣ 📂images
+┃ ┃ ┣ 📂fixtures
+┃ ┃ ┃ ┗ 📜data.json
+┃ ┃ ┣ 📂inference
+┃ ┃ ┃ ┣ 📜expect.py
+┃ ┃ ┃ ┗ 📜last.pt
+┃ ┃ ┣ 📂migrations
+┃ ┃ ┃ ┗ 📜__init__.py
+┃ ┃ ┣ 📜__init__.py
+┃ ┃ ┣ 📜admin.py
+┃ ┃ ┣ 📜apps.py
+┃ ┃ ┣ 📜models.py
+┃ ┃ ┣ 📜serializers.py
+┃ ┃ ┣ 📜tasks.py
+┃ ┃ ┣ 📜tests.py
+┃ ┃ ┣ 📜urls.py
+┃ ┃ ┗ 📜views.py
 ┃ ┣ 📂teami
+┃ ┃ ┣ 📂migrations
+┃ ┃ ┃ ┗ 📜__init__.py
 ┃ ┃ ┣ 📜__init__.py
 ┃ ┃ ┣ 📜asgi.py
+┃ ┃ ┣ 📜assest_storages.py
+┃ ┃ ┣ 📜celery.py
+┃ ┃ ┣ 📜models.py
 ┃ ┃ ┣ 📜settings.py
 ┃ ┃ ┣ 📜urls.py
 ┃ ┃ ┗ 📜wsgi.py
 ┃ ┣ 📜gitignore
-┃ ┣ 📜dockerfile
+┃ ┣ 📜Dockerfile
+┃ ┣ 📜environments.py
 ┃ ┣ 📜manage.py
-┃ ┣ 📜read.md
-┃ ┗ 📜requirement.txt
+┃ ┣ 📜readme.md
+┃ ┣ 📜requirement.txt
+┃ ┗ 📜run-celery.sh
 ┣ 📂frontend
 ┃ ┣ 📂ngnix
 ┃ ┃ ┗ 📜default.conf
 ┃ ┣ 📂public
-┃ ┃ ┣ 📂images
+┃ ┃ ┣ 📂font
+┃ ┃ ┣ 📂img
 ┃ ┃ ┣ 📜favicon.ico
 ┃ ┃ ┣ 📜index.html
 ┃ ┃ ┣ 📜logo192.png
@@ -61,9 +97,19 @@
 ┃ ┃ ┃ ┣ 📂Information
 ┃ ┃ ┃ ┃ ┣ 📜index.tsx
 ┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂InformationBlank
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂LoginForm
+┃ ┃ ┃ ┃ ┣ 📜LoginForm.module.css
+┃ ┃ ┃ ┃ ┣ 📜LoginForm.tsx
+┃ ┃ ┃ ┃ ┣ 📜Logintype.ts
+┃ ┃ ┃ ┃ ┗ 📜react-awesome-autoplay.d.ts
 ┃ ┃ ┃ ┣ 📂NaviBar
 ┃ ┃ ┃ ┃ ┣ 📜index.tsx
 ┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂NotFound
+┃ ┃ ┃ ┃ ┗ 📜NotFound.tsx
 ┃ ┃ ┃ ┣ 📂Information
 ┃ ┃ ┃ ┃ ┣ 📜ka1.svg
 ┃ ┃ ┃ ┃ ┣ 📜ka2.svg
@@ -97,7 +143,7 @@
 ┃ ┃ ┣ 📜package-lock.json
 ┃ ┃ ┣ 📜README.md
 ┃ ┃ ┗ 📜README_en.md
-'''
+```
 
 # 🤖 AI
 <img width="290" alt="image" src="https://user-images.githubusercontent.com/86517634/182535625-0502c864-1ca1-4067-9e74-296098145952.jpeg"><img width="512" alt="image" src="https://user-images.githubusercontent.com/86517634/182535634-043fd13a-56bb-43f2-8ce5-322a34de1dcd.jpeg">
