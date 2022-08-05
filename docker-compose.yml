@@ -143,10 +143,6 @@ services:
       - "9100:9100"
     restart: always
 
-networks:
-  app-tier:
-    driver: bridge
-
 volumes:
   postgres_data_dev:
   pgadmin_data_dev:
