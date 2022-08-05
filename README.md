@@ -50,6 +50,6 @@ ELK have errors depending on version. Use same version accross all three stacks.
 
 # :office: Member
 | **이름** |:kissing:Ryan Lee(Leader)|:laughing:김연진|:stuck_out_tongue_winking_eye:손희연|:joy:용준현|:yum:유제빈|
-|:---:|:---:|:---:|:---:|:---:|:---:|
+||:[Github Profile]:|:---:|:---:|:---:|:---:|
 | **역할** | Back-end <br/> DevOps <br/> AI Traning | &nbsp;&nbsp; Back-end &nbsp;&nbsp;<br/>AI inference  |  &nbsp;&nbsp;Back-end&nbsp;&nbsp;<br/>DevOps  | Web Desginer <br/> Front-end developer | Web Desginer <br/> Front-end developer|
 | **GitHub** |
