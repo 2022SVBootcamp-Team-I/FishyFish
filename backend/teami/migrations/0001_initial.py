@@ -30,11 +30,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='User',
             fields=[
-<<<<<<< HEAD
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-=======
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
->>>>>>> develop
                 ('email', models.EmailField(max_length=150, unique=True)),
                 ('password', models.CharField(max_length=255)),
                 ('username', models.CharField(max_length=50)),
