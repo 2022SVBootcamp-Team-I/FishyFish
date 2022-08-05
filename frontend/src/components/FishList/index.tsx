@@ -1,47 +1,37 @@
 import React from 'react'
 import './style.css'
+import CancelIcon from '@mui/icons-material/Cancel';
+// 
+//
 type FishListType = {
-  img: string;
-  listName: string;
-  listExplain: string;
-
+  apiData:{
+    url:string
+    id:number
+    fish: {
+      name:string
+      toxicity:boolean;
+      prohibit_period:string;
+      prohibit_area:string;
+      description:string;
+    }
+  }
+  fishClick(event:number):void;
+  fishDelete(evnet:number):void;
 };
-function index({img,listName,listExplain}:FishListType) {
+function index({apiData,fishClick,fishDelete}:FishListType):React.ReactElement {
+
+  const {url,id,fish}=apiData
   return (
     <div>
-        <div className="cell">
+        <div className="cell" onClick={()=>{fishClick(id)}} >
           <div className='Avatar'>
-            <img className='Avatar_img' src="img/Logo.jpg" alt="이미지오류"></img>
+            <img className='Avatar_img' src={url} alt="이미지오류"></img>
           </div>
           <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
-          </div>
-        </div>
-
-        <div className="cell2">
-          <div className='Avatar'></div>
-          <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
-          </div>
-        </div>
-
-        <div className="cell">
-          <div className='Avatar'>
-            <img className='Avatar_img' src="img/Logo.jpg" alt="이미지오류"></img>
-          </div>
-          <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
-          </div>
-        </div>
-
-        <div className="cell2">
-          <div className='Avatar'></div>
-          <div className='FishList_Content'>
-            <div className='This-is-a-title'>연어</div>
-            <div className='Subtitle-in-da-house'>2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
+            <div className='This-is-a-title'>NO.00{id}</div>
+            <div className='Subtitle-in-da-house'>{fish.name}</div>
+            <CancelIcon  onClick={(e)=>{e.stopPropagation(); fishDelete(id)}} ></CancelIcon>
+            
           </div>
         </div>
     </div>

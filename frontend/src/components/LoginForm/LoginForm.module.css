@@ -1,0 +1,664 @@
+@font-face {
+  font-family: 'nintendo';
+  src: url(../../../public/font/Nintendo-DS-BIOS.ttf)
+}
+
+@keyframes shake {
+  0% { margin-left: 0rem; }
+  25% { margin-left: 0.5rem; }
+  75% { margin-left: -0.5rem; }
+  100% { margin-left: 0rem; }
+}
+
+/* 3D button colors */
+.btn_3d_red {
+  position: absolute;
+  top: 33vh;
+  left: 0;
+  width: 25vw;
+  height: 5vh;
+  border: solid 0.1vw rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e74c3c;
+  box-shadow: 0 0 0 1px #c63702 inset,
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 8px 0 0 #C24032,
+    0 8px 0 1px rgba(0, 0, 0, 0.4),
+    0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn_3d_red:hover {
+  background-color: #e76e60;
+  box-shadow: 0 0 0 1px #e76e60 inset,
+  0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+  0 8px 0 0 #C24032,
+  0 8px 0 1px rgba(0, 0, 0, 0.4),
+  0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn_3d_red:active {
+  box-shadow: 0 0 0 1px #c63702 inset,
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.Login_11 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.aa_1 {
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.aa_1_image {
+  width: 100%;
+  height: 100%;
+}
+
+.Group_34 {
+  position: absolute;
+  top: 25%;
+  left: 62%;
+  width: 25%;
+  height: 15%;
+  font-family: 'nintendo';
+}
+
+.Sign_in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 10vh;
+  font-family: 'nintendo';
+  font-size: 5.5vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.If_you_dont_have_an_account_register {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 30vw;
+  height: 5vh;
+  font-family: 'nintendo';
+  font-size: 2.5vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.You_can_Register_here_ {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  width: 20vw;
+  height: 2vh;
+  font-family: 'nintendo';
+  font-size: 2vw;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0089ed;
+}
+
+.You_can_Register_here_ .text_style_1 {
+  font-weight: normal;
+  color: #000;
+}
+
+.Group_38 {
+  position: absolute;
+  top: 50%;
+  left: 62%;
+  width: 25%;
+  height: 45%;
+  margin: 0 0 1.153rem;
+}
+
+.Email {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 3vh;
+  font-family: 'nintendo';
+  font-size: 2vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.Enter_your_email_address {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  width: 24vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  font-family: 'nintendo';
+  font-size: 1.5vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  border: none;
+}
+
+.If_email_invalid {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  width: 24vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  font-family: 'nintendo';
+  font-size: 1.5vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgb(255, 99, 99);
+  box-shadow: 0 0 0 transparent;
+  border: 1px solid #999;
+  outline: 0 none;
+  transition: box-shadow 0.5s;
+  animation: shake 0.2s ease-in-out 0s 2;
+  box-shadow: 0 0 0.5em red;
+}
+
+.email_validation::before {
+  position: absolute;
+  top: -.8vw;
+  left: 23vw;
+  content: '\00d7';
+  color:#C24032;
+  font-size: 2.5vw;
+}
+
+.email_validation_display_none::before {
+  display: none;
+}
+
+.email_ballon {
+  position: absolute;
+  width: 13vw;
+  text-align: left;
+  height: 3vh;
+  top: 10.3vh;
+  left: 0.3vw;
+  font-size: 1.2vw;
+  color: #C24032;
+}
+
+.email_ballon_display_none {
+  display: none;
+}
+
+.Rectangle_8 {
+  position: absolute;
+  top: 9vh;
+  left: 0;
+  width: 25vw;
+  height: 0.3vh;
+  background-color: #000;
+}
+
+.Password {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  width: 20vw;
+  height: 3vh;
+  font-family: 'nintendo';
+  font-size: 2vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.Enter_your_Password {
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  width: 24vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  font-family: 'nintendo';
+  font-size: 1.5vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  border: none;
+}
+
+.If_password_invalid {
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  width: 24vw;
+  height: 3vh;
+  padding-left: 0.5vw;
+  font-family: 'nintendo';
+  font-size: 1.5vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgb(255, 99, 99);
+  box-shadow: 0 0 0 transparent;
+  border: 1px solid #999;
+  outline: 0 none;
+  transition: box-shadow 0.5s;
+  animation: shake 0.2s ease-in-out 0s 2;
+  box-shadow: 0 0 0.5em red;
+}
+
+.password_validation::before {
+  position: absolute;
+  top: 13.3vh;
+  left: 23vw;
+  content: '\00d7';
+  color:#C24032;
+  font-size: 2.5vw;
+}
+
+.password_validation_display_none::before {
+  display: none;
+}
+
+.password_validation_ballon {
+  position: absolute;
+  width: 25vw;
+  text-align: left;
+  height: 3vh;
+  top: 25.3vh;
+  left: 0.3vw;
+  font-size: 1.2vw;
+  color: #C24032;
+}
+
+.password_validation_ballon_display_none {
+  display: none;
+}
+
+
+.Rectangle_9 {
+  position: absolute;
+  top: 24vh;
+  left: 0;
+  width: 25vw;
+  height: 0.3vh;
+  background-color: #000;
+}
+
+.Login {
+  position: absolute;
+  width: 8vw;
+  height: 3vh;
+  font-family: 'nintendo';
+  font-size: 1.8vw;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: white;
+}
+
+@media screen and (max-width: 420px) {
+	/* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
+  .Login_11 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+
+  .aa_1 {
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    z-index: 0;
+  }
+
+  .aa_1_image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Group_34 {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 80%;
+    height: 15%;
+    font-family: 'nintendo';
+  }
+  
+  .Sign_in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 5vh;
+    font-family: 'nintendo';
+    font-size: 10vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .If_you_dont_have_an_account_register {
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 60vw;
+    height: 5vh;
+    font-family: 'nintendo';
+    font-size: 5vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+  
+  .You_can_Register_here_ {
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    width: 40vw;
+    height: 5vh;
+    font-family: 'nintendo';
+    font-size: 5vw;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0089ed;
+  }
+
+  .Group_38 {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    width: 80%;
+    height: 40%;
+  }
+
+  .Email {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 2vh;
+    font-family: 'nintendo';
+    font-size: 7vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .Enter_your_email_address {
+    position: absolute;
+    top: 4vh;
+    left: 0;
+    width: 84vw;
+    height: 3vh;
+    padding-left: 2vw;
+    font-family: 'nintendo';
+    font-size: 5vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    border: none;
+  }
+  
+  .If_email_invalid {
+    position: absolute;
+    top: 4vh;
+    left: 0;
+    width: 84vw;
+    height: 3vh;
+    padding-left: 2vw;
+    font-family: 'nintendo';
+    font-size: 5vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgb(255, 99, 99);
+    box-shadow: 0 0 0 transparent;
+    border: 1px solid #999;
+    outline: 0 none;
+    transition: box-shadow 0.5s;
+    animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.5em red;
+  }
+  
+  .email_validation::before {
+    position: absolute;
+    top: -2.2vh;
+    left: 80vw;
+    content: '\00d7';
+    color:#C24032;
+    font-size: 10vw;
+  }
+  
+  .email_validation_display_none::before {
+    display: none;
+  }
+  
+  .email_ballon {
+    position: absolute;
+    width: 50vw;
+    text-align: left;
+    height: 3vh;
+    top: 9vh;
+    left: 0.3vw;
+    font-size: 5vw;
+    color: #C24032;
+  }
+  
+  .email_ballon_display_none {
+    display: none;
+  }
+  
+
+  .Rectangle_8 {
+    position: absolute;
+    top: 8vh;
+    width: 88vw;
+    height: 0.3vh;
+    background-color: #000;
+  }
+
+  .Password {
+    position: absolute;
+    top: 14vh;
+    left: 0;
+    width: 30vw;
+    height: 2vh;
+    font-family: 'nintendo';
+    font-size: 7vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .Enter_your_Password {
+    position: absolute;
+    top: 18vh;
+    left: 0;
+    width: 84vw;
+    height: 3vh;
+    padding-left: 2vw;
+    font-family: 'nintendo';
+    font-size: 5vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    border: none;
+  }
+
+  .If_password_invalid {
+    position: absolute;
+    top: 18vh;
+    left: 0;
+    width: 84vw;
+    height: 3vh;
+    padding-left: 2vw;
+    font-family: 'nintendo';
+    font-size: 5vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgb(255, 99, 99);
+    box-shadow: 0 0 0 transparent;
+    border: 1px solid #999;
+    outline: 0 none;
+    transition: box-shadow 0.5s;
+    animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.5em red;
+  }
+  
+  .password_validation::before {
+    position: absolute;
+    top: 12.2vh;
+    left: 80vw;
+    content: '\00d7';
+    color:#C24032;
+    font-size: 10vw;
+  }
+  
+  .password_validation_display_none::before {
+    display: none;
+  }
+  
+  .password_validation_ballon {
+    position: absolute;
+    width: 50vw;
+    text-align: left;
+    height: 3vh;
+    top: 23vh;
+    left: 0.3vw;
+    font-size: 5vw;
+    color: #C24032;
+  }
+  
+  .password_validation_ballon_display_none {
+    display: none;
+  }
+  
+  .Rectangle_9 {
+    position: absolute;
+    top: 22vh;
+    width: 88vw;
+    height: 0.3vh;
+    background-color: #000;
+  }
+
+  .btn_3d_red {
+    position: absolute;
+    top: 28vh;
+    left: 0;
+    width: 88vw;
+    height: 5vh;
+    flex-grow: 0;
+    border: solid 0.1vw rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e74c3c;
+    box-shadow: 0 0 0 1px #c63702 inset,
+      0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+      0 8px 0 0 #C24032,
+      0 8px 0 1px rgba(0, 0, 0, 0.4),
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .Login {
+    position: absolute;
+    width: 20vw;
+    height: 2.5vh;
+    font-family: 'nintendo';
+    font-size: 6vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: white;
+  }
+}

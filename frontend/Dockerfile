@@ -19,8 +19,8 @@ RUN npm install react-bootstrap bootstrap
 
 COPY . ./
 # Expose ports
-EXPOSE 3000
+#EXPOSE 3000
 
 # Start the React app
 #RUN npm  start
-CMD ["npm", "start"]
+RUN npm run build

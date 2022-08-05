@@ -1,0 +1,57 @@
+[
+    {
+        "model": "teami.fish",
+        "pk": 1,
+        "fields": {
+            "name" : "mackerel",
+            "toxicity" : "None",
+            "prohibit_period": "4/1 ~ 6/30",
+            "prohibit_area": "21 cm",
+            "description": "The eyes are large and the pupil area is exposed. Mackerel species typically have vertical stripes on their backs and deeply forked tails. The back of the body is dark blue, and the belly is silver-white. It is mainly eaten as grilled, stewed, and fried food."
+        }
+    },
+    {
+        "model": "teami.fish",
+        "pk": 2,
+        "fields": {
+            "name" : "rockfish",
+            "toxicity" : "Yes",
+            "prohibit_period": "None",
+            "prohibit_area": "23 cm",
+            "description": "Rockfish is a common term for several species of fish, referring to their tendency to hide among rocks. The mouth is large and the spines of the dorsal fin are well developed. The body is generally dark brown and the abdomen is grayish. It is mainly used as sashimi and is eaten a lot as spicy fish stew. **Weak poison is present on its backfin.** "
+        }
+    },
+    {
+        "model": "teami.fish",
+        "pk": 3,
+        "fields": {
+            "name" : "yellow stingray",
+            "toxicity" : "Yes",
+            "prohibit_period": "None",
+            "prohibit_area": "None",
+            "description": "The body is almost pentagonal and flat. The snout is short and slightly pointed, and a line of small spines is lined up over the tail on the back of the body. Reaching no more than 36 cm across, the yellow stingray has a round pectoral fin disc and a short tail with a well-developed caudal fin. **The thorn located behind the tail is poisonous, so caution is needed.**"
+        }
+    },
+    {
+        "model": "teami.fish",
+        "pk": 4,
+        "fields": {
+            "name" : "red snapper",
+            "toxicity" : "No",
+            "prohibit_period": "None",
+            "prohibit_area": "24 cm",
+            "description": "type of sea mullet family, called 'sea lily' and has a white meat and a good scent."
+        }
+    },
+    {
+        "model": "teami.fish",
+        "pk": 5,
+        "fields": {
+            "name" : "halibut",
+            "toxicity" : "No",
+            "prohibit_period": "None",
+            "prohibit_area": "35 cm",
+            "description": "the world's largest flatfish, dark brown on the top side with a white to off-white underbelly  and have very small scales invisible to the naked eye embedded in their skin."
+        }
+    }
+]

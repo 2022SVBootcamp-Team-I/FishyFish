@@ -1,2 +1,30 @@
+#---- Django
 Django>=3.0,<4.0
 psycopg2>=2.8
+djangorestframework
+django-storages
+Pillow
+djangorestframework-simplejwt
+bcrypt
+django-cors-headers
+#---- S3 bucket
+boto3
+#---- Celery
+celery
+#redis
+#---- swagger
+drf-yasg
+#---- Yolov5
+torch
+torchvision
+numpy
+pandas
+opencv-python
+PyYAML
+requests
+tqdm
+matplotlib
+seaborn
+
+django-prometheus
+gunicorn

@@ -1,63 +1,15 @@
-.UploadImageBox {
-    width: 32.375rem;
-    height: 25.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin: 1.625rem 1.937rem 1.875rem 0;
-    padding: 3.5rem;
-    margin-top: 9.938rem;
-    margin-left: 2.875rem;
-    border-radius: 10px;
-    border: dashed 1px rgba(0, 0, 0, 0.25);
-}
-.UploadLetter {
-    width: 34.375rem;
-    height: 33.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin: 1.625rem 1.937rem 1.875rem 0;
-    padding: 3.5rem;
-    border-radius: 10px;
-    border: solid 1px rgba(0, 0, 0, 0.25);
-}
-
-.big {
-    width: 25.625rem;
-    height: 2.25rem;
-    flex-grow: 0;
-    font-family: Poppins;
-    font-size: 1.5rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
-}
-
-.small {
-    width: 20.188rem;
-    height: 1.438rem;
-    flex-grow: 0;
-    font-family: Poppins;
-    font-size: 0.938rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: rgba(0, 0, 0, 0.4);
-}
 
 .img_box {
     width: 20.188rem;
     height: 1.438rem;
+}
+.drag_and_drop{
+    width: 28rem;
+    height: 17rem;
+    background-image: url("../../../public/img/MessageTop.png");
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor:pointer;
 }

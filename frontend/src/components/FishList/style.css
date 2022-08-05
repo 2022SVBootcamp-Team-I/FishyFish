@@ -1,3 +1,4 @@
+
 .cell {
     height: 4.5rem;
     align-self: stretch;
@@ -8,23 +9,12 @@
     align-items: center;
     gap: 8px;
     padding: 0.25rem 0.5rem;
+    cursor: pointer;
 }
 
 .cell:hover{
-    border:1px solid aqua;
-}
-.cell2 {
-    height: 4.5rem;
-    align-self: stretch;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    padding: 0.25rem 0.5rem;
+    border:1px solid rgb(255, 117, 113);
     border-radius: 8px;
-    background-color: #dd7878;
 }
 
 .Avatar {
@@ -51,8 +41,8 @@
     height: 1.125rem;
     align-self: start;
     flex-grow: 0;
-    font-family: Poppins;
-    font-size: 0.75rem;
+    font-family: 'nintendo';
+    font-size: 2rem;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -66,8 +56,8 @@
     height: 0.875rem;
     align-self: start;
     flex-grow: 0;
-    font-family: Roboto;
-    font-size: 0.75rem;
+    font-family: 'nintendo';
+    font-size: 1.5rem;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
@@ -77,6 +67,8 @@
     color: #000;
 }
 .FishList_Content{
-    display: felx;
-    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
 }
