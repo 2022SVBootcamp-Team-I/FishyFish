@@ -9,7 +9,7 @@ WORKDIR /backend
 COPY requirements.txt /backend/
 
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 RUN apt-get update && apt-get install -y python3-opencv
 
 COPY . .
