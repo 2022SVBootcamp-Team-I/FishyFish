@@ -75,16 +75,20 @@ class myFishList(APIView):
         images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
-        fish = Fish.objects.get(id=image.fish_id)
-        result = {
-            'url': image.url.url, 
-            'name': fish.name,
-            'toxicity': fish.toxicity,
-            'prohibit_period': fish.prohibit_period,
-            'prohibit_area': fish.prohibit_area,
-            'description': fish.description
-        }
-        return Response(result, status=status.HTTP_200_OK)
+        image.delete()
+        return Response({"message": "delete successs"}, status=status.HTTP_204_NO_CONTENT)
+
+        # fish = Fish.objects.get(id=image.fish_id)
+        # print(image.url.url)
+        # result = {
+        #     'url': image.url.url, 
+        #     'name': fish.name,
+        #     'toxicity': fish.toxicity,
+        #     'prohibit_period': fish.prohibit_period,
+        #     'prohibit_area': fish.prohibit_area,
+        #     'description': fish.description
+        # }
+        # return Response(result, status=status.HTTP_200_OK)
 
     # 이미지 삭제
     @swagger_auto_schema(operation_id="특정 이미지 삭제")

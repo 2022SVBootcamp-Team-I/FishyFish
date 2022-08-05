@@ -45,22 +45,17 @@ export default function Home() {
         setButton(true);
         alert('분석완료 하였습니다');
         setLoading(false);
-        // // setResult((prev: any) => prev.push(response.data));
-        // 
-        // setResult(response.data);
-        // console.log(result);
       }))
       .catch((error)=>{
         console.log(error);
+        setLoading(false);
       })
-    console.log("전송완료 전송파일 데이터",formdata);
     
   }
 
 
   useEffect(()=>{ //이미지 프리뷰를 위해 useEffect사용
     preview();
-    console.log(imageFile)
     return ()=> {preview()};
   });
 
