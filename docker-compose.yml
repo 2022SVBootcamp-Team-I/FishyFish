@@ -47,7 +47,8 @@ services:
     container_name: django-back
     build:
       context: ./backend
-    command: gunicorn teami.wsgi --bind 0.0.0.0:8000
+    command: >
+        bash -c "python manage.py migrate && python manage.py loaddata data.json && gunicorn teami.wsgi --bind 0.0.0.0:8000"
     volumes:
       - ./backend/:/backend/
     ports:

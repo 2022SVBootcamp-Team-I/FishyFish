@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=20)),
-                ('toxicity', models.BooleanField()),
+                ('toxicity', models.CharField(max_length=20)),
                 ('prohibit_period', models.CharField(max_length=50)),
                 ('prohibit_area', models.CharField(max_length=50)),
                 ('description', models.TextField()),

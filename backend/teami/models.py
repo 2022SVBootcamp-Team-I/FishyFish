@@ -15,8 +15,8 @@ class User(models.Model):
         db_table = 'user'
 
 class Fish(ExportModelOperationsMixin("fish"), models.Model):
-    name = models.CharField(max_length = 20)
-    toxicity = models.BooleanField()
+    name = models.CharField(max_length=20)
+    toxicity = models.CharField(max_length=20)
     prohibit_period = models.CharField(max_length=50)
     prohibit_area = models.CharField(max_length=50)
     description = models.TextField()
