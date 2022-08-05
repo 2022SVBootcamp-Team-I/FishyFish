@@ -79,8 +79,9 @@ export default function Home() {
   }
 
   const fishDelete=(id:number)=>{
+    console.log(id)
     dispatch({type:"FISH_DELETE",id})
-    axios.delete("http://localhost:8000/api/v1/myfish/",{data:{image_id:id},withCredentials: true})      
+    axios.delete("http://localhost:8000/api/v1/myfish/",{data:{image_id:`${id}`},withCredentials: true})   
       .then(()=>{
       })
       .catch((error)=>{
@@ -107,7 +108,6 @@ export default function Home() {
           })
         }
       </div>
-      <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>
     </>
   );
 }
