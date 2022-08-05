@@ -39,7 +39,7 @@ export default function LoginForm() {
       dispatch(SET_TOKEN(res.data.token.access)); // access 토큰 state에 저장
       dispatch(USER_LOGIN({email: userLoginData.email}))
       resetInputForm();
-      window.location.href = "/upload";
+      window.location.href = "/";
     })
     .catch((err) => {
       setEmailValid(false); 

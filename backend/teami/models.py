@@ -2,6 +2,7 @@ from . import settings
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
+from django_prometheus.models import ExportModelOperationsMixin
 
 class User(models.Model):
     email = models.EmailField(max_length=150, null=False, unique=True)
@@ -13,9 +14,9 @@ class User(models.Model):
     class Meta:
         db_table = 'user'
 
-class Fish(models.Model):
-    name = models.CharField(max_length = 20)
-    toxicity = models.BooleanField()
+class Fish(ExportModelOperationsMixin("fish"), models.Model):
+    name = models.CharField(max_length=20)
+    toxicity = models.CharField(max_length=20)
     prohibit_period = models.CharField(max_length=50)
     prohibit_area = models.CharField(max_length=50)
     description = models.TextField()

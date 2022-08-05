@@ -25,3 +25,6 @@ requests
 tqdm
 matplotlib
 seaborn
+
+django-prometheus
+gunicorn
