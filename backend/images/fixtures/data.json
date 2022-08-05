@@ -53,5 +53,16 @@
             "prohibit_area": "35 cm",
             "description": "the world's largest flatfish, dark brown on the top side with a white to off-white underbelly  and have very small scales invisible to the naked eye embedded in their skin."
         }
+    },
+    {
+        "model": "teami.fish",
+        "pk": 6,
+        "fields": {
+            "name" : "Undefined",
+            "toxicity" : "No",
+            "prohibit_period": "None",
+            "prohibit_area": "None",
+            "description": "Sorry we were not able to determine the fish. Please try again with a different image"
+        }
     }
 ]
