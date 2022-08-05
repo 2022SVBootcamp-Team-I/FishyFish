@@ -51,8 +51,8 @@ ELK have errors depending on version. Use same version accross all three stacks.
 # :office: Member
 | **Name**       | **Develop Area**                           | **Role**                                         | **Github**                                         |
 | ---------- | ---------------------------------- | -------------------------------------------- | -------------------------------------------------- |
-| :kissing:Ryan Lee(Leader)   | Back-end, Machine Learning, DevOps | API Design, Data Engineering, Docker | [Github Profile](https://github.com/printSANO)  |
+| :kissing:Ryan Lee(Leader)   | Back-end, AI, DevOps | API Design, Machine Learning, Docker, Data Monitoring | [Github Profile](https://github.com/printSANO)  |
 | :laughing:김연진   | Back-end                  | API Design, Data Engineering                      | [Github Profile](https://github.com/homebdy)   |
-| :stuck_out_tongue_winking_eye:손희연   | Back-end           | API Design, Machine Learning                  | [Github Profile](https://github.com/fluorine1805)   |
+| :stuck_out_tongue_winking_eye:손희연   | Back-end, AI           | API Design, Machine Learning                  | [Github Profile](https://github.com/fluorine1805)   |
 | :joy:용준현   | Frontend, DevOps            | Web Development, Deploy                 | [Github Profile](https://github.com/pione3r) |
 | :yum:유제빈 | Frontend                      | Web Development                                    | [Github Profile](https://github.com/Yujaebin)   |
