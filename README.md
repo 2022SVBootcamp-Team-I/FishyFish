@@ -19,7 +19,7 @@
 
 <img width="1436" alt="image" src="https://user-images.githubusercontent.com/86517634/182526687-49169532-dc33-4279-af6e-51fb904933a1.png">
 
-# 📂file tree
+# 📂 file tree
 
 ```c
 📦fishy fish
@@ -110,29 +110,41 @@
 ┃ ┃ ┃ ┃ ┗ 📜style.css
 ┃ ┃ ┃ ┣ 📂NotFound
 ┃ ┃ ┃ ┃ ┗ 📜NotFound.tsx
-┃ ┃ ┃ ┣ 📂Information
+┃ ┃ ┃ ┣ 📂Pagenation
 ┃ ┃ ┃ ┃ ┣ 📜ka1.svg
 ┃ ┃ ┃ ┃ ┣ 📜ka2.svg
 ┃ ┃ ┃ ┃ ┣ 📜ka3.png
 ┃ ┃ ┃ ┃ ┣ 📜Pagenation.module.css
 ┃ ┃ ┃ ┃ ┗ 📜Pagenation.tsx
-┃ ┃ ┃ ┣ 📜index.css
-┃ ┃ ┃ ┗ 📜index.js
+┃ ┃ ┃ ┣ 📂RegisterForm
+┃ ┃ ┃ ┃ ┣ 📜react-awesome-autoplay.d.ts
+┃ ┃ ┃ ┃ ┣ 📜RegisterFrom.module.css
+┃ ┃ ┃ ┃ ┣ 📜RegisterFrom.tsx
+┃ ┃ ┃ ┃ ┗ 📜RegisterType.ts
+┃ ┃ ┣ 📂db
+┃ ┃ ┃ ┗ 📜data.json
+┃ ┃ ┣ 📂function
+┃ ┃ ┃ ┣ 📜emailValidation.ts
+┃ ┃ ┃ ┣ 📜handleCookie.ts
+┃ ┃ ┃ ┣ 📜islogin.ts
+┃ ┃ ┃ ┗ 📜passwordCheck.ts
 ┃ ┃ ┣ 📂hooks
-┃ ┃ ┃ ┗ 📜useTitle.tsx
+┃ ┃ ┃ ┣ 📜useGetData.ts
+┃ ┃ ┃ ┗ 📜useTitle.ts
 ┃ ┃ ┣ 📂pages
 ┃ ┃ ┃ ┣ 📂Home
 ┃ ┃ ┃ ┃ ┣ 📜index.tsx
 ┃ ┃ ┃ ┃ ┗ 📜style.css
 ┃ ┃ ┃ ┣ 📂Login
-┃ ┃ ┃ ┃ ┣ 📜Login.module.css
 ┃ ┃ ┃ ┃ ┗ 📜Login.tsx
 ┃ ┃ ┃ ┣ 📂Register
-┃ ┃ ┃ ┃ ┣ 📜Register.module.css
 ┃ ┃ ┃ ┃ ┗ 📜Register.tsx
+┃ ┃ ┃ ┣ 📂Test
+┃ ┃ ┃ ┃ ┗ 📜MyDropzone.tsx
 ┃ ┃ ┃ ┣ 📂Upload
 ┃ ┃ ┃ ┃ ┣ 📜index.tsx
 ┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┣ 📂redux
 ┃ ┃ ┃ ┣ 📜App.css
 ┃ ┃ ┃ ┣ 📜App.tsx
 ┃ ┃ ┃ ┣ 📜index.css
