@@ -15,16 +15,20 @@ celery
 #---- swagger
 drf-yasg
 #---- Yolov5
-torch
-torchvision
-numpy
+matplotlib>=3.2.2
+numpy>=1.18.5
+opencv-python>=4.1.2
+torch==1.10.1
+torchvision==0.11.2
 pandas
-opencv-python
-PyYAML
+PyYAML==5.4.1
 requests
-tqdm
 matplotlib
-seaborn
+seaborn>=0.11.0
+tqdm>=4.41.0
+setuptools<=59.5.0
+matplotlib>=3.2.2
+Pillow>=7.1.2
 
 django-prometheus
 gunicorn
