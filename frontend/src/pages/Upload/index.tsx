@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from "react";
 import Information from '../../components/Infomation'
 import InfomationBlank from '../../components/infomationBlank'
+import Infomation_2 from '../../components/Infomation_2'
 import axios from 'axios';
 import './style.css'
 import ImageUploadComponent from "../../components/ImageUpload/ImageUploadComponent"
@@ -8,33 +9,52 @@ import Pagenation from "../../components/Pagenation/Pagenation"
 import { Box as ChakraBox } from "@chakra-ui/react";
 import NaviBar from "../../components/NaviBar";
 import LinearProgress from '@mui/material/LinearProgress';
+import { useSelector } from "react-redux";
+
+
 
 
 export default function Home() {
   let [imageFile,setImageFile]=useState();
   const [button,setButton]=useState(false);
-  const [result,setResult]=useState([]);
+  const [url,setUrl]=useState('');
+  const [name,setName]=useState('');   
+  const [toxicity,setToxicity]=useState(false);   
+  const [prohibit_period,setProhibit_period]=useState('');   
+  const [prohibit_area,setProhibit_area]=useState('');   
+  const [description,setDescription]=useState('');                 
   const [loading,setLoading]=useState(false);
 
   const onChangeImage = (event: any) => {
     setImageFile(event.target.files);
   };
 
-
+  const aToken = useSelector((state: any) => state.persistedReducer.tokenSlice.accessToken);
+  
   const sendImage = async(e: any)=>{
     setLoading(true);
-    setButton(true);
+    
     const formdata=new FormData();
     formdata.append('uploadImage', imageFile![0]);
-    axios.post("",formdata)
+    axios.post("http://localhost:8000/api/v1/images/",formdata, {withCredentials: true})
       .then((response=>{
-        console.log(response.data)
-        setResult(response.data);
+        setUrl(response.data.url);
+        setName(response.data.name)
+        setToxicity(response.data.toxicity)
+        setProhibit_period(response.data.prohibit_period)
+        setProhibit_area(response.data.prohibit_area)
+        setDescription(response.data.description)
+        setButton(true);
+        alert('분석완료 하였습니다');
+        // // setResult((prev: any) => prev.push(response.data));
+        // 
+        // setResult(response.data);
+        // console.log(result);
       }))
       .catch((error)=>{
         console.log(error);
       })
-    console.log("전송완료 전송파일 데이터",formdata)
+    console.log("전송완료 전송파일 데이터",formdata);
     setLoading(false);
   }
 
@@ -98,9 +118,7 @@ export default function Home() {
           
           {
           button
-          ? result.map((apiData)=>{
-            return(<Information apiData={apiData}/>);
-          })
+          ? <Infomation_2  url={url} name={name} toxicity={toxicity} prohibit_period={prohibit_period} prohibit_area={prohibit_area} description={description}/>
           : <InfomationBlank/>
           }
         </div>

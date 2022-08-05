@@ -35,8 +35,17 @@
 .profile{ 
   margin-left:1.313rem;
 }
+.fishlist{
+  margin-left:1.313rem;
+}
 .page{
   display: flex;
+}
+
+.upload a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .fishlist a {

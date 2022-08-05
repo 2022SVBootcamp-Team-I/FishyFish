@@ -19,7 +19,7 @@ function index({title_1,title_2,title_3,content_1,content_2,content_3}:InfoBoxIn
         <div className='infoBox_Content'>
             <span className='content_1'>{content_1}</span>
             <span className='content_2'>{content_2}</span>
-            <span className='content_3'>{content_3}</span>
+            <span className='content_3'>{{content_3}?<div>Safe</div>:<div>Harmful</div>}</span>
         </div>
     </div>
   )

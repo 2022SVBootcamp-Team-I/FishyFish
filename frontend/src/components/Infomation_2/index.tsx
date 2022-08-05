@@ -1,21 +1,16 @@
 import React from 'react'
 import "./style.css";
 import InfoBoxInner from "../InfoBoxInner"
-type InformationType = {
-  apiData:{
+type InformationType_2 = {
     url:string
-    id:number
-    fish: {
-      name:string
-      toxicity:boolean;
-      prohibit_period:string;
-      prohibit_area:string;
-      description:string;
-    }
-  }
-};
-function index({apiData}:InformationType) {
-  const {url,id,fish}=apiData
+    name:string
+    toxicity:boolean;
+    prohibit_period:string;
+    prohibit_area:string;
+    description:string;
+  
+  };
+function index({url,name,toxicity,prohibit_period,prohibit_area,description}:InformationType_2) {
   return (
     <div className="box">
       <div className="grayBox">
@@ -24,13 +19,13 @@ function index({apiData}:InformationType) {
           <div className='test'>
             <div className="imgBox"><img className='imgBox_img' src={url} alt="오류"/></div>
             <div className='commentBox'>
-              <div className="numbering">NO.00{id}</div>
-              <div className="name">{fish.name}</div>
-              <div className="explain">{fish.description}</div>
+              <div className="numbering">NO.???</div>
+              <div className="name">{name}</div>
+              <div className="explain">{description}</div>
             </div>
           </div>
           <div className="infoBox">
-          <InfoBoxInner content_1={fish.prohibit_period} content_2={fish.prohibit_area} content_3={fish.toxicity} title_1='Period' title_2='Area' title_3='Toxicity'/>
+          <InfoBoxInner content_1={prohibit_period} content_2={prohibit_area} content_3={toxicity} title_1='Period' title_2='Area' title_3='Toxicity'/>
           </div>
         </div>
         <img src="img/under.png" alt="이미지오류"></img>
