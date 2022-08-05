@@ -49,15 +49,10 @@ ELK have errors depending on version. Use same version accross all three stacks.
 <img width="820" alt="image" src="https://user-images.githubusercontent.com/86517634/182536438-48a9dd3e-7bac-4f14-9b7f-2d8a2af5be53.png">
 
 # :office: Member
-| **이름** |:kissing:Ryan Lee(Leader)|:laughing:김연진|:stuck_out_tongue_winking_eye:손희연|:joy:용준현|:yum:유제빈|
-||:---:|:---:|:---:|:---:|:---:|
-| **역할** | Back-end <br/> DevOps <br/> AI Traning | &nbsp;&nbsp; Back-end &nbsp;&nbsp;<br/>AI inference  |  &nbsp;&nbsp;Back-end&nbsp;&nbsp;<br/>DevOps  | Web Desginer <br/> Front-end developer | Web Desginer <br/> Front-end developer|
-| **GitHub** |
-# :office: Member
 | **Name**       | **Develop Area**                           | **Role**                                         | **Github**                                         |
 | ---------- | ---------------------------------- | -------------------------------------------- | -------------------------------------------------- |
-| :kissing:Ryan Lee(Leader)   | Front-end, Back-end, Deep learning | Web development,API Design, Data Engineering | [Github Profile](https://github.com/yunyun3599)  |
-| :laughing:김연진   | Front-end, Devops                  | Web development, Docker                      | [Github Profile](https://github.com/leecr1215)   |
-| :stuck_out_tongue_winking_eye:손희연   | Front-end, Deep learning           | Web development, Algorithm                   | [Github Profile](https://github.com/shxnyoung)   |
-| :joy:용준현   | Back-end, Deep learning            | API Design, Data Engineering                 | [Github Profile](https://github.com/hayoung1214) |
-| :yum:유제빈 | Deep learning                      | Algorithm                                    | [Github Profile](https://github.com/printSANO)   |
+| :kissing:Ryan Lee(Leader)   | Front-end, Back-end, Deep learning | Web development,API Design, Data Engineering | [Github Profile](https://github.com/printSANO)  |
+| :laughing:김연진   | Front-end, Devops                  | Web development, Docker                      | [Github Profile](https://github.com/homebdy)   |
+| :stuck_out_tongue_winking_eye:손희연   | Front-end, Deep learning           | Web development, Algorithm                   | [Github Profile](https://github.com/fluorine1805)   |
+| :joy:용준현   | Back-end, Deep learning            | API Design, Data Engineering                 | [Github Profile](https://github.com/pione3r) |
+| :yum:유제빈 | Deep learning                      | Algorithm                                    | [Github Profile](https://github.com/Yujaebin)   |
