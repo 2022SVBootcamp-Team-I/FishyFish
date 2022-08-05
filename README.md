@@ -53,3 +53,11 @@ ELK have errors depending on version. Use same version accross all three stacks.
 ||:---:|:---:|:---:|:---:|:---:|
 | **역할** | Back-end <br/> DevOps <br/> AI Traning | &nbsp;&nbsp; Back-end &nbsp;&nbsp;<br/>AI inference  |  &nbsp;&nbsp;Back-end&nbsp;&nbsp;<br/>DevOps  | Web Desginer <br/> Front-end developer | Web Desginer <br/> Front-end developer|
 | **GitHub** |
+# :office: Member
+| Name       | 개발분야                           | **Role**                                         | **Github**                                         |
+| ---------- | ---------------------------------- | -------------------------------------------- | -------------------------------------------------- |
+| :kissing:Ryan Lee(Leader)   | Front-end, Back-end, Deep learning | Web development,API Design, Data Engineering | [개인 리포로 이동](https://github.com/yunyun3599)  |
+| laughing:김연진   | Front-end, Devops                  | Web development, Docker                      | [개인 리포로 이동](https://github.com/leecr1215)   |
+| :stuck_out_tongue_winking_eye:손희연   | Front-end, Deep learning           | Web development, Algorithm                   | [개인 리포로 이동](https://github.com/shxnyoung)   |
+| :joy:용준현   | Back-end, Deep learning            | API Design, Data Engineering                 | [개인 리포로 이동](https://github.com/hayoung1214) |
+| :yum:유제빈 | Deep learning                      | Algorithm                                    | [개인 리포로 이동](https://github.com/printSANO)   |
