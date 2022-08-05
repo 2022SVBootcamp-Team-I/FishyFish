@@ -56,8 +56,8 @@ ELK have errors depending on version. Use same version accross all three stacks.
 # :office: Member
 | Name       | 개발분야                           | **Role**                                         | **Github**                                         |
 | ---------- | ---------------------------------- | -------------------------------------------- | -------------------------------------------------- |
-| :kissing:Ryan Lee(Leader)   | Front-end, Back-end, Deep learning | Web development,API Design, Data Engineering | [개인 리포로 이동](https://github.com/yunyun3599)  |
-| laughing:김연진   | Front-end, Devops                  | Web development, Docker                      | [개인 리포로 이동](https://github.com/leecr1215)   |
-| :stuck_out_tongue_winking_eye:손희연   | Front-end, Deep learning           | Web development, Algorithm                   | [개인 리포로 이동](https://github.com/shxnyoung)   |
-| :joy:용준현   | Back-end, Deep learning            | API Design, Data Engineering                 | [개인 리포로 이동](https://github.com/hayoung1214) |
-| :yum:유제빈 | Deep learning                      | Algorithm                                    | [개인 리포로 이동](https://github.com/printSANO)   |
+| :kissing:Ryan Lee(Leader)   | Front-end, Back-end, Deep learning | Web development,API Design, Data Engineering | [Github Profile](https://github.com/yunyun3599)  |
+| :laughing:김연진   | Front-end, Devops                  | Web development, Docker                      | [Github Profile](https://github.com/leecr1215)   |
+| :stuck_out_tongue_winking_eye:손희연   | Front-end, Deep learning           | Web development, Algorithm                   | [Github Profile](https://github.com/shxnyoung)   |
+| :joy:용준현   | Back-end, Deep learning            | API Design, Data Engineering                 | [Github Profile](https://github.com/hayoung1214) |
+| :yum:유제빈 | Deep learning                      | Algorithm                                    | [Github Profile](https://github.com/printSANO)   |
