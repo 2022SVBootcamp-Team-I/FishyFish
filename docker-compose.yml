@@ -1,6 +1,18 @@
 version: "3.8"
    
 services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:8080"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - react_build:/var/www/react
+    depends_on:
+      - frontend
+      - backend
+    restart: always
+
   db:
     image: postgres:latest
     container_name: sql_db
@@ -20,9 +32,9 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=hwalbindang22@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=secret
-      - PGADMIN_LISTEN_PORT=80
+      - PGADMIN_LISTEN_PORT=81
     ports:
-      - 8080:80
+      - 8010:81
     volumes:
       - pgadmin_data_dev:/var/lib/pgadmin
     depends_on:
@@ -35,7 +47,7 @@ services:
     container_name: django-back
     build:
       context: ./backend
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn teami.wsgi --bind 0.0.0.0:8000
     volumes:
       - ./backend/:/backend/
     ports:
@@ -87,13 +99,14 @@ services:
     container_name: react
     #command: [ "npm", "start" ]
     stdin_open: true # react-script 3.4.1 부터 필요
-    tty: true
-    ports:
-      - 3000:3000
+    #tty: true
+    #ports:
+    #  - 3000:3000
     volumes:
       - ./frontend/src:/frontend/src
       - /frontend/node_modules
   #    - ./frontend/node_modules/:/frontend/node_modules
+      - react_build:/frontend/build
     environment:
   #    - CI=true
       - CHOKIDAR_USEPOLLING=true
@@ -137,3 +150,4 @@ volumes:
   postgres_data_dev:
   pgadmin_data_dev:
   rabbitmq_data_dev:
+  react_build:

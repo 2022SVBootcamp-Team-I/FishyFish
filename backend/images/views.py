@@ -1,50 +1,49 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
 from teami.models import Image, Fish, User
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
-from .serializer import *
 from drf_yasg.utils import swagger_auto_schema
+from environments import get_secret
+from PIL import Image as PILImage
 import jwt
 import sys
+import uuid
+import io
 from .tasks import fish_ai
-from django.core.files.storage import default_storage
+from .serializer import *
 sys.path.append('..')
-from environments import get_secret
-
 
 class imageView(APIView):
     # 이미지 업로드
     @swagger_auto_schema(operation_id="이미지 업로드")
     def post(self, request):
-        user_token = jwt.decode(request.COOKIES.get("access"),get_secret("SECRET_KEY"), algorithms=['HS256'])
+        user_token = jwt.decode(request.COOKIES.get("access"), get_secret("SECRET_KEY"), algorithms=['HS256'])
         userId = user_token['user_id']
         if userId is None:
             return Response({"message":"로그인 후 이용 가능합니다."}, status=status.HTTP_400_BAD_REQUEST)
         image = Image()
-        image.url = request.FILES.get('url')
-
-        content = {
-            'url': image.url,
-            'user_id': userId,
-            'fish': 1
-        }
-        # 이미지 정보 저장
-        serializers = imageSerializer(data=content)
-        if serializers.is_valid():
-            serializers.save()
-        else:
-            Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
-            
-        fish = Fish.objects.get(id=serializers.data.get('fish'))
-        # 리턴 값
-        #tes = 셀러리 결과물
-        tes = fish_ai.delay(serializers.data.get('url')).get()
-        print(tes)
+        image.url = request.FILES.get('uploadImage')
         
+        file_name = str(uuid.uuid4())  
+        imageByte = io.BytesIO()
+        image_file = PILImage.open(image.url)
+        image_file.save(imageByte, 'png')
+        imageByte.seek(0)
+        result_url = ContentFile(imageByte.read(), f'{file_name}.png')
+        image.url = result_url
+        image.user_id = userId
+        image.save()
+
+        fish_id = fish_ai.delay(image.url.url).get()
+        image.fish = Fish.objects.get(id=fish_id)
+        image.save()
+        fish = image.fish
         content = {
-            'url': serializers.data.get('url'), #사진
+            'url': image.url.url, #사진
             'name': fish.name, #이름
             'toxicity':fish.toxicity,
             'prohibit_period': fish.prohibit_period,
@@ -75,10 +74,9 @@ class myFishList(APIView):
         images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
         image = images.get(id=image_id)
-        serializer = imageSerializer(image)
-        fish = Fish.objects.get(id=serializer.data.get('fish'))
+        fish = Fish.objects.get(id=image.fish_id)
         result = {
-            'url': serializer.data.get('url'), 
+            'url': image.url.url, 
             'name': fish.name,
             'toxicity': fish.toxicity,
             'prohibit_period': fish.prohibit_period,

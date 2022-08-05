@@ -30,7 +30,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='User',
             fields=[
+<<<<<<< HEAD
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+=======
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+>>>>>>> develop
                 ('email', models.EmailField(max_length=150, unique=True)),
                 ('password', models.CharField(max_length=255)),
                 ('username', models.CharField(max_length=50)),
@@ -45,10 +49,10 @@ class Migration(migrations.Migration):
             name='Image',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('url', models.ImageField(upload_to='image')),
+                ('url', models.ImageField(upload_to='')),
                 ('create_date', models.DateTimeField(auto_now_add=True)),
-                ('fish', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='fish_id', to='teami.fish')),
-                ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user_id', to='teami.user')),
+                ('fish', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='fish_id', to='teami.fish')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user_id', to='teami.user')),
             ],
             options={
                 'db_table': 'image',

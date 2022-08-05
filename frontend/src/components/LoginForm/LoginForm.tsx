@@ -41,7 +41,7 @@ export default function LoginForm() {
       setRefreshToken(res.data.token.refresh); // refresh 토큰 쿠키에 저장
       dispatch(SET_TOKEN(res.data.token.access)); // access 토큰 state에 저장
       resetInputForm();
-      window.location.href = "/upload";
+      window.location.href = "/";
     })
     .catch((err) => {
       setEmailValid(false); 
