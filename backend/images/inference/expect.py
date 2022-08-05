@@ -11,12 +11,14 @@ def fish_detect(img_link):
     results = model(im)
 
     # Results
-    fish = results.pandas().xyxy[0].values.tolist()
-    fish_ac = fish[0][-1]
-    lst = ["mack","rock","ray","snap","hali"]
     fish_dict = {"mack":1, "rock":2, "ray":3, "snap":4, "hali":5}
-    if fish_ac in lst:
-        i = fish_dict[fish_ac]
+    fish = results.pandas().xyxy[0].values.tolist()
+    try:
+        i = fish[0][-1]
+        x = fish_dict[i]
+    except:
+        x = 6
     else:
-        i = 6
-    return i
+        i = fish[0][-1]
+        x = fish_dict[i]
+    return x
