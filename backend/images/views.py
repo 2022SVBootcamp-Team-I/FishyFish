@@ -13,6 +13,7 @@ import jwt
 import sys
 import uuid
 import io
+from django.utils.datastructures import MultiValueDictKeyError
 from .tasks import fish_ai
 from .serializer import *
 sys.path.append('..')
@@ -94,6 +95,10 @@ class myFishList(APIView):
         userId = user_token['user_id']
         images = Image.objects.filter(user_id=userId)
         image_id = request.POST['image_id']
+        if 'is_private' in request.POST:
+            is_private = request.POST['is_private']
+        else:
+            is_private = False
         image = images.get(id=image_id)
         image.delete()
         return Response({"message": "delete successs"}, status=status.HTTP_204_NO_CONTENT)

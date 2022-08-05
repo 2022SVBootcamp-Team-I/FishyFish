@@ -16,7 +16,7 @@ function index() {
             </div>
           </div>
           <div className="infoBox">
-          <InfoBoxInner content_1='' content_2='' content_3={false} title_1='Period' title_2='Area' title_3='Toxicity'/>
+          <InfoBoxInner content_1='' content_2='' content_3="" title_1='Period' title_2='Size' title_3='Toxicity'/>
           </div>
         </div>
         <img src="img/under.png" alt="이미지오류"></img>

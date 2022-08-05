@@ -19,7 +19,7 @@ export default function Home() {
   const [button,setButton]=useState(false);
   const [url,setUrl]=useState('');
   const [name,setName]=useState('');   
-  const [toxicity,setToxicity]=useState(false);   
+  const [toxicity,setToxicity]=useState('');   
   const [prohibit_period,setProhibit_period]=useState('');   
   const [prohibit_area,setProhibit_area]=useState('');   
   const [description,setDescription]=useState('');                 
@@ -29,11 +29,9 @@ export default function Home() {
     setImageFile(event.target.files);
   };
 
-  const aToken = useSelector((state: any) => state.persistedReducer.tokenSlice.accessToken);
   
   const sendImage = async(e: any)=>{
     setLoading(true);
-    
     const formdata=new FormData();
     formdata.append('uploadImage', imageFile![0]);
     axios.post("http://localhost:8000/api/v1/images/",formdata, {withCredentials: true})
@@ -46,6 +44,7 @@ export default function Home() {
         setDescription(response.data.description)
         setButton(true);
         alert('분석완료 하였습니다');
+        setLoading(false);
         // // setResult((prev: any) => prev.push(response.data));
         // 
         // setResult(response.data);
@@ -55,7 +54,7 @@ export default function Home() {
         console.log(error);
       })
     console.log("전송완료 전송파일 데이터",formdata);
-    setLoading(false);
+    
   }
 
 

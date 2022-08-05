@@ -7,7 +7,7 @@ type InformationType = {
     id:number
     fish: {
       name:string
-      toxicity:boolean;
+      toxicity:string;
       prohibit_period:string;
       prohibit_area:string;
       description:string;
@@ -30,7 +30,7 @@ function index({apiData}:InformationType) {
             </div>
           </div>
           <div className="infoBox">
-          <InfoBoxInner content_1={fish.prohibit_period} content_2={fish.prohibit_area} content_3={fish.toxicity} title_1='Period' title_2='Area' title_3='Toxicity'/>
+          <InfoBoxInner content_1={fish.prohibit_period} content_2={fish.prohibit_area} content_3={fish.toxicity} title_1='Period' title_2='Size' title_3='Toxicity'/>
           </div>
         </div>
         <img src="img/under.png" alt="이미지오류"></img>

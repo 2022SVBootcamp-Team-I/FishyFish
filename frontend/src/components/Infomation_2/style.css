@@ -104,10 +104,10 @@ HTML
 }
 
 
-.explain {
+.explain_info2 {
     flex-grow: 0;
     font-family: 'nintendo';
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
@@ -115,6 +115,7 @@ HTML
     letter-spacing: normal;
     text-align: left;
     color: #000;
+    margin-bottom: 2.2rem;
 }
 
 .infoBox_Line {

@@ -6,7 +6,7 @@ type InfoBoxInnerType = {
   title_3:string;
   content_1:string;
   content_2:string;
-  content_3:boolean;
+  content_3:string;
 };
 function index({title_1,title_2,title_3,content_1,content_2,content_3}:InfoBoxInnerType) {
   return (
@@ -19,7 +19,7 @@ function index({title_1,title_2,title_3,content_1,content_2,content_3}:InfoBoxIn
         <div className='infoBox_Content'>
             <span className='content_1'>{content_1}</span>
             <span className='content_2'>{content_2}</span>
-            <span className='content_3'>{{content_3}?<div>Safe</div>:<div>Harmful</div>}</span>
+            <span className='content_3'>{{content_3}?<div>Harmful</div>:<div>Safe</div>}</span>
         </div>
     </div>
   )
