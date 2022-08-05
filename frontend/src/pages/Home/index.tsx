@@ -94,10 +94,9 @@ export default function Home() {
     <div className="page">
         <div className='concon'>
           <span className="fishList">Myfish List</span>
-          {
-          /* {state.data.map((apiData)=>{
+          {state.data.map((apiData)=>{
             return(<FishList fishDelete={fishDelete} apiData={apiData} fishClick={fishClick}/>);
-          })} */}
+          })}
         </div>
         {
           state.selectFishBoolean
