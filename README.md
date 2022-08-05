@@ -90,10 +90,10 @@
 ┃ ┃ ┃ ┃ ┗ 📜style.css
 ┃ ┃ ┃ ┣ 📂ImageUpload
 ┃ ┃ ┃ ┃ ┣ 📜index.tsx
-┃ ┃ ┃ ┃ ┣ 📜style.css
+┃ ┃ ┃ ┃ ┗ 📜style.css
 ┃ ┃ ┃ ┣ 📂InfoBoxInner
 ┃ ┃ ┃ ┃ ┣ 📜index.tsx
-┃ ┃ ┃ ┃ ┣ 📜style.css
+┃ ┃ ┃ ┃ ┗ 📜style.css
 ┃ ┃ ┃ ┣ 📂Information
 ┃ ┃ ┃ ┃ ┣ 📜index.tsx
 ┃ ┃ ┃ ┃ ┗ 📜style.css
@@ -116,11 +116,11 @@
 ┃ ┃ ┃ ┃ ┣ 📜ka3.png
 ┃ ┃ ┃ ┃ ┣ 📜Pagenation.module.css
 ┃ ┃ ┃ ┃ ┗ 📜Pagenation.tsx
-┃ ┃ ┃ ┣ 📂RegisterForm
-┃ ┃ ┃ ┃ ┣ 📜react-awesome-autoplay.d.ts
-┃ ┃ ┃ ┃ ┣ 📜RegisterFrom.module.css
-┃ ┃ ┃ ┃ ┣ 📜RegisterFrom.tsx
-┃ ┃ ┃ ┃ ┗ 📜RegisterType.ts
+┃ ┃ ┃ ┗ 📂RegisterForm
+┃ ┃ ┃   ┣ 📜react-awesome-autoplay.d.ts
+┃ ┃ ┃   ┣ 📜RegisterFrom.module.css
+┃ ┃ ┃   ┣ 📜RegisterFrom.tsx
+┃ ┃ ┃   ┗ 📜RegisterType.ts
 ┃ ┃ ┣ 📂db
 ┃ ┃ ┃ ┗ 📜data.json
 ┃ ┃ ┣ 📂function
@@ -141,20 +141,37 @@
 ┃ ┃ ┃ ┃ ┗ 📜Register.tsx
 ┃ ┃ ┃ ┣ 📂Test
 ┃ ┃ ┃ ┃ ┗ 📜MyDropzone.tsx
-┃ ┃ ┃ ┣ 📂Upload
-┃ ┃ ┃ ┃ ┣ 📜index.tsx
-┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┗ 📂Upload
+┃ ┃ ┃   ┣ 📜index.tsx
+┃ ┃ ┃   ┗ 📜style.css
 ┃ ┃ ┣ 📂redux
-┃ ┃ ┃ ┣ 📜App.css
-┃ ┃ ┃ ┣ 📜App.tsx
-┃ ┃ ┃ ┣ 📜index.css
-┃ ┃ ┃ ┣ 📜index.tsx
-┃ ┃ ┃ ┗ 📜react-app-env.d.ts 
-┃ ┃ ┣ 📜.gitignore
-┃ ┃ ┣ 📜dockerfile
-┃ ┃ ┣ 📜package-lock.json
-┃ ┃ ┣ 📜README.md
-┃ ┃ ┗ 📜README_en.md
+┃ ┃ ┃ ┣ 📂Auth
+┃ ┃ ┃ ┃ ┗ 📜tokenSlice.ts
+┃ ┃ ┃ ┣ 📂Fish
+┃ ┃ ┃ ┃ ┣ 📜action.tsx
+┃ ┃ ┃ ┃ ┣ 📜reducer.tsx
+┃ ┃ ┃ ┃ ┗ 📜types.tsx
+┃ ┃ ┃ ┣ 📂Login
+┃ ┃ ┃ ┃ ┗ 📜loginSlice.ts
+┃ ┃ ┃ ┣ 📂Register
+┃ ┃ ┃ ┃ ┗ 📜registerSlice.ts
+┃ ┃ ┃ ┣ 📜store.ts
+┃ ┃ ┃ ┗ 📜store.tsx
+┃ ┃ ┣ 📜App.css
+┃ ┃ ┣ 📜App.tsx
+┃ ┃ ┣ 📜index.css
+┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┗ 📜react-app-env.d.ts 
+┃ ┣ 📜.gitignore
+┃ ┣ 📜dockerfile
+┃ ┣ 📜package-lock.json
+┃ ┣ 📜README.md
+┃ ┗ 📜tsconfig.json
+┣ 📜.gitignore
+┣ 📜docker-compose.prod.yml
+┣ 📜docker-compose.yml
+┣ 📜license
+┗ 📜readme.md
 ```
 
 # 🤖 AI
