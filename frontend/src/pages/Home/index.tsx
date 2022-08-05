@@ -23,7 +23,6 @@ export default function Home() {
           console.log("api연결실패!")
           return
         case 'FISH_CLICK':
-          console.log(action.id)
           return{
             ...state,
             selectFish:(state.data.filter(apiData=>apiData.id === action.id)),
@@ -52,7 +51,6 @@ export default function Home() {
       const response=await axios.get(
         "http://localhost:8000/api/v1/myfish/", {withCredentials: true}
       );
-      console.log(response.data)
       dispatch({type:"FISH_LOADED",data:response.data});
     } catch(e){
       dispatch({type:'ERROR',error:e});
@@ -63,9 +61,6 @@ export default function Home() {
 
   useEffect(()=>{
     fetchFishes();
-    console.log(111);
-    console.log(state);
-
   },[])
 
   const fishClick=(id:number)=>{
@@ -78,9 +73,14 @@ export default function Home() {
     setButton(false);
   }
 
+
+
   const fishDelete=(id:number)=>{
+    const id_2=id.toString()
+    const formdata_2=new FormData();
+    formdata_2.append('image_id', id_2);
     dispatch({type:"FISH_DELETE",id})
-    axios.delete("http://localhost:8000/api/v1/myfish/",{data:{image_id:id},withCredentials: true})      
+    axios.post("http://localhost:8000/api/v1/myfish/",formdata_2,{withCredentials: true})      
       .then(()=>{
       })
       .catch((error)=>{
@@ -88,6 +88,7 @@ export default function Home() {
       })
     setButton(true);
   }
+
   return (
     <>
     <NaviBar />
@@ -107,7 +108,6 @@ export default function Home() {
           })
         }
       </div>
-      <img className="displayPort" src="img/displayPort.png" alt="이미지오류"></img>
     </>
   );
 }

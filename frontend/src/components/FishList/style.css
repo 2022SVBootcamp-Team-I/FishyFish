@@ -13,20 +13,8 @@
 }
 
 .cell:hover{
-    border:1px solid aqua;
-}
-.cell2 {
-    height: 4.5rem;
-    align-self: stretch;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    padding: 0.25rem 0.5rem;
+    border:1px solid rgb(255, 117, 113);
     border-radius: 8px;
-    background-color: #dd7878;
 }
 
 .Avatar {
