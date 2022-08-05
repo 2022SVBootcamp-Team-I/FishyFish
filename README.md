@@ -2,6 +2,7 @@
 물고기 분류 및 정보 제공 서비스
 
 # :file_folder: System Archiecture
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/47908851-9804-47dd-abe8-4e23fb8fb4d9/2022_Bootcamp_Team-I_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220805%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220805T152151Z&X-Amz-Expires=86400&X-Amz-Signature=875d5f5fac8cbefe052170dd41624ba9f8e7c07643cdc66ca2d94e9ac6a0bb6e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%222022%2520Bootcamp%2520Team-I%2520%282%29.png%22&x-id=GetObject">
 <br/>
 
 # :electric_plug: Tech Stack
