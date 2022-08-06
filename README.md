@@ -3,20 +3,23 @@
 물고기 분류 및 정보 제공 서비스
 
 # :file_folder: System Archiecture
-<img width="1436" alt="image" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/47908851-9804-47dd-abe8-4e23fb8fb4d9/2022_Bootcamp_Team-I_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220805%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220805T130628Z&X-Amz-Expires=86400&X-Amz-Signature=40f1a1ef56c6c8cce3f316324b256fe1877671cd27492f5e41006ed84200dc3b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%222022%2520Bootcamp%2520Team-I%2520%282%29.png%22&x-id=GetObject">
+<img width="688" alt="image" src="https://user-images.githubusercontent.com/86517634/183236379-b82cc996-78be-4c28-9670-9982781b0688.png">
+
 <br/>
 
 
 # :video_camera: Demo
+:one: 로그인&회원가입 페이지<br/>
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/86517634/183235969-54d77ea1-3237-4280-a264-d96d80bc9d56.gif)
 
-![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/80400157/183234732-c97b15b0-6262-472d-b057-bf123a5b4164.gif)
+:two: 메인 페이지<br/>
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/86517634/183236024-bea4e016-dc71-415d-af60-34593a99a65a.gif)
 
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/80400157/183233665-eb084dd0-2c78-413e-85f8-d7bc26e943a8.gif)
+:three: Flsh list 
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/86517634/183236069-465d34df-5e5c-4cea-88c6-71ba7d36c871.gif)
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/80400157/183233702-e7748f65-273d-49d3-8986-c7a6de5720f6.gif)
-
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/80400157/183233700-45a74f54-c495-4aad-ba40-e97ac106f9d8.gif)
-
+반응형 페이지로 구현<br/>
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/86517634/183235883-056ae583-ea1a-4b50-a6bb-6cb41d702e1e.gif)
 
 
 # :electric_plug: Tech Stack
@@ -195,6 +198,9 @@
 <img width="290" alt="image" src="https://user-images.githubusercontent.com/86517634/182535625-0502c864-1ca1-4067-9e74-296098145952.jpeg"><img width="512" alt="image" src="https://user-images.githubusercontent.com/86517634/182535634-043fd13a-56bb-43f2-8ce5-322a34de1dcd.jpeg">
 <img width="820" alt="image" src="https://user-images.githubusercontent.com/86517634/182536438-48a9dd3e-7bac-4f14-9b7f-2d8a2af5be53.png">
 
+# :chart_with_upwards_trend: Monitoring: prometheus & grafana
+![Screen Shot 2022-08-04 at 7.55.26 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f5592d14-5f37-4b54-803d-9870b4122229/Screen_Shot_2022-08-04_at_7.55.26_PM.png)
+![Screen Shot 2022-08-04 at 7.59.11 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e261d4ca-a983-4a7b-b962-f049973e6cd3/Screen_Shot_2022-08-04_at_7.59.11_PM.png)
 # :office: Member
 | **Name**       | **Develop Area**                           | **Role**                                         | **Github**                                         |
 | ---------- | ---------------------------------- | -------------------------------------------- | -------------------------------------------------- |
