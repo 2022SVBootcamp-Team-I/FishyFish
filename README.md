@@ -17,6 +17,163 @@
 |  Cloud  | <img src="https://img.shields.io/badge/Amazon S3-569A31?style=for-the-badge&logo=Amazon S3&logoColor=white"> <img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=for-the-badge&logo=Amazon EC2&logoColor=white">
 |  Monitoring  | <img src="https://img.shields.io/badge/-Grafana-%23F46800?style=for-the-badge&logo=grafana&logoColor=white"> <img src="https://img.shields.io/badge/-Prometheus-%23E6522C?style=for-the-badge&logo=Prometheus&logoColor=white"> |
 
+
+# 📂 file tree
+
+```c
+📦fishy fish
+┣ 📂backend
+┃ ┣ 📂accounts
+┃ ┃ ┣ 📂migrations
+┃ ┃ ┃ ┗ 📜__init__.py
+┃ ┃ ┣ 📜__init__.py
+┃ ┃ ┣ 📜admin.py
+┃ ┃ ┣ 📜apps.py
+┃ ┃ ┣ 📜models.py
+┃ ┃ ┣ 📜serializers.py
+┃ ┃ ┣ 📜tests.py
+┃ ┃ ┣ 📜urls.py
+┃ ┃ ┗ 📜views.py
+┃ ┣ 📂images
+┃ ┃ ┣ 📂fixtures
+┃ ┃ ┃ ┗ 📜data.json
+┃ ┃ ┣ 📂inference
+┃ ┃ ┃ ┣ 📜expect.py
+┃ ┃ ┃ ┗ 📜last.pt
+┃ ┃ ┣ 📂migrations
+┃ ┃ ┃ ┗ 📜__init__.py
+┃ ┃ ┣ 📜__init__.py
+┃ ┃ ┣ 📜admin.py
+┃ ┃ ┣ 📜apps.py
+┃ ┃ ┣ 📜models.py
+┃ ┃ ┣ 📜serializers.py
+┃ ┃ ┣ 📜tasks.py
+┃ ┃ ┣ 📜tests.py
+┃ ┃ ┣ 📜urls.py
+┃ ┃ ┗ 📜views.py
+┃ ┣ 📂teami
+┃ ┃ ┣ 📂migrations
+┃ ┃ ┃ ┗ 📜__init__.py
+┃ ┃ ┣ 📜__init__.py
+┃ ┃ ┣ 📜asgi.py
+┃ ┃ ┣ 📜assest_storages.py
+┃ ┃ ┣ 📜celery.py
+┃ ┃ ┣ 📜models.py
+┃ ┃ ┣ 📜settings.py
+┃ ┃ ┣ 📜urls.py
+┃ ┃ ┗ 📜wsgi.py
+┃ ┣ 📜gitignore
+┃ ┣ 📜Dockerfile
+┃ ┣ 📜environments.py
+┃ ┣ 📜manage.py
+┃ ┣ 📜readme.md
+┃ ┣ 📜requirement.txt
+┃ ┗ 📜run-celery.sh
+┣ 📂frontend
+┃ ┣ 📂ngnix
+┃ ┃ ┗ 📜default.conf
+┃ ┣ 📂public
+┃ ┃ ┣ 📂font
+┃ ┃ ┣ 📂img
+┃ ┃ ┣ 📜favicon.ico
+┃ ┃ ┣ 📜index.html
+┃ ┃ ┣ 📜logo192.png
+┃ ┃ ┣ 📜logo512.png
+┃ ┃ ┣ 📜manifest.json
+┃ ┃ ┗ 📜robots.text
+┃ ┣ 📂src
+┃ ┃ ┣ 📂assests/images
+┃ ┃ ┣ 📂components
+┃ ┃ ┃ ┣ 📂FishList
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂ImageUpload
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂InfoBoxInner
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂Information
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂InformationBlank
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂LoginForm
+┃ ┃ ┃ ┃ ┣ 📜LoginForm.module.css
+┃ ┃ ┃ ┃ ┣ 📜LoginForm.tsx
+┃ ┃ ┃ ┃ ┣ 📜Logintype.ts
+┃ ┃ ┃ ┃ ┗ 📜react-awesome-autoplay.d.ts
+┃ ┃ ┃ ┣ 📂NaviBar
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂NotFound
+┃ ┃ ┃ ┃ ┗ 📜NotFound.tsx
+┃ ┃ ┃ ┣ 📂Pagenation
+┃ ┃ ┃ ┃ ┣ 📜ka1.svg
+┃ ┃ ┃ ┃ ┣ 📜ka2.svg
+┃ ┃ ┃ ┃ ┣ 📜ka3.png
+┃ ┃ ┃ ┃ ┣ 📜Pagenation.module.css
+┃ ┃ ┃ ┃ ┗ 📜Pagenation.tsx
+┃ ┃ ┃ ┗ 📂RegisterForm
+┃ ┃ ┃   ┣ 📜react-awesome-autoplay.d.ts
+┃ ┃ ┃   ┣ 📜RegisterFrom.module.css
+┃ ┃ ┃   ┣ 📜RegisterFrom.tsx
+┃ ┃ ┃   ┗ 📜RegisterType.ts
+┃ ┃ ┣ 📂db
+┃ ┃ ┃ ┗ 📜data.json
+┃ ┃ ┣ 📂function
+┃ ┃ ┃ ┣ 📜emailValidation.ts
+┃ ┃ ┃ ┣ 📜handleCookie.ts
+┃ ┃ ┃ ┣ 📜islogin.ts
+┃ ┃ ┃ ┗ 📜passwordCheck.ts
+┃ ┃ ┣ 📂hooks
+┃ ┃ ┃ ┣ 📜useGetData.ts
+┃ ┃ ┃ ┗ 📜useTitle.ts
+┃ ┃ ┣ 📂pages
+┃ ┃ ┃ ┣ 📂Home
+┃ ┃ ┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┃ ┃ ┗ 📜style.css
+┃ ┃ ┃ ┣ 📂Login
+┃ ┃ ┃ ┃ ┗ 📜Login.tsx
+┃ ┃ ┃ ┣ 📂Register
+┃ ┃ ┃ ┃ ┗ 📜Register.tsx
+┃ ┃ ┃ ┣ 📂Test
+┃ ┃ ┃ ┃ ┗ 📜MyDropzone.tsx
+┃ ┃ ┃ ┗ 📂Upload
+┃ ┃ ┃   ┣ 📜index.tsx
+┃ ┃ ┃   ┗ 📜style.css
+┃ ┃ ┣ 📂redux
+┃ ┃ ┃ ┣ 📂Auth
+┃ ┃ ┃ ┃ ┗ 📜tokenSlice.ts
+┃ ┃ ┃ ┣ 📂Fish
+┃ ┃ ┃ ┃ ┣ 📜action.tsx
+┃ ┃ ┃ ┃ ┣ 📜reducer.tsx
+┃ ┃ ┃ ┃ ┗ 📜types.tsx
+┃ ┃ ┃ ┣ 📂Login
+┃ ┃ ┃ ┃ ┗ 📜loginSlice.ts
+┃ ┃ ┃ ┣ 📂Register
+┃ ┃ ┃ ┃ ┗ 📜registerSlice.ts
+┃ ┃ ┃ ┣ 📜store.ts
+┃ ┃ ┃ ┗ 📜store.tsx
+┃ ┃ ┣ 📜App.css
+┃ ┃ ┣ 📜App.tsx
+┃ ┃ ┣ 📜index.css
+┃ ┃ ┣ 📜index.tsx
+┃ ┃ ┗ 📜react-app-env.d.ts 
+┃ ┣ 📜.gitignore
+┃ ┣ 📜dockerfile
+┃ ┣ 📜package-lock.json
+┃ ┣ 📜README.md
+┃ ┗ 📜tsconfig.json
+┣ 📜.gitignore
+┣ 📜docker-compose.prod.yml
+┣ 📜docker-compose.yml
+┣ 📜license
+┗ 📜readme.md
+```
+
+
 # :page_facing_up: Swagger
 
 <img width="1436" alt="image" src="https://user-images.githubusercontent.com/86517634/182526687-49169532-dc33-4279-af6e-51fb904933a1.png">
