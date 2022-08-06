@@ -16,7 +16,7 @@
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/86517634/183236024-bea4e016-dc71-415d-af60-34593a99a65a.gif)
 
 :three: Flsh list 
-![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/86517634/183254239-4d4b55ae-aeb2-4902-9164-ce9a7ba7f0a2.gif)
+![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/86517634/183254418-300c4add-623a-496b-a2ce-5007354b7e43.gif)
 
 
 반응형 페이지로 구현<br/>
