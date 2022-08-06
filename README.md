@@ -7,7 +7,7 @@
 <br/>
 
 
-# :electric_plug: Demo
+# :video_camera: Demo
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/80400157/183233665-eb084dd0-2c78-413e-85f8-d7bc26e943a8.gif)
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/80400157/183233702-e7748f65-273d-49d3-8986-c7a6de5720f6.gif)
