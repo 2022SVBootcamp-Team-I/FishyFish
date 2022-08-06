@@ -10,13 +10,14 @@
 
 # :video_camera: Demo
 :one: 로그인&회원가입 페이지<br/>
-![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/86517634/183235969-54d77ea1-3237-4280-a264-d96d80bc9d56.gif)
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/86517634/183253596-ef203141-2b21-4471-86ab-1cc4373688d0.gif)
 
 :two: 메인 페이지<br/>
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/86517634/183236024-bea4e016-dc71-415d-af60-34593a99a65a.gif)
 
 :three: Flsh list 
-![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/86517634/183236069-465d34df-5e5c-4cea-88c6-71ba7d36c871.gif)
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/86517634/183254239-4d4b55ae-aeb2-4902-9164-ce9a7ba7f0a2.gif)
+
 
 반응형 페이지로 구현<br/>
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/86517634/183235883-056ae583-ea1a-4b50-a6bb-6cb41d702e1e.gif)
@@ -199,8 +200,9 @@
 <img width="820" alt="image" src="https://user-images.githubusercontent.com/86517634/182536438-48a9dd3e-7bac-4f14-9b7f-2d8a2af5be53.png">
 
 # :chart_with_upwards_trend: Monitoring: prometheus & grafana
-![Screen Shot 2022-08-04 at 7.55.26 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f5592d14-5f37-4b54-803d-9870b4122229/Screen_Shot_2022-08-04_at_7.55.26_PM.png)
-![Screen Shot 2022-08-04 at 7.59.11 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e261d4ca-a983-4a7b-b962-f049973e6cd3/Screen_Shot_2022-08-04_at_7.59.11_PM.png)
+![Screen Shot 2022-08-04 at 7 59 11 PM (1)](https://user-images.githubusercontent.com/86517634/183253018-a1433c23-28ea-4643-88f8-9292941f2152.png)
+![Screen Shot 2022-08-04 at 7 55 26 PM (1)](https://user-images.githubusercontent.com/86517634/183253024-d0141aeb-5f9c-40aa-94b7-c1e6ec7a382e.png)
+
 # :office: Member
 | **Name**       | **Develop Area**                           | **Role**                                         | **Github**                                         |
 | ---------- | ---------------------------------- | -------------------------------------------- | -------------------------------------------------- |
